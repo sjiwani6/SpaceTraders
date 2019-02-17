@@ -1,13 +1,13 @@
 package edu.gatech.cs2340.milestones.spacetraders.entity;
 
-public enum levelDifficulty {
+public enum Difficulty {
     EASY("Easy"),
     NORMAl("Normal"),
     HARD ("Hard");
 
     private final String diffLevel;
 
-    levelDifficulty (String diffLevel){
+    Difficulty(String diffLevel){
         this.diffLevel = diffLevel;
     }
 
