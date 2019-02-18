@@ -15,5 +15,11 @@
     <string name="instruc"></string>
     <string name="skill">Skill Points : </string>
     <string name="maxSkill">16</string>
+    <string-array name="difficulty1">
+        <item>Easy</item>
+        <item>Normal</item>
+        <item>Hard</item>
+        <item>Impossible</item>
+    </string-array>
 
 </resources>
