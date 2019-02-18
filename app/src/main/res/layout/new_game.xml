@@ -35,8 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="20dp"
-            android:autofillHints="@string/enter"
             android:ems="10"
+            android:text="Name"
             android:inputType="textPersonName" />
 
     </RelativeLayout>
@@ -66,10 +66,11 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:maxLines="1"
+            android:layout_marginRight="60dp"
             android:padding="8dp"
             android:textSize="20sp"
             android:text="@string/maxSkill"
-            android:layout_marginRight="20dp"/>
+            />
     </RelativeLayout>
 
     <!--pilot field-->
