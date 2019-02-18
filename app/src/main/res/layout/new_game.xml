@@ -86,7 +86,8 @@
         android:layout_marginBottom="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/enter"
+        android:autofillHints="@string/enter"
+        android:labelFor="@id/name_input"
         app:layout_constraintBottom_toTopOf="@+id/pilotPoint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/name"
@@ -105,5 +106,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fighterPoint" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:autofillHints="@string/point"
+        android:labelFor="@id/pilotPoint"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="77dp" />
 
 </android.support.constraint.ConstraintLayout>

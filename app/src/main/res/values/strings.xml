@@ -7,5 +7,6 @@
     <string name="name">Name :</string>
     <string name="enter">Enter name</string>
     <string name="credit">Credit : </string>
+    <string name="point">Enter points</string>
 
 </resources>
