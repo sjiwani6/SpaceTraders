@@ -11,21 +11,23 @@ public class Player {
     private int tradePoint;
     private int fighterPoint;
     private int credit;
-    private final int INITIAL_CREDIT = 10000;
+    private final int INITIAL_CREDIT = 1000;
     private int skillPoint;
-    private int INITIAL_SKILL = 20;
+    private final int INITIAL_SKILL = 20;
 
     public static List<Difficulty> difficultyList = Arrays.asList(Difficulty.EASY, Difficulty.NORMAl, Difficulty.HARD, Difficulty.IMPOSSIBLE);
 
 
-    public Player(String name, int pilotPoint, int engineerPoint, int tradePoint, int fighterPoint) {
+    public Player(String name) {
         this.name = name;
-        this.pilotPoint = pilotPoint;
-        this.engineerPoint = engineerPoint;
-        this.tradePoint = tradePoint;
-        this.fighterPoint = fighterPoint;
-        this.credit = INITIAL_CREDIT;
         this.skillPoint = INITIAL_SKILL;
+        this.credit = INITIAL_CREDIT;
+        this.pilotPoint = 1;
+        this.engineerPoint = 1;
+        this.tradePoint = 1;
+        this.fighterPoint = 1;
+        skillPoint -= 4;
+
     }
 
     public int getCredit() {
