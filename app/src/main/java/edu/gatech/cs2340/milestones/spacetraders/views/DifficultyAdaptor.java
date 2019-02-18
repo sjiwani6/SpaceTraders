@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.gatech.cs2340.milestones.spacetraders.R;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Difficulty;
 
 public class DifficultyAdaptor extends RecyclerView.Adapter<DifficultyAdaptor.DifficultyViewHolder> {
@@ -21,8 +22,8 @@ public class DifficultyAdaptor extends RecyclerView.Adapter<DifficultyAdaptor.Di
     public DifficultyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
 
         //Tell the adapter what layout to use for each course in the list
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.new_game, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext());
+                .inflate(R.layout.new_game, parent, false);
 
         return new DifficultyViewHolder(itemView);
     }
