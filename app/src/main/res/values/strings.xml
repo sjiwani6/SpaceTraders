@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Space Traders</string>
+    <string name="pilot_point">Pilot Point :</string>
+    <string name="engi_point">Engineer Point :</string>
+    <string name="trade_point">Trade Point :</string>
+    <string name="fighter_point">Fighter Point :</string>
+    <string name="name">Name :</string>
+    <string name="enter">Enter name</string>
+    <string name="credit">Credit : </string>
+
 </resources>

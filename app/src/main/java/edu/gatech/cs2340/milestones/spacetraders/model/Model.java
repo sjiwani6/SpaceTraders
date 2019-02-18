@@ -1,5 +1,7 @@
 package edu.gatech.cs2340.milestones.spacetraders.model;
 
+import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
+
 public class Model {
     // player instance
     private Player player;
