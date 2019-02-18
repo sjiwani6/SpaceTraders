@@ -90,15 +90,32 @@
             android:text="@string/pilot_point"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/pilot_input"
-            android:layout_width="100dp"
+        <Button
+            android:id="@+id/p_plus"
+            android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
             android:layout_marginRight="20dp"
-            android:autofillHints="@string/enter"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="+"
+            android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/p_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="20sp"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            />
+        <Button
+            android:id="@+id/p_minus"
+            android:layout_width="41dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="100dp"
+            android:text="-"
+            android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
     <!--enginner field-->
@@ -119,15 +136,32 @@
             android:text="@string/engi_point"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/engineer_input"
-            android:layout_width="100dp"
+        <Button
+            android:id="@+id/e_plus"
+            android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
             android:layout_marginRight="20dp"
-            android:autofillHints="@string/enter"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="+"
+            android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/e_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="20sp"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            />
+        <Button
+            android:id="@+id/e_minus"
+            android:layout_width="41dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="100dp"
+            android:text="-"
+            android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
 
@@ -149,15 +183,32 @@
             android:text="@string/trade_point"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/trade_input"
-            android:layout_width="100dp"
+        <Button
+            android:id="@+id/t_plus"
+            android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
             android:layout_marginRight="20dp"
-            android:autofillHints="@string/enter"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="+"
+            android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/t_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="20sp"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            />
+        <Button
+            android:id="@+id/t_minus"
+            android:layout_width="41dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="100dp"
+            android:text="-"
+            android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
 
@@ -179,15 +230,32 @@
             android:text="@string/fighter_point"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/fighter_input"
-            android:layout_width="100dp"
+        <Button
+            android:id="@+id/f_plus"
+            android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
             android:layout_marginRight="20dp"
-            android:autofillHints="@string/enter"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="+"
+            android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/f_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="20sp"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            />
+        <Button
+            android:id="@+id/f_minus"
+            android:layout_width="41dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="100dp"
+            android:text="-"
+            android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
 
