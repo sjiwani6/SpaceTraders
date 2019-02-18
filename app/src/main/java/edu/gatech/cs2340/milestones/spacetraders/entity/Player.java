@@ -17,15 +17,23 @@ public class Player {
 
     public static List<Difficulty> difficultyList = Arrays.asList(Difficulty.EASY, Difficulty.NORMAl, Difficulty.HARD, Difficulty.IMPOSSIBLE);
 
-
+    public Player(){
+        skillPoint = INITIAL_SKILL;
+        credit = INITIAL_CREDIT;
+        pilotPoint = 1;
+        engineerPoint = 1;
+        tradePoint = 1;
+        fighterPoint = 1;
+        skillPoint -= 4;
+    }
     public Player(String name) {
         this.name = name;
-        this.skillPoint = INITIAL_SKILL;
-        this.credit = INITIAL_CREDIT;
-        this.pilotPoint = 1;
-        this.engineerPoint = 1;
-        this.tradePoint = 1;
-        this.fighterPoint = 1;
+        skillPoint = INITIAL_SKILL;
+        credit = INITIAL_CREDIT;
+        pilotPoint = 1;
+        engineerPoint = 1;
+        tradePoint = 1;
+        fighterPoint = 1;
         skillPoint -= 4;
 
     }

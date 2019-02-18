@@ -18,6 +18,7 @@ import java.util.List;
 
 import edu.gatech.cs2340.milestones.spacetraders.R;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Difficulty;
+
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewModel;
 
@@ -25,7 +26,7 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
 
     private ConfigurationViewModel viewModel;
 
-    private Player player;
+    private Player player = new Player();
     private boolean editing;
 
     private EditText nameField;
@@ -45,6 +46,8 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
     private Button t_minusb;
     private Button f_plusb;
     private Button f_minusb;
+
+    private int ppoint = player.getPilotPoint();
 
     private int skillpoint = 16;
 
@@ -69,8 +72,8 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         player = new Player("put your name");
         Log.d("here", player.getName());
         nameField.setText(player.getName());
-//        skillPoint.setText(player.getSkillPoint());
-//        pilotPoint.setText(player.getPilotPoint());
+        //skillPoint.setText(""+player.getSkillPoint());
+        pilotPoint.setText(""+ppoint);
 //        enginnerPoint.setText(player.getEngineerPoint());
 //        tradePoint.setText(player.getTradePoint());
 //        fighterPoint.setText(player.getFighterPoint());
@@ -86,16 +89,23 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
             p_plusb = findViewById(R.id.p_plus);
             p_plusb.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view)
-                {
-//                    int tempvalue = Integer.parseInt(pilotPoint.toString());
-//                    tempvalue++;
-//                    pilotPoint.setText(tempvalue);
-
-                    Log.i("Test", "Testing string");
+                public void onClick(View v) {
+                    ppoint = ppoint + 1;
+                    skillpoint--;
+                    pilotPoint.setText(String.valueOf(ppoint));
+                    skillPoint.setText(String.valueOf(skillpoint));
                 }
             });
-
+            p_minusb = findViewById(R.id.p_plus);
+            p_minusb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                ppoint = ppoint + 1;
+                skillpoint--;
+                pilotPoint.setText(String.valueOf(ppoint));
+                skillPoint.setText(String.valueOf(skillpoint));
+                }
+            });
 
 
         viewModel = ViewModelProviders.of(this).get(ConfigurationViewModel.class);
