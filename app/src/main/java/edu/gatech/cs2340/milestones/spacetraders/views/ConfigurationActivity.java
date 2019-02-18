@@ -39,7 +39,7 @@ public class ConfigurationActivity extends AppCompatActivity {
         fighterPoint = findViewById(R.id.f_count);
         skillPoint = findViewById(R.id.s_count);
 
-        skillPoint.setText(player.getSkillCount());
+        skillPoint.setText(player.getSkillPoint());
         pilotPoint.setText(player.getPilotPoint());
         enginnerPoint.setText(player.getEngineerPoint());
         tradePoint.setText(player.getTradePoint());
