@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="30dp">
 
         <TextView
             android:id="@+id/display_name"
@@ -160,15 +160,35 @@
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/ShipSelect"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="45dp"
-        android:text="@string/next"
-        android:layout_marginBottom="40dp"
-    />
+    <!--difficulty field-->
+    <RelativeLayout
+        android:id="@+id/difficulty_field"
+        android:layout_width="345dp"
+        android:layout_height="235dp"
+        android:layout_alignStart="@+id/fighter_field"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="256dp">
+
+        <TextView
+            android:id="@+id/difficulty"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="@string/difficulty"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/difficuly_spinner"
+            android:layout_width="214dp"
+            android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="20dp"
+            android:padding="8dp" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/textView"
@@ -177,6 +197,15 @@
         android:text="@string/ShipNext"
         android:layout_alignBottom="@+id/ShipSelect"
         android:layout_marginBottom="50dp"/>
+
+    <Button
+        android:id="@+id/ShipSelect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/next" />
 
 
     <!--pilot field-->
