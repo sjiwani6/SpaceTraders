@@ -3,7 +3,8 @@ package edu.gatech.cs2340.milestones.spacetraders.entity;
 public enum Difficulty {
     EASY("Easy"),
     NORMAl("Normal"),
-    HARD ("Hard");
+    HARD ("Hard"),
+    IMPOSSIBLE ("Impossible");
 
     private final String diffLevel;
 

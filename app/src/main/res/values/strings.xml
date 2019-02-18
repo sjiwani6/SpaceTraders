@@ -10,6 +10,10 @@
     <string name="point">Enter points</string>
     <string name="creditAmount">1000</string>
     <string name="next">Next</string>
-    <string name="ShipNext">Click next button to select the ship</string>
+    <string name="ShipNext">Click next to play the game</string>
+    <string name="difficulty">Difficulty :</string>
+    <string name="instruc"></string>
+    <string name="skill">Skill Points : </string>
+    <string name="maxSkill">16</string>
 
 </resources>

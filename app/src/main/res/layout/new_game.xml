@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="25dp">
 
         <TextView
             android:id="@+id/display_name"
@@ -41,14 +41,45 @@
 
     </RelativeLayout>
 
+    <!--skill field-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/name_field"
+        android:layout_alignStart="@+id/name_field">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="132dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:textSize="20sp"
+            android:text="@string/skill" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:textSize="20sp"
+            android:text="@string/maxSkill"
+            android:layout_marginRight="20dp"/>
+    </RelativeLayout>
+
     <!--pilot field-->
     <RelativeLayout
         android:id="@+id/pilot_field"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="356dp"
         android:layout_alignTop="@+id/name_field"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="45dp">
+        android:layout_marginTop="85dp">
 
         <TextView
             android:id="@+id/display_pilot"
@@ -59,15 +90,32 @@
             android:text="@string/pilot_point"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/pilot_input"
-            android:layout_width="100dp"
+        <Button
+            android:id="@+id/p_plus"
+            android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
             android:layout_marginRight="20dp"
-            android:autofillHints="@string/enter"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="+"
+            android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/p_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="20sp"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            />
+        <Button
+            android:id="@+id/p_minus"
+            android:layout_width="41dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="100dp"
+            android:text="-"
+            android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
     <!--enginner field-->
@@ -88,15 +136,32 @@
             android:text="@string/engi_point"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/engineer_input"
-            android:layout_width="100dp"
+        <Button
+            android:id="@+id/e_plus"
+            android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
             android:layout_marginRight="20dp"
-            android:autofillHints="@string/enter"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="+"
+            android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/e_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="20sp"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            />
+        <Button
+            android:id="@+id/e_minus"
+            android:layout_width="41dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="100dp"
+            android:text="-"
+            android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
 
@@ -118,15 +183,32 @@
             android:text="@string/trade_point"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/trade_input"
-            android:layout_width="100dp"
+        <Button
+            android:id="@+id/t_plus"
+            android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
             android:layout_marginRight="20dp"
-            android:autofillHints="@string/enter"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="+"
+            android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/t_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="20sp"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            />
+        <Button
+            android:id="@+id/t_minus"
+            android:layout_width="41dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="100dp"
+            android:text="-"
+            android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
 
@@ -148,27 +230,64 @@
             android:text="@string/fighter_point"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/fighter_input"
-            android:layout_width="100dp"
+        <Button
+            android:id="@+id/f_plus"
+            android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
             android:layout_marginRight="20dp"
-            android:autofillHints="@string/enter"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:text="+"
+            android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/f_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="20sp"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            />
+        <Button
+            android:id="@+id/f_minus"
+            android:layout_width="41dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="100dp"
+            android:text="-"
+            android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/ShipSelect"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="45dp"
-        android:text="@string/next"
-        android:layout_marginBottom="40dp"
-    />
+    <!--difficulty field-->
+    <RelativeLayout
+        android:id="@+id/difficulty_field"
+        android:layout_width="wrap_content"
+        android:layout_height="196dp"
+        android:layout_alignStart="@+id/fighter_field"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="295dp">
+
+        <TextView
+            android:id="@+id/difficulty"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="@string/difficulty"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/difficuly_spinner"
+            android:layout_width="214dp"
+            android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="20dp"
+            android:padding="8dp" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/textView"
@@ -177,6 +296,17 @@
         android:text="@string/ShipNext"
         android:layout_alignBottom="@+id/ShipSelect"
         android:layout_marginBottom="50dp"/>
+
+    <Button
+        android:id="@+id/ShipSelect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/next" />
+
+
 
 
     <!--pilot field-->
