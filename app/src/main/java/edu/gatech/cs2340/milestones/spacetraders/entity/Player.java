@@ -1,6 +1,10 @@
 package edu.gatech.cs2340.milestones.spacetraders.entity;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Player {
+
     private String name;
     private int pilotPoint;
     private int engineerPoint;
@@ -10,6 +14,8 @@ public class Player {
     private final int INITIAL_CREDIT = 10000;
     private int skillPoint;
     private int INITIAL_SKILL = 20;
+
+    public static List<Difficulty> difficultyList = Arrays.asList(Difficulty.EASY, Difficulty.NORMAl, Difficulty.HARD, Difficulty.IMPOSSIBLE);
 
 
     public Player(String name, int pilotPoint, int engineerPoint, int tradePoint, int fighterPoint) {
