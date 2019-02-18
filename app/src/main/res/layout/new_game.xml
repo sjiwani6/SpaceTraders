@@ -108,15 +108,102 @@
         app:layout_constraintTop_toBottomOf="@+id/fighterPoint" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/pilot_point"
+        android:layout_width="112dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:autofillHints="@string/point"
         android:ems="10"
         android:inputType="textPersonName"
-        android:autofillHints="@string/point"
-        android:labelFor="@id/pilotPoint"
+        android:labelFor="@id/pilot_point"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="77dp" />
+        app:layout_constraintBottom_toTopOf="@+id/engineerPoint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.804"
+        app:layout_constraintStart_toEndOf="@+id/pilotPoint"
+        app:layout_constraintTop_toBottomOf="@+id/name_input"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/engineer_point"
+        android:layout_width="112dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="353dp"
+        android:autofillHints="@string/point"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:labelFor="@id/engineer_point"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/engineerPoint"
+        app:layout_constraintTop_toBottomOf="@+id/pilot_point" />
+
+    <EditText
+        android:id="@+id/credit_point"
+        android:layout_width="112dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="265dp"
+        android:autofillHints="@string/point"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/creditAmount"
+        android:labelFor="@id/credit_point"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fighterPoint"
+        app:layout_constraintTop_toBottomOf="@+id/trade_point" />
+
+    <EditText
+        android:id="@+id/trade_point"
+        android:layout_width="112dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="309dp"
+        android:autofillHints="@string/point"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:labelFor="@id/trade_point"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tradePoint"
+        app:layout_constraintTop_toBottomOf="@+id/engineer_point" />
+
+    <Button
+        android:id="@+id/ShipSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="186dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="57dp"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fighterPoint" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="13dp"
+        android:text="@string/ShipNext"
+        app:layout_constraintBottom_toTopOf="@+id/ShipSelect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/credit_point" />
 
 </android.support.constraint.ConstraintLayout>
