@@ -6,7 +6,10 @@ public class Player {
     private int engineerPoint;
     private int tradePoint;
     private int fighterPoint;
-    private int credit = 1000;
+    private int credit;
+    private final int INITIAL_CREDIT = 10000;
+    private int skillPoint;
+    private int INITIAL_SKILL = 20;
 
 
     public Player(String name, int pilotPoint, int engineerPoint, int tradePoint, int fighterPoint) {
@@ -15,6 +18,8 @@ public class Player {
         this.engineerPoint = engineerPoint;
         this.tradePoint = tradePoint;
         this.fighterPoint = fighterPoint;
+        this.credit = INITIAL_CREDIT;
+        this.skillPoint = INITIAL_SKILL;
     }
 
     public int getCredit() {
@@ -63,6 +68,12 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
+    }
+    public int getSkillPoint() {
+        return skillPoint;
+    }
+    public void setSkillPoint(int skillPoint) {
+        this.skillPoint = skillPoint;
     }
 
     @Override
