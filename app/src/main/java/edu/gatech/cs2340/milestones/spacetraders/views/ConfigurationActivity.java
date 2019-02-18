@@ -3,11 +3,13 @@ package edu.gatech.cs2340.milestones.spacetraders.views;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import edu.gatech.cs2340.milestones.spacetraders.R;
+import edu.gatech.cs2340.milestones.spacetraders.entity.Difficulty;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewModel;
 
@@ -32,7 +34,7 @@ public class ConfigurationActivity extends AppCompatActivity {
 
 
         nameField = findViewById(R.id.name_input);
-        diffSpinner = findViewById(R.id.difficuly_spinner);
+        diffSpinner = (Spinner) findViewById(R.id.difficuly_spinner);
         pilotPoint = findViewById(R.id.p_count);
         enginnerPoint = findViewById(R.id.e_count);
         tradePoint = findViewById(R.id.t_count);
@@ -44,6 +46,10 @@ public class ConfigurationActivity extends AppCompatActivity {
         enginnerPoint.setText(player.getEngineerPoint());
         tradePoint.setText(player.getTradePoint());
         fighterPoint.setText(player.getFighterPoint());
+
+        //setting adapter for difficulty spinner
+        //ArrayAdapter<Difficulty> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Difficulty.values());
+        diffSpinner.setAdapter(new ArrayAdapter<Difficulty>(this,android.R.layout.simple_spinner_dropdown_item, Difficulty.values()));
 
     }
     public void onNextPressed(View view){
