@@ -50,7 +50,8 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.new_game);
+        setContentView(R.layout.activity_configuration);
+        Log.d("here", "you got here_configact");
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
@@ -65,11 +66,14 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         fighterPoint = findViewById(R.id.f_count);
         skillPoint = findViewById(R.id.s_count);
 
-        skillPoint.setText(player.getSkillPoint());
-        pilotPoint.setText(player.getPilotPoint());
-        enginnerPoint.setText(player.getEngineerPoint());
-        tradePoint.setText(player.getTradePoint());
-        fighterPoint.setText(player.getFighterPoint());
+        player = new Player("put your name");
+        Log.d("here", player.getName());
+        nameField.setText(player.getName());
+//        skillPoint.setText(player.getSkillPoint());
+//        pilotPoint.setText(player.getPilotPoint());
+//        enginnerPoint.setText(player.getEngineerPoint());
+//        tradePoint.setText(player.getTradePoint());
+//        fighterPoint.setText(player.getFighterPoint());
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.difficulty1, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -96,6 +100,7 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
 
         viewModel = ViewModelProviders.of(this).get(ConfigurationViewModel.class);
 
+        viewModel = ViewModelProviders.of(this).get(ConfigurationViewModel.class);
     }
 
     public void onNextPressed(View view){
@@ -105,7 +110,9 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         player.setTradePoint(Integer.parseInt(tradePoint.getText().toString()));
         player.setFighterPoint(Integer.parseInt(fighterPoint.getText().toString()));
 
+        viewModel.addPlayer(player);
 
+        finish();
     }
 
     @Override
