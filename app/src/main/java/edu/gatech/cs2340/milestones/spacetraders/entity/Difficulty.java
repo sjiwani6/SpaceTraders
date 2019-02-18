@@ -6,7 +6,7 @@ public enum Difficulty {
     HARD ("Hard"),
     IMPOSSIBLE ("Impossible");
 
-    private final String diffLevel;
+    private String diffLevel;
 
     Difficulty(String diffLevel){
         this.diffLevel = diffLevel;
