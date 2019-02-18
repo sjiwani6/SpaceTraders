@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -47,11 +48,11 @@ public class ConfigurationActivity extends AppCompatActivity {
         player = new Player("put your name");
         Log.d("here", player.getName());
         nameField.setText(player.getName());
-//        skillPoint.setText(player.getSkillPoint());
-//        pilotPoint.setText(player.getPilotPoint());
-//        enginnerPoint.setText(player.getEngineerPoint());
-//        tradePoint.setText(player.getTradePoint());
-//        fighterPoint.setText(player.getFighterPoint());
+        skillPoint.setText(""+player.getSkillPoint());
+        pilotPoint.setText(""+player.getPilotPoint());
+        enginnerPoint.setText(""+player.getEngineerPoint());
+        tradePoint.setText(""+player.getTradePoint());
+        fighterPoint.setText(""+player.getFighterPoint());
 
         //setting adapter for difficulty spinner
         //ArrayAdapter<Difficulty> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Difficulty.values());
@@ -59,16 +60,104 @@ public class ConfigurationActivity extends AppCompatActivity {
 
         viewModel = ViewModelProviders.of(this).get(ConfigurationViewModel.class);
     }
-    public void onNextPressed(View view){
-        player.setName(nameField.getText().toString());
-        player.setPilotPoint(Integer.parseInt(pilotPoint.getText().toString()));
-        player.setEngineerPoint(Integer.parseInt(enginnerPoint.getText().toString()));
-        player.setTradePoint(Integer.parseInt(tradePoint.getText().toString()));
-        player.setFighterPoint(Integer.parseInt(fighterPoint.getText().toString()));
+    public void onNextPressed(View view) {
+        if (player.getSkillPoint() == 0) {
+            player.setName(nameField.getText().toString());
+            player.setPilotPoint(Integer.parseInt(pilotPoint.getText().toString()));
+            player.setEngineerPoint(Integer.parseInt(enginnerPoint.getText().toString()));
+            player.setTradePoint(Integer.parseInt(tradePoint.getText().toString()));
+            player.setFighterPoint(Integer.parseInt(fighterPoint.getText().toString()));
 
-        viewModel.addPlayer(player);
+            //viewModel.addPlayer(player);
+            Log.d("user data:", player.toString());
+        }
 
         finish();
+    }
+    public void onSkillButton(View view) {
+        int id = view.getId();
+        //
+        if (id == R.id.p_plus) {
+            if(player.getSkillPoint() > 0) {
+                int p1 = player.getPilotPoint() + 1;
+                player.setPilotPoint(p1);
+                int s1 = player.getSkillPoint() - 1;
+                player.setSkillPoint(s1);
+                pilotPoint.setText("" + player.getPilotPoint());
+                skillPoint.setText("" + player.getSkillPoint());
+            }
+        }
+        if (id == R.id.e_plus) {
+            if(player.getSkillPoint() > 0) {
+                int e1 = player.getEngineerPoint() + 1;
+                player.setEngineerPoint(e1);
+                int s2 = player.getSkillPoint() - 1;
+                player.setSkillPoint(s2);
+                enginnerPoint.setText("" + player.getEngineerPoint());
+                skillPoint.setText("" + player.getSkillPoint());
+            }
+        }
+        if (id == R.id.t_plus) {
+            if(player.getSkillPoint() > 0) {
+                int t1 = player.getTradePoint() + 1;
+                player.setTradePoint(t1);
+                int s3 = player.getSkillPoint() - 1;
+                player.setSkillPoint(s3);
+                tradePoint.setText("" + player.getTradePoint());
+                skillPoint.setText("" + player.getSkillPoint());
+            }
+        }
+        if (id == R.id.f_plus) {
+            if(player.getSkillPoint() > 0) {
+                int f1 = player.getFighterPoint() + 1;
+                player.setFighterPoint(f1);
+                int s4 = player.getSkillPoint() - 1;
+                player.setSkillPoint(s4);
+                fighterPoint.setText("" + player.getFighterPoint());
+                skillPoint.setText("" + player.getSkillPoint());
+            }
+        }
+        //minus
+        if (id == R.id.p_minus) {
+            if (player.getPilotPoint() > 1) {
+                int p2 = player.getPilotPoint() - 1;
+                player.setPilotPoint(p2);
+                int s5 = player.getSkillPoint() + 1;
+                player.setSkillPoint(s5);
+                pilotPoint.setText("" + player.getPilotPoint());
+                skillPoint.setText("" + player.getSkillPoint());
+            }
+        }
+        if (id == R.id.e_minus) {
+            if(player.getEngineerPoint() > 1) {
+                int e2 = player.getEngineerPoint() - 1;
+                player.setEngineerPoint(e2);
+                int s6 = player.getSkillPoint() + 1;
+                player.setSkillPoint(s6);
+                enginnerPoint.setText("" + player.getEngineerPoint());
+                skillPoint.setText("" + player.getSkillPoint());
+            }
+        }
+        if (id == R.id.t_minus) {
+            if(player.getTradePoint() > 1) {
+                int t2 = player.getTradePoint() - 1;
+                player.setTradePoint(t2);
+                int s7 = player.getSkillPoint() + 1;
+                player.setSkillPoint(s7);
+                tradePoint.setText("" + player.getTradePoint());
+                skillPoint.setText("" + player.getSkillPoint());
+            }
+        }
+        if (id == R.id.f_minus) {
+            if(player.getFighterPoint() > 1) {
+                int f2 = player.getFighterPoint() - 1;
+                player.setFighterPoint(f2);
+                int s8 = player.getSkillPoint() + 1;
+                player.setSkillPoint(s8);
+                fighterPoint.setText("" + player.getFighterPoint());
+                skillPoint.setText("" + player.getSkillPoint());
+            }
+        }
     }
 
 }
