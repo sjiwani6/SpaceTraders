@@ -12,9 +12,11 @@ class Repository {
     public Player getPlayer() {
         return player;
     }
+
     public void setPlayer(Player player) {
         this.player = player;
     }
+
     public void updatePlayer(Player player) {
         player.setCredit(player.getCredit());
         player.setEngineerPoint(player.getEngineerPoint());
