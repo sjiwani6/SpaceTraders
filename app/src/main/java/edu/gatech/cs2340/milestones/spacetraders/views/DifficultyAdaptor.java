@@ -22,7 +22,7 @@ public class DifficultyAdaptor extends RecyclerView.Adapter<DifficultyAdaptor.Di
 
         //Tell the adapter what layout to use for each course in the list
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.course_item, parent, false);
+                .inflate(R.new_game, parent, false);
 
         return new DifficultyViewHolder(itemView);
     }
