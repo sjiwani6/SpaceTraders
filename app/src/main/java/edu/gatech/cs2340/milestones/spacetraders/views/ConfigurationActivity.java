@@ -1,7 +1,9 @@
 package edu.gatech.cs2340.milestones.spacetraders.views;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -30,7 +32,8 @@ public class ConfigurationActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.new_game);
+        setContentView(R.layout.activity_configuration);
+        Log.d("here", "you got here_configact");
 
 
         nameField = findViewById(R.id.name_input);
@@ -41,16 +44,20 @@ public class ConfigurationActivity extends AppCompatActivity {
         fighterPoint = findViewById(R.id.f_count);
         skillPoint = findViewById(R.id.s_count);
 
-        skillPoint.setText(player.getSkillPoint());
-        pilotPoint.setText(player.getPilotPoint());
-        enginnerPoint.setText(player.getEngineerPoint());
-        tradePoint.setText(player.getTradePoint());
-        fighterPoint.setText(player.getFighterPoint());
+        player = new Player("put your name");
+        Log.d("here", player.getName());
+        nameField.setText(player.getName());
+//        skillPoint.setText(player.getSkillPoint());
+//        pilotPoint.setText(player.getPilotPoint());
+//        enginnerPoint.setText(player.getEngineerPoint());
+//        tradePoint.setText(player.getTradePoint());
+//        fighterPoint.setText(player.getFighterPoint());
 
         //setting adapter for difficulty spinner
         //ArrayAdapter<Difficulty> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Difficulty.values());
         diffSpinner.setAdapter(new ArrayAdapter<Difficulty>(this,android.R.layout.simple_spinner_dropdown_item, Difficulty.values()));
 
+        viewModel = ViewModelProviders.of(this).get(ConfigurationViewModel.class);
     }
     public void onNextPressed(View view){
         player.setName(nameField.getText().toString());
@@ -59,7 +66,9 @@ public class ConfigurationActivity extends AppCompatActivity {
         player.setTradePoint(Integer.parseInt(tradePoint.getText().toString()));
         player.setFighterPoint(Integer.parseInt(fighterPoint.getText().toString()));
 
+        viewModel.addPlayer(player);
 
+        finish();
     }
 
 }
