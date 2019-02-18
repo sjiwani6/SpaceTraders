@@ -8,5 +8,8 @@
     <string name="enter">Enter name</string>
     <string name="credit">Credit : </string>
     <string name="point">Enter points</string>
+    <string name="creditAmount">1000</string>
+    <string name="next">Next</string>
+    <string name="ShipNext">Click next button to select the ship</string>
 
 </resources>
