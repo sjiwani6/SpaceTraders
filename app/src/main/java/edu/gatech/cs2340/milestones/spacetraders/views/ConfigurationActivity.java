@@ -84,33 +84,6 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         diffSpinner.setAdapter(adapter);
         diffSpinner.setOnItemSelectedListener(this);
 
-        //Buttons
-
-
-            p_plusb = findViewById(R.id.p_plus);
-            p_plusb.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ppoint = ppoint + 1;
-                    skillpoint--;
-                    pilotPoint.setText(String.valueOf(ppoint));
-                    skillPoint.setText(String.valueOf(skillpoint));
-                }
-            });
-            p_minusb = findViewById(R.id.p_plus);
-            p_minusb.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                ppoint = ppoint + 1;
-                skillpoint--;
-                pilotPoint.setText(String.valueOf(ppoint));
-                skillPoint.setText(String.valueOf(skillpoint));
-                }
-            });
-
-
-        viewModel = ViewModelProviders.of(this).get(ConfigurationViewModel.class);
-
         viewModel = ViewModelProviders.of(this).get(ConfigurationViewModel.class);
     }
 
