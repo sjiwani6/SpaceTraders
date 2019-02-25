@@ -68,9 +68,8 @@
             android:maxLines="1"
             android:layout_marginRight="60dp"
             android:padding="8dp"
-            android:textSize="20sp"
             android:text="@string/maxSkill"
-            />
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <!--pilot field-->
@@ -294,10 +293,10 @@
         <Spinner
             android:id="@+id/difficuly_spinner"
             android:layout_width="214dp"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             android:layout_marginEnd="20dp"
             android:padding="8dp" />
     </RelativeLayout>
@@ -319,8 +318,6 @@
         android:layout_marginBottom="40dp"
         android:onClick="onNextPressed"
         android:text="@string/next" />
-
-
 
 
     <!--pilot field-->
