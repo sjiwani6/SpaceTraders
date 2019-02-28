@@ -2,6 +2,7 @@ package edu.gatech.cs2340.milestones.spacetraders.views;
 
 import android.support.v7.app.AppCompatActivity;
 import edu.gatech.cs2340.milestones.spacetraders.R;
+import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -16,28 +17,15 @@ public class UniverseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_configuration);
+        setContentView(R.layout.activity_universe);
         Log.d("here", "you got here_universe");
 
-       // button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
+        button = (Button) findViewById(R.id.UniverseButton);
 
     }
-    public int xCoordinate(){
-        Random randX = new Random();
-        int rangeX = 101;
-        int x = randX.nextInt(rangeX);
-        return x;
-    }
-    public int yCoordinate(){
-        Random randY = new Random();
-        int rangeY = 151;
-        int y = randY.nextInt(rangeY);
-        return y;
+    public void onPressed(View view) {
+        Universe universe = new Universe();
+        Log.d("universe", universe.toString());
     }
 
 }
