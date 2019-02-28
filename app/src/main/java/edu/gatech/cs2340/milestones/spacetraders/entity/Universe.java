@@ -16,8 +16,8 @@ public enum Universe {
     private String universeName;
 
 
-    Universe(String diffLevel){
-        this.universeName = diffLevel;
+    Universe(String universeName){
+        this.universeName = universeName;
     }
 
     public String getUniverse() {

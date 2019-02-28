@@ -17,13 +17,14 @@ enum Resources {
 
     private String resources;
 
-    Resources(String techLevel) {
-        this.resources = techLevel;
+    Resources(String resources) {
+        this.resources = resources;
     }
 
-    public String getTechLevel() {
+    public String getResources() {
         return resources;
     }
+
     @Override
     public String toString() {
         return super.toString();
