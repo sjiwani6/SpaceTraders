@@ -1,6 +1,7 @@
 package edu.gatech.cs2340.milestones.spacetraders.views;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -97,6 +98,8 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
 
             //viewModel.addPlayer(player);
             Log.d("user data:", player.toString());
+            Intent intent = new Intent(this, UniverseActivity.class);
+            startActivity(intent);
         }
 
         finish();
