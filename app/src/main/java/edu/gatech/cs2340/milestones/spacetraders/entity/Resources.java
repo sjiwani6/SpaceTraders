@@ -17,8 +17,9 @@ enum Resources {
 
     private String resources;
 
-    Resources(String techLevel) {
-        this.resources = techLevel;
+
+    Resources(String resources) {
+        this.resources = resources;
     }
 
     public String getTechLevel() {
