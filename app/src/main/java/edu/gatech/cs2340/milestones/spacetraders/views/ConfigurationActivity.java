@@ -97,12 +97,18 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
             player.setFighterPoint(Integer.parseInt(fighterPoint.getText().toString()));
 
             //viewModel.addPlayer(player);
+
+        }
+
+        if (player.getSkillPoint() ==  0 ) {
             Log.d("user data:", player.toString());
             Intent intent = new Intent(this, UniverseActivity.class);
             startActivity(intent);
+            finish();
+        } else {
+            String test = "Please use all of the skill points";
+            Toast.makeText(getApplicationContext(), test,Toast.LENGTH_LONG).show();
         }
-
-        finish();
     }
     public void onSkillButton(View view) {
         int id = view.getId();
