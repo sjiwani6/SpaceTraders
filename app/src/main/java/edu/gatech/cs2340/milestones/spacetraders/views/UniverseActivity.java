@@ -76,10 +76,10 @@ public class UniverseActivity extends AppCompatActivity {
     public void onPressed(View view) {
         Universe universe = new Universe();
         Log.d("universe", universe.toString());
-        //Intent intent = new Intent(this, StartGameActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, StartGameActivity.class);
+        startActivity(intent);
 
-        //finish();
+        finish();
     }
 
     private int varienceCalc(int var, int basePrice) {
