@@ -60,10 +60,26 @@ public class Universe {
         planetList.add("Nine Ball");
         planetList.add("Ahrahas");
         planetList.add("Silva");
-        for (int i = 0; i < planetList.size(); i++) {
+        for (int i = 0; i < 10; i++) {
             if (planeName.equals(planetList.get(i))) {
                 TechLevel currTech = techLevelList[i];
-                currentTechLevel = currTech.getTechLevelNum();
+                if (currTech.equals("PRE_AGRICULTURE")) {
+                    currentTechLevel = 0;
+                } else if (currTech.equals("AGRICULTURE")) {
+                    currentTechLevel = 1;
+                } else if (currTech.equals("MEDIEVAL")) {
+                    currentTechLevel = 2;
+                } else if (currTech.equals("RENAISSANCE")) {
+                    currentTechLevel = 3;
+                } else if (currTech.equals("EARLY_INDUSTRIAL")) {
+                    currentTechLevel = 4;
+                } else if (currTech.equals("INDUSTRIAL")) {
+                    currentTechLevel = 5;
+                } else if (currTech.equals("POST_INDUSTRIAL")) {
+                    currentTechLevel =  6;
+                } else if (currTech.equals("HI_TECH")) {
+                    currentTechLevel =  7;
+                }
             }
         }
         return currentTechLevel;
