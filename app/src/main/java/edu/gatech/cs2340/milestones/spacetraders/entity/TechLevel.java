@@ -1,6 +1,6 @@
 package edu.gatech.cs2340.milestones.spacetraders.entity;
 
-enum TechLevel {
+public enum TechLevel {
     PRE_AGRICULTURE("Pre-Agriculture", 0),
     AGRICULTURE("Agriculture", 1),
     MEDIEVAL("Medieval", 2),
@@ -21,6 +21,11 @@ enum TechLevel {
     public String getTechLevel() {
         return techLevel;
     }
+
+    public int getTechLevelNum() {
+        return techLevelNum;
+    }
+
     @Override
     public String toString() {
         return super.toString();

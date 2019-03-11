@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 //import android.support.v7.app.AppCompatActivity;
 import edu.gatech.cs2340.milestones.spacetraders.R;
+import edu.gatech.cs2340.milestones.spacetraders.entity.Items;
+import edu.gatech.cs2340.milestones.spacetraders.entity.Planet;
+import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 
 import android.os.Bundle;
@@ -18,7 +21,8 @@ import java.util.Random;
 public class UniverseActivity extends Activity {
     private View startgame;
     private Button button;
-
+    private Items item;
+    private Universe uni = new Universe();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +66,19 @@ public class UniverseActivity extends Activity {
 //        stub.setLayoutResource(R.layout.content_sell);
         //View inflated = stub.inflate();
 
+    }
+
+    private int varienceCalc(int var, int basePrice) {
+        double varience = 0;
+        int coinFlip = (int)Math.random();
+        double randomVar = (Math.random() * var) / 100;
+        if (coinFlip == 1) {
+            varience = basePrice * -randomVar;
+            return (int)varience;
+        } else {
+            varience = basePrice * randomVar;
+            return (int)varience;
+        }
     }
 
 }
