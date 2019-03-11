@@ -1,17 +1,21 @@
 package edu.gatech.cs2340.milestones.spacetraders.views;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import edu.gatech.cs2340.milestones.spacetraders.R;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewStub;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+
 import java.util.Random;
 
-public class UniverseActivity extends AppCompatActivity {
+public class UniverseActivity extends Activity {
     private View startgame;
     private Button button;
 
@@ -22,16 +26,42 @@ public class UniverseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_universe);
         Log.d("here", "you got here_universe");
 
-        button = (Button) findViewById(R.id.UniverseButton);
+//        final RelativeLayout stubLayout = findViewById(R.id.stub_layout);
+//
+//        //buy and sell buttons
+//        Button buyButton = findViewById(R.id.buy_button);
+//        Button sellButton = findViewById(R.id.sell_button);
 
+//        ViewStub stub = (ViewStub) findViewById(R.id.stub);
+//        stub.setLayoutResource(R.layout.content_buy);
+        //stub.setLayoutResource(R.layout.content_sell);
+       // View inflated = stub.inflate();
+        View view = findViewById(R.id.buy_layout);
+        view.setVisibility(View.VISIBLE);
+
+        //button = (Button) findViewById(R.id.UniverseButton);
 
     }
-    public void onPressed(View view) {
-        Universe universe = new Universe();
-        Log.d("universe", universe.toString());
-        Intent intent = new Intent(this, StartGameActivity.class);
-        startActivity(intent);
-        finish();
+
+    public void onBuyPressed(View view) {
+//        ViewStub stub = (ViewStub) findViewById(R.id.stub);
+//        stub.setLayoutResource(R.layout.content_buy);
+        //View inflated = stub.inflate();
+        View sellView = findViewById(R.id.sell_layout);
+        sellView.setVisibility(View.GONE);
+        View buyView = findViewById(R.id.buy_layout);
+        buyView.setVisibility(View.VISIBLE);
+    }
+    public void onSellPressed(View view) {
+
+        View buyView = findViewById(R.id.buy_layout);
+        buyView.setVisibility(View.GONE);
+        View sellView = findViewById(R.id.sell_layout);
+        sellView.setVisibility(View.VISIBLE);
+//        ViewStub stub = (ViewStub) findViewById(R.id.stub);
+//        stub.setLayoutResource(R.layout.content_sell);
+        //View inflated = stub.inflate();
+
     }
 
 }
