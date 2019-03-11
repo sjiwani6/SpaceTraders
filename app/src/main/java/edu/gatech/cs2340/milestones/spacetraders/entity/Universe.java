@@ -39,10 +39,34 @@ public class Universe {
                 HashMap<Integer, Integer> coor = new HashMap<>();
                 coor.put(x, y);
                 universeMap.put(coor,
-                            new Planet(planetList.get(i), resourceList[(int) (Math.random()* resourceList.length)],techLevelList[(int) (Math.random()* techLevelList.length)] ));
+                            new Planet(planetList.get(i),
+                                    resourceList[(int) (Math.random() * resourceList.length)],
+                                    techLevelList[(int) (Math.random()* techLevelList.length)] ));
                 i++;
             }
         }
+    }
+
+    public int getIntTechLevel (String planeName){
+        int currentTechLevel = 0;
+        ArrayList<String> planetList = new ArrayList<>();
+        planetList.add("Bobert");
+        planetList.add("Namek");
+        planetList.add("Sector10");
+        planetList.add("Catopia");
+        planetList.add("Planet Vegeta");
+        planetList.add("Tonald Drump");
+        planetList.add("Amita");
+        planetList.add("Nine Ball");
+        planetList.add("Ahrahas");
+        planetList.add("Silva");
+        for (int i = 0; i < planetList.size(); i++) {
+            if (planeName.equals(planetList.get(i))) {
+                TechLevel currTech = techLevelList[i];
+                currentTechLevel = currTech.getTechLevelNum();
+            }
+        }
+        return currentTechLevel;
     }
 
     public String getUniverse() {
