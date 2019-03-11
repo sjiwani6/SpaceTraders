@@ -21,6 +21,7 @@ import edu.gatech.cs2340.milestones.spacetraders.R;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Difficulty;
 
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
+import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewModel;
 
 public class ConfigurationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -87,6 +88,10 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         if (player.getSkillPoint() ==  0 ) {
             //viewModel.addPlayer(player);
             Log.d("user data:", player.toString());
+            //universe created
+            Universe universe = new Universe();
+            Log.d("universe", universe.toString());
+
             Intent intent = new Intent(this, UniverseActivity.class);
             startActivity(intent);
             finish();
