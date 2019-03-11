@@ -1,6 +1,7 @@
 package edu.gatech.cs2340.milestones.spacetraders.views;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -27,7 +28,6 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
     private ConfigurationViewModel viewModel;
 
     private Player player = new Player();
-    private boolean editing;
 
     private EditText nameField;
     private Spinner diffSpinner;
@@ -37,19 +37,6 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
     private TextView tradePoint;
     private TextView fighterPoint;
     private TextView skillPoint;
-
-    private Button p_plusb;
-    private Button p_minusb;
-    private Button e_plusb;
-    private Button e_minusb;
-    private Button t_plusb;
-    private Button t_minusb;
-    private Button f_plusb;
-    private Button f_minusb;
-
-    private int ppoint = player.getPilotPoint();
-
-    private int skillpoint = 16;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,11 +82,18 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
             player.setTradePoint(Integer.parseInt(tradePoint.getText().toString()));
             player.setFighterPoint(Integer.parseInt(fighterPoint.getText().toString()));
 
-            //viewModel.addPlayer(player);
-            Log.d("user data:", player.toString());
         }
 
-        finish();
+        if (player.getSkillPoint() ==  0 ) {
+            //viewModel.addPlayer(player);
+            Log.d("user data:", player.toString());
+            Intent intent = new Intent(this, UniverseActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            String test = "Please use all of the skill points";
+            Toast.makeText(getApplicationContext(), test,Toast.LENGTH_LONG).show();
+        }
     }
     public void onSkillButton(View view) {
         int id = view.getId();

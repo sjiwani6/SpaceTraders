@@ -1,18 +1,21 @@
 package edu.gatech.cs2340.milestones.spacetraders.entity;
 
 enum TechLevel {
-    PRE_AGRICULTURE("Pre-Agriculture"),
-    AGRICULTURE("Agriculture"),
-    MEDIEVAL("Medieval"),
-    RENAISSANCE("Renaissance"),
-    EARLY_INDUSTRIAL("Renaissance"),
-    POST_INDUSTRIAL("Post-Industrial"),
-    HI_TECH("Hi-Tech");
+    PRE_AGRICULTURE("Pre-Agriculture", 0),
+    AGRICULTURE("Agriculture", 1),
+    MEDIEVAL("Medieval", 2),
+    RENAISSANCE("Renaissance", 3),
+    EARLY_INDUSTRIAL("Renaissance", 4),
+    INDUSTRIAL("Industrial", 5),
+    POST_INDUSTRIAL("Post-Industrial", 6),
+    HI_TECH("Hi-Tech", 7);
 
     private String techLevel;
+    private int techLevelNum;
 
-    TechLevel(String techLevel) {
+    TechLevel(String techLevel, int techLevelNum) {
         this.techLevel = techLevel;
+        this.techLevelNum = techLevelNum;
     }
 
     public String getTechLevel() {
