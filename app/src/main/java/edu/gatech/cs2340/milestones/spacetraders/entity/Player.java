@@ -6,6 +6,7 @@ import java.util.List;
 public class Player {
 
     private String name;
+    //points
     private int pilotPoint;
     private int engineerPoint;
     private int tradePoint;
@@ -14,17 +15,13 @@ public class Player {
     private final int INITIAL_CREDIT = 1000;
     private int skillPoint;
     private final int INITIAL_SKILL = 20;
+    //
+    private Ship playerShip;
 
     public static List<Difficulty> difficultyList = Arrays.asList(Difficulty.EASY, Difficulty.NORMAl, Difficulty.HARD, Difficulty.IMPOSSIBLE);
 
     public Player(){
-        skillPoint = INITIAL_SKILL;
-        credit = INITIAL_CREDIT;
-        pilotPoint = 1;
-        engineerPoint = 1;
-        tradePoint = 1;
-        fighterPoint = 1;
-        skillPoint -= 4;
+        this("Bob Waters");
     }
     public Player(String name) {
         this.name = name;
@@ -90,6 +87,10 @@ public class Player {
     }
     public void setSkillPoint(int skillPoint) {
         this.skillPoint = skillPoint;
+    }
+
+    public Ship getPlayerShip() {
+        return playerShip;
     }
 
     @Override
