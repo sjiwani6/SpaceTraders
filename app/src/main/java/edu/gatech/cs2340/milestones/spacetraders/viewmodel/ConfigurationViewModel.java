@@ -22,4 +22,8 @@ public class ConfigurationViewModel extends AndroidViewModel {
     public void addPlayer(Player player) {
         interactor.addPlayer(player);
     }
+
+    public Player getPlayer() {
+        return interactor.getPlayer();
+    }
 }

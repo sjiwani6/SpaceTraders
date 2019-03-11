@@ -32,7 +32,7 @@ public class Player {
         tradePoint = 1;
         fighterPoint = 1;
         skillPoint -= 4;
-
+        playerShip = new Ship();
     }
 
     public int getCredit() {
@@ -91,6 +91,10 @@ public class Player {
 
     public Ship getPlayerShip() {
         return playerShip;
+    }
+
+    public void setPlayerShip(Ship playerShip) {
+        this.playerShip = playerShip;
     }
 
     @Override

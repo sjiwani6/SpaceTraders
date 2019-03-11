@@ -4,10 +4,12 @@ public class Ship {
     private ShipType shipType;
     //private Cargo cargo;
 
-    public Ship () {
-        this.shipType = ShipType.GNAT;
+    public Ship() {
+        this(ShipType.GNAT);
     }
-
+    public Ship(ShipType type) {
+        this.shipType = type;
+    }
 
     public ShipType getShipType() {
         return shipType;
