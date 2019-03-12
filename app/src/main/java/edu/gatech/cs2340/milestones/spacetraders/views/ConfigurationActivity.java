@@ -21,6 +21,7 @@ import java.util.List;
 import edu.gatech.cs2340.milestones.spacetraders.R;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Difficulty;
 
+import edu.gatech.cs2340.milestones.spacetraders.entity.Planet;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewModel;
@@ -86,11 +87,13 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
             player.setTradePoint(Integer.parseInt(tradePoint.getText().toString()));
             player.setFighterPoint(Integer.parseInt(fighterPoint.getText().toString()));
 
-            viewModel.addPlayer(player);
-            Log.d("user data:", player.toString());
             //universe created
             Universe universe = new Universe();
             universeViewModel.addUniverse(universe);
+            Object[] planets = universe.getUniverseMap().values().toArray();
+            player.setPlayerLocation((Planet) planets[(int) Math.random() * planets.length]);
+            viewModel.addPlayer(player);
+            Log.d("user data:", player.toString());
             Log.d("universe", universe.toString());
 
             Intent intent = new Intent(this, UniverseActivity.class);
