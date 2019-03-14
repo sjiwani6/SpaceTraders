@@ -22,7 +22,7 @@ public class EconomicModel {
                     price = items[i].getBasePrice();
                     cargo.replace(items[i], cargo.get(items[i]), new int[] {quantity, price});
                 } else {
-                    quantity = (int) (25 * Math.random());
+                    quantity = 15 + (int) (25 * Math.random());
                     price = 20;
                     cargo.replace(items[i], cargo.get(items[i]), new int[] {quantity, price});
                 }

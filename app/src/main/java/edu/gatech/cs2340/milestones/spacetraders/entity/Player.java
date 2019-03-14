@@ -1,6 +1,7 @@
 package edu.gatech.cs2340.milestones.spacetraders.entity;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class Player {
@@ -100,6 +101,10 @@ public class Player {
 
     public Planet getPlayerLocation() {
         return playerLocation;
+    }
+
+    public HashMap<Items, int[]> getCargo() {
+        return playerShip.getCargo();
     }
 
     public void setPlayerLocation(Planet playerLocation) {
