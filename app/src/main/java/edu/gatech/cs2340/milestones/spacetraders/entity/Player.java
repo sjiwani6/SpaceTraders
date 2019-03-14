@@ -106,6 +106,9 @@ public class Player {
     public HashMap<Items, int[]> getCargo() {
         return playerShip.getCargo();
     }
+    public void setCargo(HashMap<Items, int[]> cargo) {
+        playerShip.setCargo(cargo);
+    }
 
     public void setPlayerLocation(Planet playerLocation) {
         this.playerLocation = playerLocation;

@@ -10,6 +10,7 @@ import edu.gatech.cs2340.milestones.spacetraders.entity.Planet;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Ship;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
+import edu.gatech.cs2340.milestones.spacetraders.model.Market;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewModel;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.UniverseViewModel;
 
@@ -30,6 +31,7 @@ public class UniverseActivity extends AppCompatActivity {
     private UniverseViewModel universeViewModel;
     private ConfigurationViewModel viewModel;
     private HashMap<Items, Integer> purchaseTable;
+    private Player player;
 
 
     private TextView waterField;
@@ -76,7 +78,7 @@ public class UniverseActivity extends AppCompatActivity {
         universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
 
         Universe universe = universeViewModel.getUniverse();
-        Player player = viewModel.getPlayer();
+        player = viewModel.getPlayer();
         Ship ship = player.getPlayerShip();
         HashMap<Items, int[]> cargo = ship.getCargo();
         Planet planet = player.getPlayerLocation();
@@ -127,7 +129,6 @@ public class UniverseActivity extends AppCompatActivity {
     public void onItemButton(View view) {
 
         int id = view.getId();
-        Player player = viewModel.getPlayer();
         Planet planet = player.getPlayerLocation();
 
         HashMap<Items,int[]> planetCargo = planet.getCargo();
@@ -391,8 +392,24 @@ public class UniverseActivity extends AppCompatActivity {
             }
         }
 
-        if (id ==R.id.purchase) {
-            count = ""+ waterField.getText().toString().substring(0,waterField.getText().toString().indexOf("/"));
+        if (id == R.id.purchase) {
+            player.setCredit(remainingCr - totalCR);
+            HashMap<Items, int[]> playerCargo = player.getCargo();
+            player.setCargo(Market.buyAction(purchaseTable, playerCargo));
+            planet.setCargo(Market.buyAction2(purchaseTable, planetCargo));
+            clearPurch();
+            waterField.setText("0/"+ planetCargo.get(Items.WATER)[0]);
+            fursField.setText("0/"+ planetCargo.get(Items.FURS)[0]);
+            foodField.setText("0/"+ planetCargo.get(Items.FOOD)[0]);
+            oreField.setText("0/"+ planetCargo.get(Items.ORE)[0]);
+            gameField.setText("0/"+ planetCargo.get(Items.GAMES)[0]);
+            fireField.setText("0/"+ planetCargo.get(Items.FIREARMS)[0]);
+            medField.setText("0/"+ planetCargo.get(Items.MEDICINE)[0]);
+            machField.setText("0/"+ planetCargo.get(Items.MACHINES)[0]);
+            narcField.setText("0/"+ planetCargo.get(Items.NARCOTICS)[0]);
+            roboField.setText("0/"+ planetCargo.get(Items.ROBOTS)[0]);
+            totalPrice.setText("0Cr");
+            remaining.setText(""+player.getCredit());
         }
     }
 
@@ -411,6 +428,12 @@ public class UniverseActivity extends AppCompatActivity {
         } else {
             varience = basePrice * randomVar;
             return (int)varience;
+        }
+    }
+    private void clearPurch() {
+        Items[] items = Items.values();
+        for (int i = 0; i < items.length; i++) {
+            purchaseTable.put(items[i], 0);
         }
     }
 

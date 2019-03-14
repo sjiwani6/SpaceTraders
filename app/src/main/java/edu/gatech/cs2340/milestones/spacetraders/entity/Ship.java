@@ -15,16 +15,20 @@ public class Ship {
         this.capacity = 0;
 
         cargo = new HashMap<>();
-        cargo.put(Items.WATER, new int[2]);
-        cargo.put(Items.FURS, new int[2]);
-        cargo.put(Items.FOOD, new int[2]);
-        cargo.put(Items.ORE, new int[2]);
-        cargo.put(Items.GAMES, new int[2]);
-        cargo.put(Items.FIREARMS, new int[2]);
-        cargo.put(Items.MEDICINE, new int[2]);
-        cargo.put(Items.MACHINES, new int[2]);
-        cargo.put(Items.NARCOTICS, new int[2]);
-        cargo.put(Items.ROBOTS, new int[2]);
+        cargo.put(Items.WATER, new int[] {0,0});
+        cargo.put(Items.FURS, new int[]{0,0});
+        cargo.put(Items.FOOD, new int[]{0,0});
+        cargo.put(Items.ORE, new int[]{0,0});
+        cargo.put(Items.GAMES, new int[]{0,0});
+        cargo.put(Items.FIREARMS, new int[]{0,0});
+        cargo.put(Items.MEDICINE, new int[]{0,0});
+        cargo.put(Items.MACHINES, new int[]{0,0});
+        cargo.put(Items.NARCOTICS, new int[]{0,0});
+        cargo.put(Items.ROBOTS, new int[]{0,0});
+    }
+
+    public void setCargo(HashMap<Items, int[]> cargo) {
+        this.cargo = cargo;
     }
 
     public ShipType getShipType() {

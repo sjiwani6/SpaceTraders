@@ -67,6 +67,10 @@ public class Planet {
     public void setCargo() {
         cargo = EconomicModel.setPlanetCargo(this);
     }
+
+    public void setCargo(HashMap<Items, int[]> cargo) {
+        this.cargo = cargo;
+    }
     @Override
     public String toString() {
         return "Name: "+ name +" Resources: " + resources.toString() + " Tech Level: " + techLevel.toString() + " "+

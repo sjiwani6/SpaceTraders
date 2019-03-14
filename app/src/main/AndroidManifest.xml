@@ -19,7 +19,8 @@
         <activity
             android:name=".views.ConfigurationActivity"
             android:parentActivityName=".views.MainActivity" />
-        <activity android:name=".views.UniverseActivity">
+        <activity android:name=".views.UniverseActivity"
+                  android:parentActivityName=".views.ConfigurationActivity">
 
         </activity>
         
