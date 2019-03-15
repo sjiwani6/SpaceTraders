@@ -29,7 +29,7 @@
             android:text="Credit Remaining:" />
 
         <TextView
-            android:id="@+id/credit_count"
+            android:id="@+id/credit_count2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
@@ -65,9 +65,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:onClick="onItemButton2"
             android:text="-" />
         <TextView
-            android:id="@+id/water_count"
+            android:id="@+id/water_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0/4"
@@ -81,8 +82,9 @@
             android:id="@+id/water_plus"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/water_minus"
             android:layout_marginLeft="70dp"
+            android:layout_toRightOf="@id/water_minus"
+            android:onClick="onItemButton2"
             android:text="+" />
         <TextView
             android:id="@+id/water_price"
@@ -119,9 +121,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:onClick="onItemButton2"
             android:text="-" />
         <TextView
-            android:id="@+id/furs_count"
+            android:id="@+id/furs_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0/5"
@@ -135,8 +138,9 @@
             android:id="@+id/furs_plus"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/furs_minus"
             android:layout_marginLeft="70dp"
+            android:layout_toRightOf="@id/furs_minus"
+            android:onClick="onItemButton2"
             android:text="+" />
         <TextView
             android:id="@+id/furs_price"
@@ -173,9 +177,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:onClick="onItemButton2"
             android:text="-" />
         <TextView
-            android:id="@+id/food_count"
+            android:id="@+id/food_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0/10"
@@ -189,8 +194,9 @@
             android:id="@+id/food_plus"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/food_minus"
             android:layout_marginLeft="70dp"
+            android:layout_toRightOf="@id/food_minus"
+            android:onClick="onItemButton2"
             android:text="+" />
         <TextView
             android:id="@+id/food_price"
@@ -227,9 +233,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:onClick="onItemButton2"
             android:text="-" />
         <TextView
-            android:id="@+id/ore_count"
+            android:id="@+id/ore_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -243,8 +250,9 @@
             android:id="@+id/ore_plus"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/ore_minus"
             android:layout_marginLeft="70dp"
+            android:layout_toRightOf="@id/ore_minus"
+            android:onClick="onItemButton2"
             android:text="+" />
         <TextView
             android:id="@+id/ore_price"
@@ -281,9 +289,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:onClick="onItemButton2"
             android:text="-" />
         <TextView
-            android:id="@+id/game_count"
+            android:id="@+id/game_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -297,8 +306,9 @@
             android:id="@+id/game_plus"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/game_minus"
             android:layout_marginLeft="70dp"
+            android:layout_toRightOf="@id/game_minus"
+            android:onClick="onItemButton2"
             android:text="+" />
         <TextView
             android:id="@+id/game_price"
@@ -334,9 +344,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:onClick="onItemButton2"
             android:text="-" />
         <TextView
-            android:id="@+id/fire_count"
+            android:id="@+id/fire_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -350,8 +361,9 @@
             android:id="@+id/fire_plus"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/fire_minus"
             android:layout_marginLeft="70dp"
+            android:layout_toRightOf="@id/fire_minus"
+            android:onClick="onItemButton2"
             android:text="+" />
         <TextView
             android:id="@+id/fire_price"
@@ -388,9 +400,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:onClick="onItemButton2"
             android:text="-" />
         <TextView
-            android:id="@+id/med_count"
+            android:id="@+id/med_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -404,8 +417,9 @@
             android:id="@+id/med_plus"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/med_minus"
             android:layout_marginLeft="70dp"
+            android:layout_toRightOf="@id/med_minus"
+            android:onClick="onItemButton2"
             android:text="+" />
         <TextView
             android:id="@+id/med_price"
@@ -442,9 +456,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:onClick="onItemButton2"
             android:text="-" />
         <TextView
-            android:id="@+id/mach_count"
+            android:id="@+id/mach_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -458,8 +473,9 @@
             android:id="@+id/mach_plus"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/mach_minus"
             android:layout_marginLeft="70dp"
+            android:layout_toRightOf="@id/mach_minus"
+            android:onClick="onItemButton2"
             android:text="+" />
         <TextView
             android:id="@+id/mach_price"
@@ -496,9 +512,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:onClick="onItemButton2"
             android:text="-" />
         <TextView
-            android:id="@+id/narc_count"
+            android:id="@+id/narc_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -512,8 +529,9 @@
             android:id="@+id/narc_plus"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/narc_minus"
             android:layout_marginLeft="70dp"
+            android:layout_toRightOf="@id/narc_minus"
+            android:onClick="onItemButton2"
             android:text="+" />
         <TextView
             android:id="@+id/narc_price"
@@ -550,9 +568,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:onClick="onItemButton2"
             android:text="-" />
         <TextView
-            android:id="@+id/robo_count"
+            android:id="@+id/robo_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -566,8 +585,9 @@
             android:id="@+id/robo_plus"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/robo_minus"
             android:layout_marginLeft="70dp"
+            android:layout_toRightOf="@id/robo_minus"
+            android:onClick="onItemButton2"
             android:text="+" />
         <TextView
             android:id="@+id/robo_price"
@@ -596,17 +616,17 @@
             android:text="total:"
             android:textSize="20sp" />
         <TextView
-            android:id="@+id/display_capacity"
+            android:id="@+id/display_capacity2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:padding="8dp"
-            android:layout_toLeftOf="@id/display_total"
+            android:layout_toLeftOf="@id/display_total2"
             android:layout_marginRight="75dp"
             android:text="0/15"
             />
         <TextView
-            android:id="@+id/display_total"
+            android:id="@+id/display_total2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -623,14 +643,17 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/total_field"
         android:layout_marginTop="30dp">
+
         <Button
+            android:id="@+id/sell"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:text="Sell"
+            android:layout_alignParentBottom="true"
             android:layout_marginRight="50dp"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            android:onClick="onItemButton2"
+            android:text="Sell" />
 
 
     </RelativeLayout>

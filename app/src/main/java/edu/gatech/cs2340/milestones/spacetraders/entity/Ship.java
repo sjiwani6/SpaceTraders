@@ -15,16 +15,16 @@ public class Ship {
         this.capacity = 0;
 
         cargo = new HashMap<>();
-        cargo.put(Items.WATER, new int[] {0,0});
-        cargo.put(Items.FURS, new int[]{0,0});
-        cargo.put(Items.FOOD, new int[]{0,0});
-        cargo.put(Items.ORE, new int[]{0,0});
-        cargo.put(Items.GAMES, new int[]{0,0});
-        cargo.put(Items.FIREARMS, new int[]{0,0});
-        cargo.put(Items.MEDICINE, new int[]{0,0});
-        cargo.put(Items.MACHINES, new int[]{0,0});
-        cargo.put(Items.NARCOTICS, new int[]{0,0});
-        cargo.put(Items.ROBOTS, new int[]{0,0});
+        cargo.put(Items.WATER, new int[] {0,20});
+        cargo.put(Items.FURS, new int[]{0,20});
+        cargo.put(Items.FOOD, new int[]{0,20});
+        cargo.put(Items.ORE, new int[]{0,20});
+        cargo.put(Items.GAMES, new int[]{0,20});
+        cargo.put(Items.FIREARMS, new int[]{0,20});
+        cargo.put(Items.MEDICINE, new int[]{0,20});
+        cargo.put(Items.MACHINES, new int[]{0,20});
+        cargo.put(Items.NARCOTICS, new int[]{0,20});
+        cargo.put(Items.ROBOTS, new int[]{0,20});
     }
 
     public void setCargo(HashMap<Items, int[]> cargo) {
@@ -33,6 +33,14 @@ public class Ship {
 
     public ShipType getShipType() {
         return shipType;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
     public HashMap<Items, int[]> getCargo() {
