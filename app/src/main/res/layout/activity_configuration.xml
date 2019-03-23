@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:fitsSystemWindows="true"
-    tools:context="edu.gatech.cs2340.milestones.spacetraders.views.ConfigurationActivity">
+    tools:context="edu.gatech.cs2340.milestones.spacetraders.views.ConfigurationActivity"
+    >
 
 
     <include layout="@layout/new_game" />

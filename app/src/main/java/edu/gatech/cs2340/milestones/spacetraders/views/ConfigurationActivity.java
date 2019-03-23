@@ -1,6 +1,8 @@
 package edu.gatech.cs2340.milestones.spacetraders.views;
 
+import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -19,15 +21,17 @@ import java.util.List;
 import edu.gatech.cs2340.milestones.spacetraders.R;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Difficulty;
 
+import edu.gatech.cs2340.milestones.spacetraders.entity.Planet;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
+import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewModel;
+import edu.gatech.cs2340.milestones.spacetraders.viewmodel.UniverseViewModel;
 
 public class ConfigurationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private ConfigurationViewModel viewModel;
-
+    private UniverseViewModel universeViewModel;
     private Player player = new Player();
-    private boolean editing;
 
     private EditText nameField;
     private Spinner diffSpinner;
@@ -37,19 +41,6 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
     private TextView tradePoint;
     private TextView fighterPoint;
     private TextView skillPoint;
-
-    private Button p_plusb;
-    private Button p_minusb;
-    private Button e_plusb;
-    private Button e_minusb;
-    private Button t_plusb;
-    private Button t_minusb;
-    private Button f_plusb;
-    private Button f_minusb;
-
-    private int ppoint = player.getPilotPoint();
-
-    private int skillpoint = 16;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,6 +76,7 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         diffSpinner.setOnItemSelectedListener(this);
 
         viewModel = ViewModelProviders.of(this).get(ConfigurationViewModel.class);
+        universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
     }
 
     public void onNextPressed(View view) {
@@ -95,11 +87,22 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
             player.setTradePoint(Integer.parseInt(tradePoint.getText().toString()));
             player.setFighterPoint(Integer.parseInt(fighterPoint.getText().toString()));
 
-            //viewModel.addPlayer(player);
+            //universe created
+            Universe universe = new Universe();
+            universeViewModel.addUniverse(universe);
+            Object[] planets = universe.getUniverseMap().values().toArray();
+            player.setPlayerLocation((Planet) planets[(int) Math.random() * planets.length]);
+            viewModel.addPlayer(player);
             Log.d("user data:", player.toString());
-        }
+            Log.d("universe", universe.toString());
 
-        finish();
+            Intent intent = new Intent(this, UniverseActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            String test = "Please use all of the skill points";
+            Toast.makeText(getApplicationContext(), test,Toast.LENGTH_LONG).show();
+        }
     }
     public void onSkillButton(View view) {
         int id = view.getId();

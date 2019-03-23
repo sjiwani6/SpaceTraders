@@ -1,18 +1,53 @@
 package edu.gatech.cs2340.milestones.spacetraders.entity;
 
-public class Ship {
-    private String shipName;
-    private ShipType shipType;
+import java.util.HashMap;
 
-    public Ship (String shipName) {
-        this(shipName, ShipType.GNAT);
+public class Ship {
+    private ShipType shipType;
+    private HashMap<Items, int[]> cargo;
+    private int capacity;
+
+    public Ship() {
+        this(ShipType.GNAT);
     }
-    public Ship(String shipName, ShipType shipType) {
-        this.shipName = shipName;
-        this.shipType = shipType;
+    public Ship(ShipType type) {
+        this.shipType = type;
+        this.capacity = 0;
+
+        cargo = new HashMap<>();
+        cargo.put(Items.WATER, new int[] {0,20});
+        cargo.put(Items.FURS, new int[]{0,20});
+        cargo.put(Items.FOOD, new int[]{0,20});
+        cargo.put(Items.ORE, new int[]{0,20});
+        cargo.put(Items.GAMES, new int[]{0,20});
+        cargo.put(Items.FIREARMS, new int[]{0,20});
+        cargo.put(Items.MEDICINE, new int[]{0,20});
+        cargo.put(Items.MACHINES, new int[]{0,20});
+        cargo.put(Items.NARCOTICS, new int[]{0,20});
+        cargo.put(Items.ROBOTS, new int[]{0,20});
+    }
+
+    public void setCargo(HashMap<Items, int[]> cargo) {
+        this.cargo = cargo;
     }
 
     public ShipType getShipType() {
         return shipType;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public HashMap<Items, int[]> getCargo() {
+        return cargo;
+    }
+
+    public boolean isFull() {
+        return capacity == shipType.getCapacity();
     }
 }

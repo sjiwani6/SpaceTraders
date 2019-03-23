@@ -1,16 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".views.UniverseActivity">
 
-    <Button
-        android:id="@+id/UniverseButton"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/name_field"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PrintUniverse"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="341dp" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/game_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="Welcome!"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/stub_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tab"
+        android:layout_below="@id/name_field"
+        android:scrollbarStyle="insideInset">
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:id="@+id/buy_layout">
+
+            <include layout="@layout/content_buy" />
+
+            <!--<include layout="@layout/content_sell"-->
+                <!--android:visibility="gone"-->
+                <!--android:id="@+id/sell_layout"/>-->
+            <!--<ViewStub-->
+                <!--android:id="@+id/stub"-->
+                <!--android:inflatedId="@+id/subView"-->
+                <!--android:layout="@layout/content_buy"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent" />-->
+        </ScrollView>
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:id="@+id/sell_layout">
+
+            <include layout="@layout/content_sell" />
+
+            <!--<include layout="@layout/content_sell"-->
+            <!--android:visibility="gone"-->
+            <!--android:id="@+id/sell_layout"/>-->
+            <!--<ViewStub-->
+            <!--android:id="@+id/stub"-->
+            <!--android:inflatedId="@+id/subView"-->
+            <!--android:layout="@layout/content_buy"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" />-->
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="0dp"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/buy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onBuyPressed"
+            android:text="BUY" />
+        <Button
+            android:id="@+id/sell_button"
+            android:layout_toRightOf="@id/buy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onSellPressed"
+            android:text="SELL" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
