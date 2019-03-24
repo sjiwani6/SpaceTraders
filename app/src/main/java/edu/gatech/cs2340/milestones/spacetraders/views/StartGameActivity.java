@@ -8,12 +8,16 @@ import android.view.View;
 import android.widget.Button;
 
 import edu.gatech.cs2340.milestones.spacetraders.R;
+import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
+
 public class StartGameActivity extends AppCompatActivity {
 
     private View configView;
     private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Universe uni = new Universe();
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_startgame);
