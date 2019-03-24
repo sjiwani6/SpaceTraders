@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
+    android:background="@drawable/starsback"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".views.UniverseActivity">
 
@@ -26,7 +27,8 @@
             android:maxLines="1"
             android:padding="8dp"
             android:textSize="20sp"
-            android:text="Credit Remaining:" />
+            android:text="Credit Remaining:"
+            android:textColor="#ffffff"/>
 
         <TextView
             android:id="@+id/credit_count2"
@@ -38,7 +40,8 @@
             android:layout_marginRight="60dp"
             android:padding="8dp"
             android:text="1000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textColor="#ffffff"/>
     </RelativeLayout>
 
     <!--water field-->
@@ -57,7 +60,9 @@
             android:maxLines="1"
             android:padding="8dp"
             android:text="Water:"
-            android:textSize="20sp" />
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            />
 
         <Button
             android:id="@+id/water_minus"
@@ -65,13 +70,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="-" />
+            android:text="-"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/water_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0/4"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
@@ -84,13 +92,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
             android:layout_toRightOf="@id/water_minus"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="+" />
+            android:text="+"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/water_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="price"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/water_plus"
@@ -113,6 +124,7 @@
             android:maxLines="1"
             android:padding="8dp"
             android:text="furs:"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
 
         <Button
@@ -121,13 +133,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="-" />
+            android:text="-"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/furs_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0/5"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
@@ -140,13 +155,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
             android:layout_toRightOf="@id/furs_minus"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="+" />
+            android:text="+"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/furs_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="price"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/furs_plus"
@@ -169,6 +187,7 @@
             android:maxLines="1"
             android:padding="8dp"
             android:text="food:"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
 
         <Button
@@ -177,13 +196,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="-" />
+            android:text="-"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/food_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0/10"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
@@ -194,15 +216,18 @@
             android:id="@+id/food_plus"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
+            android:layout_marginLeft="68dp"
             android:layout_toRightOf="@id/food_minus"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="+" />
+            android:text="+"
+            android:textColor="#ffffff" />
         <TextView
             android:id="@+id/food_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="price"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/food_plus"
@@ -215,8 +240,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/food_field"
-        android:layout_marginTop="50dp"
-        >
+        android:layout_marginTop="50dp">
 
         <TextView
             android:id="@+id/display_ore"
@@ -225,6 +249,7 @@
             android:maxLines="1"
             android:padding="8dp"
             android:text="ore:"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
 
         <Button
@@ -233,13 +258,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="-" />
+            android:text="-"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/ore_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
@@ -252,13 +280,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
             android:layout_toRightOf="@id/ore_minus"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="+" />
+            android:text="+"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/ore_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="price"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/ore_plus"
@@ -281,6 +312,7 @@
             android:maxLines="1"
             android:padding="8dp"
             android:text="game:"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
 
         <Button
@@ -289,13 +321,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="-" />
+            android:text="-"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/game_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
@@ -308,13 +343,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
             android:layout_toRightOf="@id/game_minus"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="+" />
+            android:text="+"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/game_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="price"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/game_plus"
@@ -336,6 +374,7 @@
             android:maxLines="1"
             android:padding="8dp"
             android:text="firearms:"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
 
         <Button
@@ -344,13 +383,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="-" />
+            android:text="-"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/fire_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
@@ -363,13 +405,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
             android:layout_toRightOf="@id/fire_minus"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="+" />
+            android:text="+"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/fire_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="price"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/fire_plus"
@@ -392,6 +437,7 @@
             android:maxLines="1"
             android:padding="8dp"
             android:text="medicine:"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
 
         <Button
@@ -400,13 +446,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="-" />
+            android:text="-"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/med_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
@@ -419,13 +468,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
             android:layout_toRightOf="@id/med_minus"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="+" />
+            android:text="+"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/med_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="price"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/med_plus"
@@ -448,6 +500,7 @@
             android:maxLines="1"
             android:padding="8dp"
             android:text="machines:"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
 
         <Button
@@ -456,13 +509,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="-" />
+            android:text="-"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/mach_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
@@ -475,13 +531,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
             android:layout_toRightOf="@id/mach_minus"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="+" />
+            android:text="+"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/mach_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="price"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/mach_plus"
@@ -504,6 +563,7 @@
             android:maxLines="1"
             android:padding="8dp"
             android:text="narcrotics:"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
 
         <Button
@@ -512,13 +572,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="-" />
+            android:text="-"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/narc_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
@@ -531,13 +594,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
             android:layout_toRightOf="@id/narc_minus"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="+" />
+            android:text="+"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/narc_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="price"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/narc_plus"
@@ -560,6 +626,7 @@
             android:maxLines="1"
             android:padding="8dp"
             android:text="robots:"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
 
         <Button
@@ -568,13 +635,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="100dp"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="-" />
+            android:text="-"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/robo_count2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
@@ -587,13 +657,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
             android:layout_toRightOf="@id/robo_minus"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="+" />
+            android:text="+"
+            android:textColor="#ffffff"/>
         <TextView
             android:id="@+id/robo_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="price"
+            android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/robo_plus"
@@ -614,6 +687,7 @@
             android:maxLines="1"
             android:padding="8dp"
             android:text="total:"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
         <TextView
             android:id="@+id/display_capacity2"
@@ -624,6 +698,7 @@
             android:layout_toLeftOf="@id/display_total2"
             android:layout_marginRight="75dp"
             android:text="0/15"
+            android:textColor="#ffffff"
             />
         <TextView
             android:id="@+id/display_total2"
@@ -634,6 +709,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="50dp"
             android:text="254Cr"
+            android:textColor="#ffffff"
             />
 
     </RelativeLayout>
@@ -652,8 +728,10 @@
             android:layout_alignParentBottom="true"
             android:layout_marginRight="50dp"
             android:layout_marginBottom="20dp"
+            android:background="#51C7F2"
             android:onClick="onItemButton2"
-            android:text="Sell" />
+            android:text="Sell"
+            android:textColor="#ffffff"/>
 
 
     </RelativeLayout>
