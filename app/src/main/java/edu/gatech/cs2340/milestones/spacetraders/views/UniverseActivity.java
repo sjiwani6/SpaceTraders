@@ -125,6 +125,7 @@ public class UniverseActivity extends AppCompatActivity {
         narcField = findViewById(R.id.narc_count);
         roboField = findViewById(R.id.robo_count);
 
+        String total = totalField.getText().toString().substring(0, totalField.getText().toString().indexOf("/"));
         totalField = findViewById(R.id.display_capacity);
         totalPrice = findViewById(R.id.display_total);
         remaining = findViewById(R.id.credit_count);
@@ -144,7 +145,8 @@ public class UniverseActivity extends AppCompatActivity {
         narcField.setText("0/"+ planetCargo.get(Items.NARCOTICS)[0]);
         roboField.setText("0/"+ planetCargo.get(Items.ROBOTS)[0]);
 
-        totalField.setText("0/"+ ship.getShipType().getCapacity());
+
+        totalField.setText(total + "/"+ ship.getShipType().getCapacity());
         totalPrice.setText("0Cr");
         remaining.setText(""+player.getCredit());
     }
@@ -166,7 +168,7 @@ public class UniverseActivity extends AppCompatActivity {
         machField = findViewById(R.id.mach_count2);
         narcField = findViewById(R.id.narc_count2);
         roboField = findViewById(R.id.robo_count2);
-
+        String total = totalField.getText().toString().substring(0, totalField.getText().toString().indexOf("/"));
         totalField = findViewById(R.id.display_capacity2);
         totalPrice = findViewById(R.id.display_total2);
         remaining = findViewById(R.id.credit_count2);
@@ -186,7 +188,7 @@ public class UniverseActivity extends AppCompatActivity {
         narcField.setText("0/"+ playerCargo.get(Items.NARCOTICS)[0]);
         roboField.setText("0/"+ playerCargo.get(Items.ROBOTS)[0]);
 
-        totalField.setText(ship.getCapacity()+ "/"+ ship.getShipType().getCapacity());
+        totalField.setText(total + "/"+ ship.getShipType().getCapacity());
         totalPrice.setText("0Cr");
         remaining.setText(""+player.getCredit());
 
