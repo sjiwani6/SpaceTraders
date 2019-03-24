@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/starsback"
     android:padding="10dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".views.UniverseActivity">
@@ -25,7 +25,8 @@
             android:maxLines="1"
             android:padding="8dp"
             android:text="Welcome!"
-            android:textSize="20sp" />
+            android:textColor="#51C7F2"
+            android:textSize="30sp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -34,30 +35,40 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/tab"
         android:layout_below="@id/name_field"
+        android:layout_marginTop="68dp"
+        android:layout_marginBottom="-57dp"
         android:scrollbarStyle="insideInset">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="149dp"
+            android:layout_height="74dp"
+            app:srcCompat="@drawable/planet" />
+
         <ScrollView
+            android:id="@+id/buy_layout"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
-            android:id="@+id/buy_layout">
+            android:visibility="gone">
 
             <include layout="@layout/content_buy" />
 
             <!--<include layout="@layout/content_sell"-->
-                <!--android:visibility="gone"-->
-                <!--android:id="@+id/sell_layout"/>-->
+            <!--android:visibility="gone"-->
+            <!--android:id="@+id/sell_layout"/>-->
             <!--<ViewStub-->
-                <!--android:id="@+id/stub"-->
-                <!--android:inflatedId="@+id/subView"-->
-                <!--android:layout="@layout/content_buy"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent" />-->
+            <!--android:id="@+id/stub"-->
+            <!--android:inflatedId="@+id/subView"-->
+            <!--android:layout="@layout/content_buy"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" />-->
         </ScrollView>
+
         <ScrollView
+            android:id="@+id/sell_layout"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
-            android:id="@+id/sell_layout">
+            android:visibility="gone">
 
             <include layout="@layout/content_sell" />
 
@@ -78,25 +89,9 @@
         android:id="@+id/tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="0dp"
-        android:layout_alignParentBottom="true">
-
-        <Button
-            android:id="@+id/buy_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onBuyPressed"
-            android:text="BUY" />
-        <Button
-            android:id="@+id/sell_button"
-            android:layout_toRightOf="@id/buy_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onSellPressed"
-            android:text="SELL" />
-
-    </RelativeLayout>
+        android:layout_marginBottom="0dp"/>
 
 
 </RelativeLayout>
