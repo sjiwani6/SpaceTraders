@@ -93,6 +93,7 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
             Object[] planets = universe.getUniverseMap().values().toArray();
             player.setPlayerLocation((Planet) planets[(int) Math.random() * planets.length]);
             viewModel.addPlayer(player);
+            Log.d("User Location: ", player.getPlayerLocation().toString());
             Log.d("user data:", player.toString());
             Log.d("universe", universe.toString());
 

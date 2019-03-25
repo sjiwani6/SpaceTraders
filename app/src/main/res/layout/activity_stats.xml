@@ -24,9 +24,23 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:padding="8dp"
-            android:text="Welcome to Amita"
+            android:text="Welcome to"
             android:textColor="#51C7F2"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/planet_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="0dp"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="Planet Vegeta"
+            android:textColor="#51C7F2"
+            android:textSize="25sp" />
 
     </RelativeLayout>
 
@@ -258,14 +272,14 @@
             android:textColor="#ffffff" />
 
         <Button
-            android:id="@+id/src_button"
-            android:layout_width="wrap_content"
+            android:id="@+id/next_content"
+            android:layout_width="112dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="17dp"
             android:layout_toRightOf="@id/apl_button"
             android:background="#51C7F2"
             android:onClick="onSellPressed"
-            android:text=" Short Range Chart "
+            android:text="Next Planet"
             android:textColor="#ffffff" />
 
         <Button
