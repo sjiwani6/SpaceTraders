@@ -27,6 +27,9 @@
         <activity
             android:name=".views.StartGameActivity"
             android:parentActivityName=".views.UniverseActivity" />
+        <activity
+            android:name=".views.TravelActivity"
+            android:parentActivityName=".views.UniverseActivity" />
     </application>
 
 </manifest>

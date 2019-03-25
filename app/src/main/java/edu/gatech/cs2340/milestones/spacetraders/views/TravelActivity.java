@@ -1,6 +1,7 @@
 package edu.gatech.cs2340.milestones.spacetraders.views;
 
-import android.app.AppComponentFactory;
+import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +18,8 @@ import edu.gatech.cs2340.milestones.spacetraders.model.Travel;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewModel;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.UniverseViewModel;
 
-public class TravelActivity extends AppComponentFactory {
+
+public class TravelActivity extends AppCompactActivity {
     private UniverseViewModel universeViewModel;
     private ConfigurationViewModel viewModel;
     private Player player;
