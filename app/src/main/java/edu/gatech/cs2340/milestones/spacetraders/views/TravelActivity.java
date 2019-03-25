@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import edu.gatech.cs2340.milestones.spacetraders.R;
+import android.arch.lifecycle.ViewModelProviders;
 
 import edu.gatech.cs2340.milestones.spacetraders.entity.Planet;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
