@@ -320,13 +320,16 @@
 
         <Spinner
             android:id="@+id/difficuly_spinner"
+            style="@style/mySpinnerStyle"
             android:layout_width="214dp"
             android:layout_height="45dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="20dp"
-            android:padding="8dp" />
+            android:background="@color/colorPrimary"
+            android:padding="8dp"
+            android:popupBackground="@color/my_spinner_text_color" />
     </RelativeLayout>
 
     <TextView
