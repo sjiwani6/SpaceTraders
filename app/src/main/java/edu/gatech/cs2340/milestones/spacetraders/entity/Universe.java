@@ -26,7 +26,7 @@ public class Universe {
         planetList.add("Tonald Drump");
         planetList.add("Amita");
         planetList.add("Nine Ball");
-        planetList.add("Ahrahas");
+        planetList.add("Ahlo");
         planetList.add("Silva");
         resourceList = Resources.values();
         techLevelList = TechLevel.values();
@@ -40,7 +40,7 @@ public class Universe {
                 coor.put(x, y);
                 Planet planet = new Planet(planetList.get(i),
                         resourceList[(int) (Math.random() * resourceList.length)],
-                        techLevelList[(int) (Math.random()* techLevelList.length)]);
+                        techLevelList[(int) (Math.random()* techLevelList.length)], x, y);
                 planet.setCargo();
                 universeMap.put(coor, planet);
                 i++;

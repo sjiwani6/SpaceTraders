@@ -6,6 +6,7 @@ public class Ship {
     private ShipType shipType;
     private HashMap<Items, int[]> cargo;
     private int capacity;
+    private int fuel;
 
     public Ship() {
         this(ShipType.GNAT);
@@ -13,6 +14,7 @@ public class Ship {
     public Ship(ShipType type) {
         this.shipType = type;
         this.capacity = 0;
+        this.fuel = 500000;
 
         cargo = new HashMap<>();
         cargo.put(Items.WATER, new int[] {0,20});
@@ -37,6 +39,14 @@ public class Ship {
 
     public int getCapacity() {
         return capacity;
+    }
+
+    public int getFuel() {
+        return fuel;
+    }
+
+    public void setFuel(int fuel) {
+        this.fuel = fuel;
     }
 
     public void setCapacity(int capacity) {
