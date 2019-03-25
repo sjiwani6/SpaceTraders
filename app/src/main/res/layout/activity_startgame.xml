@@ -1,15 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/starsback">
+    android:background="@drawable/starsback"
+    android:padding="20dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".views.ConfigurationActivity">
 
-    <Button
-        android:id="@+id/exitGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="#51C7F2"
-        android:text="@string/exit"
-        android:textColor="#ffffff" />
+    <RelativeLayout
+        android:id="@+id/name_field"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:background="@color/transparent_neon">
+
+        <TextView
+            android:id="@+id/display_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="@string/name"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/name_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:text="Name"
+            android:textColor="#ffffff" />
+
+    </RelativeLayout>
+
+    <!--pilot field-->
+    <RelativeLayout
+        android:id="@+id/pilot_field"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/name_field"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:background="@color/transparent_neon">
+
+        <TextView
+            android:id="@+id/display_pilot"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="@string/pilot_point"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/p_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="200dp"
+            android:text="0"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+    <!--enginner field-->
+    <RelativeLayout
+        android:id="@+id/engineer_field"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/pilot_field"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:background="@color/transparent_neon">
+
+        <TextView
+            android:id="@+id/display_enginner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="@string/engi_point"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/e_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="200dp"
+            android:text="0"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+
+    <!--trade field-->
+    <RelativeLayout
+        android:id="@+id/trade_field"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/engineer_field"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:background="@color/transparent_neon">
+
+        <TextView
+            android:id="@+id/display_trade"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="@string/trade_point"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/t_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="200dp"
+            android:text="0"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+
+    <!--fighter field-->
+    <RelativeLayout
+        android:id="@+id/fighter_field"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/trade_field"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:background="@color/transparent_neon">
+
+        <TextView
+            android:id="@+id/display_fighter"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="@string/fighter_point"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/f_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="200dp"
+            android:text="0"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+
+
 </RelativeLayout>

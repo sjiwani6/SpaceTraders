@@ -12,7 +12,6 @@ import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 
 public class StartGameActivity extends AppCompatActivity {
 
-    private View configView;
     private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +21,7 @@ public class StartGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_startgame);
 
-        button = (Button) findViewById(R.id.exitGame);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-                moveTaskToBack(true);
-            }
-        });
+
 
     }
 }

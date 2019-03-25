@@ -101,7 +101,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="20dp"
-            android:background="#51C7F2"
+            android:background="#6651C7F2"
             android:onClick="onSkillButton"
             android:text="+"
             android:textColor="#ffffff" />
@@ -124,7 +124,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="100dp"
-            android:background="#51C7F2"
+            android:background="#6651C7F2"
             android:onClick="onSkillButton"
             android:text="-"
             android:textColor="#ffffff" />
@@ -156,7 +156,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="20dp"
-            android:background="#51C7F2"
+            android:background="#6651C7F2"
             android:onClick="onSkillButton"
             android:text="+"
             android:textColor="#ffffff" />
@@ -179,7 +179,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="100dp"
-            android:background="#51C7F2"
+            android:background="#6651C7F2"
             android:onClick="onSkillButton"
             android:text="-"
             android:textColor="#ffffff" />
@@ -212,7 +212,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="20dp"
-            android:background="#51C7F2"
+            android:background="#6651C7F2"
             android:onClick="onSkillButton"
             android:text="+"
             android:textColor="#ffffff" />
@@ -235,7 +235,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="100dp"
-            android:background="#51C7F2"
+            android:background="#6651C7F2"
             android:onClick="onSkillButton"
             android:text="-"
             android:textColor="#ffffff" />
@@ -268,7 +268,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="20dp"
-            android:background="#51C7F2"
+            android:background="#6651C7F2"
             android:onClick="onSkillButton"
             android:text="+"
             android:textColor="#ffffff" />
@@ -291,7 +291,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="100dp"
-            android:background="#51C7F2"
+            android:background="#6651C7F2"
             android:onClick="onSkillButton"
             android:text="-"
             android:textColor="#ffffff" />
@@ -348,7 +348,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginTop="45dp"
         android:layout_marginBottom="40dp"
-        android:background="#51C7F2"
+        android:background="#6651C7F2"
         android:onClick="onNextPressed"
         android:text="@string/next"
         android:textColor="#ffffff" />
