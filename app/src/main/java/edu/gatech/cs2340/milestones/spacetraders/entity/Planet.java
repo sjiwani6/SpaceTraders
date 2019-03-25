@@ -10,11 +10,15 @@ public class Planet {
     private TechLevel techLevel;
     private Resources resources;
     private HashMap<Items, int[]> cargo;
+    private int x;
+    private int y;
 
-    public Planet(String name, Resources resources, TechLevel techLevel) {
+    public Planet(String name, Resources resources, TechLevel techLevel, int x, int y) {
         this.name = name;
         this.resources = resources;
         this.techLevel = techLevel;
+        this.x = x;
+        this.y = y;
         cargo = new HashMap<>();
         cargo.put(Items.WATER, new int[2]);
         cargo.put(Items.FURS, new int[2]);
@@ -49,6 +53,14 @@ public class Planet {
         return cargo;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     //setters
     public void setDescription(String description) {
         this.description = description;
@@ -62,7 +74,13 @@ public class Planet {
         this.techLevel = techLevel;
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
 
+    public void setY(int y) {
+        this.y = y;
+    }
 
     public void setCargo() {
         cargo = EconomicModel.setPlanetCargo(this);
