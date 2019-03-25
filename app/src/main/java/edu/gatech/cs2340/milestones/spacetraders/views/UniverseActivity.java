@@ -52,7 +52,7 @@ public class UniverseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_universe);
+        setContentView(R.layout.activity_market);
         Log.d("here", "you got here_universe");
 
 
