@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_market"
+
+        android:icon="@drawable/market"
+        android:title="Market" />
+
+    <item
+        android:id="@+id/navigation_travel"
+        android:icon="@color/colorAccent"
+        android:title="Travel" />
+
+    <item
+        android:id="@+id/navigation_shipyard"
+        android:title="ShipYard"/>
+
+</menu>

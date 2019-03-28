@@ -30,15 +30,15 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/name_input"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-            android:ems="10"
+            android:layout_toRightOf="@id/display_name"
             android:text="Name"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 
@@ -176,6 +176,20 @@
 
     </RelativeLayout>
 
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:itemBackground="@color/transparent_neon"
+        app:itemTextColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
 
 
 </RelativeLayout>
