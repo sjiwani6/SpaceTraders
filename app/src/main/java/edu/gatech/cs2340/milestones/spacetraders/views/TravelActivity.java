@@ -1,6 +1,7 @@
 package edu.gatech.cs2340.milestones.spacetraders.views;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,7 +25,7 @@ public class TravelActivity extends AppCompatActivity {
     private ConfigurationViewModel viewModel;
     private Player player;
     private Universe universe;
-    private String[][] listPlanet;
+    //private String[][] listPlanet;
     private int count = 0;
 
     private TextView planetName;
@@ -69,7 +70,7 @@ public class TravelActivity extends AppCompatActivity {
 
     }
 
-    public void onPressed(View view) {
+    public void onNext2Pressed(View view) {
         planetName = findViewById(R.id.planet_name);
         name = findViewById(R.id.name_content);
         size = findViewById(R.id.size_content);
@@ -91,34 +92,33 @@ public class TravelActivity extends AppCompatActivity {
 
         button = findViewById(R.id.next_content);
         wrap = findViewById(R.id.warp_button);
-        button.setOnClickListener(new View.OnClickListener() {
+
+        final int tempfuel = player.getPlayerShip().getFuel();
+        final int tempCredit = player.getCredit();
+
+        final Planet[] planetList = (Planet[]) universe.getUniverseMap().values().toArray();
+        Planet temp = planetList[count];
+        final int dist = Travel.calcDistance(temp, player);
+        planetName.setText(temp.getName());
+        name.setText(temp.getName());
+        techLevel.setText(temp.getTechLevel().toString());
+        distance.setText("" + (dist/3) + "parsecs");
+        if (dist > 50) {
+            wrap.setEnabled(false);
+        }
+
+        wrap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Planet[] planetList = (Planet[]) universe.getUniverseMap().values().toArray();
-                Planet temp = planetList[count];
-                int dist = Travel.calcDistance(temp, player);
-                planetName.setText(temp.getName());
-                name.setText(temp.getName());
-                techLevel.setText(temp.getTechLevel().toString());
-                distance.setText("" + dist/3 + "parsecs");
-                if (dist > 50) {
-                    wrap.setEnabled(false);
-                }
-
-                wrap.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        player.setPlayerLocation(planetList[count]);
-                    }
-                });
-                count++;
-                if (count == planetList.length) {
-                    count = 0;
-                }
-
-
+                player.setPlayerLocation(planetList[count]);
+                player.getPlayerShip().setFuel(tempfuel - (dist/3));
+                player.setCredit(tempCredit - ((dist/3)/10));
             }
         });
+        count++;
+        if (count == planetList.length) {
+            count = 0;
+        }
 //        Planet[] planetList = (Planet[]) universe.getUniverseMap().values().toArray();
 //        int lengthPlanets = planetList.length;
 //        listPlanet = new String[lengthPlanets][3];
@@ -132,14 +132,9 @@ public class TravelActivity extends AppCompatActivity {
 //            listPlanet[i][2] = ""+y;
 //        }
     }
-    public void onSellPressed(View view) {
+    public void onBackPressed(View view) {
         closeWindow = findViewById(R.id.back_button);
-        closeWindow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
+        Intent myIntent2 = new Intent(TravelActivity.this, StartGameActivity.class);
+        startActivity(myIntent2);
     }
 }

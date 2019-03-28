@@ -278,7 +278,7 @@
             android:layout_marginLeft="17dp"
             android:layout_toRightOf="@id/apl_button"
             android:background="#51C7F2"
-            android:onClick="onSellPressed"
+            android:onClick="onNext2Pressed"
             android:text="Next Planet"
             android:textColor="#ffffff" />
 
@@ -290,7 +290,7 @@
             android:layout_marginLeft="0dp"
             android:layout_marginTop="7dp"
             android:background="#51C7F2"
-            android:onClick="onSellPressed"
+            android:onClick="onNext2Pressed"
             android:text=" Warp "
             android:textColor="#ffffff" />
 
@@ -302,7 +302,7 @@
             android:layout_marginLeft="105dp"
             android:layout_marginTop="7dp"
             android:background="#51C7F2"
-            android:onClick="onSellPressed"
+            android:onClick="onBackPressed"
             android:text=" Back "
             android:textColor="#ffffff" />
 
