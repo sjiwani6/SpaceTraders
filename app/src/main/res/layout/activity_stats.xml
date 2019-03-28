@@ -294,6 +294,18 @@
             android:text=" Warp "
             android:textColor="#ffffff" />
 
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/apl_button"
+            android:layout_marginLeft="105dp"
+            android:layout_marginTop="7dp"
+            android:background="#51C7F2"
+            android:onClick="onSellPressed"
+            android:text=" Back "
+            android:textColor="#ffffff" />
+
     </RelativeLayout>
 
 </RelativeLayout>
