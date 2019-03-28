@@ -66,7 +66,8 @@ public class TravelActivity extends AppCompatActivity {
         planetName.setText(player.getPlayerLocation().toString());
         name.setText(player.getPlayerLocation().getName());
         techLevel.setText(player.getPlayerLocation().getTechLevel().toString());
-        distance.setText("0");
+        int tempDist = Travel.calcDistance(player.getPlayerLocation(),player);
+        distance.setText(""+ (tempDist / 3) + "parsecs");
 
     }
 
@@ -113,12 +114,17 @@ public class TravelActivity extends AppCompatActivity {
                 player.setPlayerLocation(planetList[count]);
                 player.getPlayerShip().setFuel(tempfuel - (dist/3));
                 player.setCredit(tempCredit - ((dist/3)/10));
+                planetName.setText(player.getPlayerLocation().getName());
+                name.setText(player.getPlayerLocation().getName());
+                techLevel.setText(player.getPlayerLocation().getTechLevel().toString());
+                distance.setText(Travel.calcDistance(player.getPlayerLocation(),player));
             }
         });
         count++;
         if (count == planetList.length) {
             count = 0;
         }
+
 //        Planet[] planetList = (Planet[]) universe.getUniverseMap().values().toArray();
 //        int lengthPlanets = planetList.length;
 //        listPlanet = new String[lengthPlanets][3];
