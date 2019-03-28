@@ -106,11 +106,16 @@ public class TravelActivity extends AppCompatActivity {
         distance.setText("" + (dist/3) + " parsecs");
 
         Log.d(planetList[count].getName(), "dist is :"+ dist);
-        if (dist > 100) {
+        if (dist > 50 || player.getPlayerShip().getFuel() < (dist/3)) {
             wrap.setEnabled(false);
         } else {
+
+         //   we forgot to update the fuel
+            int fuel = player.getPlayerShip().getFuel();
             wrap.setEnabled(true);
             cost.setText("" + (dist/3) + " cr.");
+            player.getPlayerShip().setFuel(fuel - (dist/3));
+            Log.d(planetList[count].getName(), "dist : Fuel :  is :"+ fuel);
         }
 
         wrap.setOnClickListener(new View.OnClickListener() {
