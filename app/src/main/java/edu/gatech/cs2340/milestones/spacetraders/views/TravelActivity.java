@@ -19,7 +19,7 @@ import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewMode
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.UniverseViewModel;
 
 
-public class TravelActivity extends AppCompactActivity {
+public class TravelActivity extends AppCompatActivity {
     private UniverseViewModel universeViewModel;
     private ConfigurationViewModel viewModel;
     private Player player;
@@ -39,6 +39,7 @@ public class TravelActivity extends AppCompactActivity {
 
     private Button button;
     private Button wrap;
+    private Button closeWindow;
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -99,8 +100,7 @@ public class TravelActivity extends AppCompactActivity {
                 planetName.setText(temp.getName());
                 name.setText(temp.getName());
                 techLevel.setText(temp.getTechLevel().toString());
-                distance.setText("" + dist);
-
+                distance.setText("" + dist/3 + "parsecs");
                 if (dist > 50) {
                     wrap.setEnabled(false);
                 }
@@ -131,7 +131,15 @@ public class TravelActivity extends AppCompactActivity {
 //            listPlanet[i][1] = ""+x;
 //            listPlanet[i][2] = ""+y;
 //        }
+    }
+    public void onSellPressed(View view) {
+        closeWindow = findViewById(R.id.back_button);
+        closeWindow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+            }
+        });
 
     }
 }
