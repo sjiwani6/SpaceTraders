@@ -19,7 +19,7 @@ import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewMode
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.UniverseViewModel;
 
 
-public class TravelActivity extends AppCompactActivity {
+public class TravelActivity extends AppCompatActivity {
     private UniverseViewModel universeViewModel;
     private ConfigurationViewModel viewModel;
     private Player player;
