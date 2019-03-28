@@ -104,14 +104,14 @@ public class TravelActivity extends AppCompatActivity {
         name.setText(temp.getName());
         techLevel.setText(temp.getTechLevel().toString());
         distance.setText("" + (dist/3) + " parsecs");
-        cost.setText("" + (dist/3)/10 + " cr.");
 
         Log.d(planetList[count].getName(), "dist is :"+ dist);
-//        if (dist > 50) {
-//            wrap.setEnabled(false);
-//        } else {
-//            wrap.setEnabled(true);
-//        }
+        if (dist > 100) {
+            wrap.setEnabled(false);
+        } else {
+            wrap.setEnabled(true);
+            cost.setText("" + (dist/3) + " cr.");
+        }
 
         wrap.setOnClickListener(new View.OnClickListener() {
             @Override
