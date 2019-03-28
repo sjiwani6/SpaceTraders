@@ -51,5 +51,6 @@ public class StartGameActivity extends AppCompatActivity {
     public void onTravel(View view) {
         Intent intent = new Intent(this, TravelActivity.class);
         startActivity(intent);
+        finish();
     }
 }
