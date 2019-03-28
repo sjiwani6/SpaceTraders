@@ -13,6 +13,7 @@ import org.w3c.dom.Text;
 
 import edu.gatech.cs2340.milestones.spacetraders.R;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
+import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewModel;
 
 public class StartGameActivity extends AppCompatActivity {
@@ -37,9 +38,18 @@ public class StartGameActivity extends AppCompatActivity {
         TextView fighterPoint = findViewById(R.id.f_count);
 
         Player player = viewModel.getPlayer();
+        nameField.setText(player.getName());
         pilotPoint.setText(""+player.getPilotPoint());
         enginnerPoint.setText(""+player.getEngineerPoint());
         tradePoint.setText(""+player.getTradePoint());
         fighterPoint.setText(""+player.getFighterPoint());
+    }
+    public void onMarket(View view) {
+        Intent intent = new Intent(this, UniverseActivity.class);
+        startActivity(intent);
+    }
+    public void onTravel(View view) {
+        Intent intent = new Intent(this, TravelActivity.class);
+        startActivity(intent);
     }
 }
