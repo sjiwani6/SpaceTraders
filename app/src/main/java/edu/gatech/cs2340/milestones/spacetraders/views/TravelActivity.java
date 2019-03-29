@@ -110,7 +110,6 @@ public class TravelActivity extends AppCompatActivity {
             wrap.setEnabled(false);
         } else {
 
-         //   we forgot to update the fuel
             int fuel = player.getPlayerShip().getFuel();
             wrap.setEnabled(true);
             cost.setText("" + (dist/3) + " cr.");
@@ -139,18 +138,6 @@ public class TravelActivity extends AppCompatActivity {
         if (count == planetList.length) {
             count = 0;
         }
-//        Planet[] planetList = (Planet[]) universe.getUniverseMap().values().toArray();
-//        int lengthPlanets = planetList.length;
-//        listPlanet = new String[lengthPlanets][3];
-//        for (int i = 0; i < lengthPlanets; i++) {
-//            Planet temp = planetList[i];
-//            int x = temp.getX();
-//            int y = temp.getY();
-//            String name = temp.getName();
-//            listPlanet[i][0] = name;
-//            listPlanet[i][1] = ""+x;
-//            listPlanet[i][2] = ""+y;
-//        }
     }
     public void onBackPressed(View view) {
         closeWindow = findViewById(R.id.back_button);
