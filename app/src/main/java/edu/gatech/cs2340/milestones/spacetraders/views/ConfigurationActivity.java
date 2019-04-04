@@ -97,7 +97,7 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
             Log.d("user data:", player.toString());
             Log.d("universe", universe.toString());
 
-            Intent intent = new Intent(this, UniverseActivity.class);
+            Intent intent = new Intent(this, StartGameActivity.class);
             startActivity(intent);
             finish();
         } else {

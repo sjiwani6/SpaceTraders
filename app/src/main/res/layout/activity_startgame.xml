@@ -8,7 +8,7 @@
     android:background="@drawable/starsback"
     android:padding="20dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".views.ConfigurationActivity">
+    tools:context=".views.StartGameActivity">
 
     <RelativeLayout
         android:id="@+id/name_field"
@@ -30,15 +30,15 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/name_input"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-            android:ems="10"
+            android:layout_toRightOf="@id/display_name"
             android:text="Name"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 
@@ -176,6 +176,49 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="0dp">
+
+        <Button
+            android:id="@+id/market"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#51C7F2"
+            android:text="Market"
+            android:onClick="onMarket"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/travel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/market"
+            android:onClick="onTravel"
+            android:background="#51C7F2"
+            android:text="Travel"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+    <!--<android.support.design.widget.BottomNavigationView-->
+        <!--android:id="@+id/navigationView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginStart="0dp"-->
+        <!--android:layout_marginEnd="0dp"-->
+        <!--android:background="?android:attr/windowBackground"-->
+        <!--app:itemBackground="@color/transparent_neon"-->
+        <!--app:itemTextColor="@color/colorPrimaryDark"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:menu="@menu/navigation" />-->
 
 
 </RelativeLayout>

@@ -14,7 +14,7 @@ public class Ship {
     public Ship(ShipType type) {
         this.shipType = type;
         this.capacity = 0;
-        this.fuel = 1000;
+        this.fuel = 50;
 
         cargo = new HashMap<>();
         cargo.put(Items.WATER, new int[] {0,20});

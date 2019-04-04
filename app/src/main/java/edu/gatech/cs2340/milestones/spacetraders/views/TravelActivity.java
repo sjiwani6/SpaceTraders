@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -63,7 +64,7 @@ public class TravelActivity extends AppCompatActivity {
         universe = universeViewModel.getUniverse();
         player = viewModel.getPlayer();
 
-        planetName.setText(player.getPlayerLocation().toString());
+        planetName.setText(player.getPlayerLocation().getName());
         name.setText(player.getPlayerLocation().getName());
         techLevel.setText(player.getPlayerLocation().getTechLevel().toString());
         int tempDist = Travel.calcDistance(player.getPlayerLocation(),player);
@@ -97,50 +98,55 @@ public class TravelActivity extends AppCompatActivity {
         final int tempfuel = player.getPlayerShip().getFuel();
         final int tempCredit = player.getCredit();
 
-        final Planet[] planetList = (Planet[]) universe.getUniverseMap().values().toArray();
+        final Planet[] planetList = universe.getUniverseMap().values().toArray(new Planet[10]);
         Planet temp = planetList[count];
         final int dist = Travel.calcDistance(temp, player);
         planetName.setText(temp.getName());
         name.setText(temp.getName());
         techLevel.setText(temp.getTechLevel().toString());
-        distance.setText("" + (dist/3) + "parsecs");
-        if (dist > 50) {
+        distance.setText("" + (dist/3) + " parsecs");
+
+        Log.d(planetList[count].getName(), "dist is :"+ dist);
+        if (dist > 50 || player.getPlayerShip().getFuel() < (dist/3)) {
             wrap.setEnabled(false);
+        } else {
+
+            int fuel = player.getPlayerShip().getFuel();
+            wrap.setEnabled(true);
+            cost.setText("" + (dist/3) + " cr.");
+            player.getPlayerShip().setFuel(fuel - (dist/3));
+            Log.d(planetList[count].getName(), "dist : Fuel :  is :"+ fuel);
         }
 
         wrap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("gets here", ": true");
+                if (count == 0) {
+                    count = 9;
+                } else {
+                    count--;
+                }
                 player.setPlayerLocation(planetList[count]);
                 player.getPlayerShip().setFuel(tempfuel - (dist/3));
                 player.setCredit(tempCredit - ((dist/3)/10));
-                planetName.setText(player.getPlayerLocation().getName());
-                name.setText(player.getPlayerLocation().getName());
-                techLevel.setText(player.getPlayerLocation().getTechLevel().toString());
-                distance.setText(Travel.calcDistance(player.getPlayerLocation(),player));
+                distance.setText(""+Travel.calcDistance(planetList[count], player) + "parsecs");
+                cost.setText("0 cr.");
+                count++;
             }
         });
         count++;
         if (count == planetList.length) {
             count = 0;
         }
-
-//        Planet[] planetList = (Planet[]) universe.getUniverseMap().values().toArray();
-//        int lengthPlanets = planetList.length;
-//        listPlanet = new String[lengthPlanets][3];
-//        for (int i = 0; i < lengthPlanets; i++) {
-//            Planet temp = planetList[i];
-//            int x = temp.getX();
-//            int y = temp.getY();
-//            String name = temp.getName();
-//            listPlanet[i][0] = name;
-//            listPlanet[i][1] = ""+x;
-//            listPlanet[i][2] = ""+y;
-//        }
     }
     public void onBackPressed(View view) {
         closeWindow = findViewById(R.id.back_button);
         Intent myIntent2 = new Intent(TravelActivity.this, StartGameActivity.class);
         startActivity(myIntent2);
+    }
+    public void onWarpPressed(View view) {
+        player = viewModel.getPlayer();
+
     }
 }
