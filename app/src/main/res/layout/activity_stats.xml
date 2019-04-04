@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/starsback"
+    android:padding="10dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".views.UniverseActivity">
+
+    <RelativeLayout
+        android:id="@+id/name_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/game_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="Welcome to"
+            android:textColor="#51C7F2"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/planet_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="0dp"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="Planet Vegeta"
+            android:textColor="#51C7F2"
+            android:textSize="25sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/planet_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/food_field"
+        android:layout_marginTop="75dp">
+
+        <TextView
+            android:id="@+id/display_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="Name:"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/name_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amita"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/display_name"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/display_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/display_name"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="Size:"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/size_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_content"
+            android:text="Medium"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/display_size"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/display_tech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/display_size"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="Tech Level:"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/tech_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/size_content"
+            android:text="Industrial"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/display_tech"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/display_govt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/display_tech"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="Government:"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/govt_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tech_content"
+            android:text="Technocracy"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@id/display_govt"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/display_dist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/display_govt"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="Distance:"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/dist_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/govt_content"
+            android:text="12 parsecs"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@id/display_dist"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/display_police"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/display_dist"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="Police:"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/police_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dist_content"
+            android:text="Abundant"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginTop="18dp"
+            android:layout_toRightOf="@id/display_police"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/display_pirates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/display_police"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="Pirates:"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/pirates_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/police_content"
+            android:text="Some"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginTop="18dp"
+            android:layout_toRightOf="@id/display_pirates"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/display_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/display_pirates"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="Current Cost:"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/cost_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pirates_content"
+            android:text="0 cr."
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/display_cost"
+            android:layout_marginLeft="50dp"/>
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp">
+
+        <Button
+            android:id="@+id/apl_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#51C7F2"
+            android:onClick="onBuyPressed"
+            android:text=" Average Price List "
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/next_content"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_toRightOf="@id/apl_button"
+            android:background="#51C7F2"
+            android:onClick="onNext2Pressed"
+            android:text="Next Planet"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/warp_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/apl_button"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="7dp"
+            android:background="#51C7F2"
+            android:onClick="onNext2Pressed"
+            android:text=" Warp "
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/apl_button"
+            android:layout_marginLeft="105dp"
+            android:layout_marginTop="7dp"
+            android:background="#51C7F2"
+            android:onClick="onBackPressed"
+            android:text=" Back "
+            android:textColor="#ffffff" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

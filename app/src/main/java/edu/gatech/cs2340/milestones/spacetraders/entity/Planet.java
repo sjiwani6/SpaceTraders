@@ -1,15 +1,35 @@
 package edu.gatech.cs2340.milestones.spacetraders.entity;
 
+import java.util.HashMap;
+
+import edu.gatech.cs2340.milestones.spacetraders.model.EconomicModel;
+
 public class Planet {
     private String name;
     private String description;
     private TechLevel techLevel;
     private Resources resources;
+    private HashMap<Items, int[]> cargo;
+    private int x;
+    private int y;
 
-    public Planet(String name, Resources resources, TechLevel techLevel) {
+    public Planet(String name, Resources resources, TechLevel techLevel, int x, int y) {
         this.name = name;
         this.resources = resources;
         this.techLevel = techLevel;
+        this.x = x;
+        this.y = y;
+        cargo = new HashMap<>();
+        cargo.put(Items.WATER, new int[2]);
+        cargo.put(Items.FURS, new int[2]);
+        cargo.put(Items.FOOD, new int[2]);
+        cargo.put(Items.ORE, new int[2]);
+        cargo.put(Items.GAMES, new int[2]);
+        cargo.put(Items.FIREARMS, new int[2]);
+        cargo.put(Items.MEDICINE, new int[2]);
+        cargo.put(Items.MACHINES, new int[2]);
+        cargo.put(Items.NARCOTICS, new int[2]);
+        cargo.put(Items.ROBOTS, new int[2]);
     }
 
     //getters
@@ -25,6 +45,22 @@ public class Planet {
         return techLevel;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public HashMap<Items, int[]> getCargo() {
+        return cargo;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     //setters
     public void setDescription(String description) {
         this.description = description;
@@ -38,8 +74,32 @@ public class Planet {
         this.techLevel = techLevel;
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public void setCargo() {
+        cargo = EconomicModel.setPlanetCargo(this);
+    }
+
+    public void setCargo(HashMap<Items, int[]> cargo) {
+        this.cargo = cargo;
+    }
     @Override
     public String toString() {
-        return "Name: "+ name +" Resources: " + resources.toString() + " Tech Level: " + techLevel.toString();
+        return "Name: "+ name +" Resources: " + resources.toString() + " Tech Level: " + techLevel.toString() + " "+
+                    techLevel.getTechLevelNum();
+    }
+    public String cargoString() {
+        String string = "";
+        for (Items car : cargo.keySet()) {
+            string += car.toString()+":";
+                string += "qt: "+ cargo.get(car)[0] + " pr:" + cargo.get(car)[1] + "\n";
+        }
+        return string;
     }
 }

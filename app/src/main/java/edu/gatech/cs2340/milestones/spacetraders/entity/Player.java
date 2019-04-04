@@ -1,6 +1,7 @@
 package edu.gatech.cs2340.milestones.spacetraders.entity;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class Player {
@@ -17,6 +18,7 @@ public class Player {
     private final int INITIAL_SKILL = 20;
     //
     private Ship playerShip;
+    private Planet playerLocation;
 
     public static List<Difficulty> difficultyList = Arrays.asList(Difficulty.EASY, Difficulty.NORMAl, Difficulty.HARD, Difficulty.IMPOSSIBLE);
 
@@ -32,7 +34,7 @@ public class Player {
         tradePoint = 1;
         fighterPoint = 1;
         skillPoint -= 4;
-
+        playerShip = new Ship();
     }
 
     public int getCredit() {
@@ -93,10 +95,29 @@ public class Player {
         return playerShip;
     }
 
+    public void setPlayerShip(Ship playerShip) {
+        this.playerShip = playerShip;
+    }
+
+    public Planet getPlayerLocation() {
+        return playerLocation;
+    }
+
+    public HashMap<Items, int[]> getCargo() {
+        return playerShip.getCargo();
+    }
+    public void setCargo(HashMap<Items, int[]> cargo) {
+        playerShip.setCargo(cargo);
+    }
+
+    public void setPlayerLocation(Planet playerLocation) {
+        this.playerLocation = playerLocation;
+    }
+
     @Override
     public String toString() {
         return String.format("Player: %s, Pilot Points: %d, Engineer " +
-                "Points: %d, Trade Points: %d, Fighter  Points: %d, Credit: %d", name,
-                pilotPoint, engineerPoint,tradePoint,fighterPoint,credit);
+                "Points: %d, Trade Points: %d, Fighter  Points: %d, Credit: %d, Location: %s", name,
+                pilotPoint, engineerPoint,tradePoint,fighterPoint,credit, playerLocation.getName());
     }
 }

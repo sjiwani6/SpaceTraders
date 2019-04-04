@@ -1,5 +1,6 @@
 package edu.gatech.cs2340.milestones.spacetraders.views;
 
+import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,13 +21,16 @@ import java.util.List;
 import edu.gatech.cs2340.milestones.spacetraders.R;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Difficulty;
 
+import edu.gatech.cs2340.milestones.spacetraders.entity.Planet;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
+import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewModel;
+import edu.gatech.cs2340.milestones.spacetraders.viewmodel.UniverseViewModel;
 
 public class ConfigurationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private ConfigurationViewModel viewModel;
-
+    private UniverseViewModel universeViewModel;
     private Player player = new Player();
 
     private EditText nameField;
@@ -72,6 +76,7 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         diffSpinner.setOnItemSelectedListener(this);
 
         viewModel = ViewModelProviders.of(this).get(ConfigurationViewModel.class);
+        universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
     }
 
     public void onNextPressed(View view) {
@@ -82,12 +87,17 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
             player.setTradePoint(Integer.parseInt(tradePoint.getText().toString()));
             player.setFighterPoint(Integer.parseInt(fighterPoint.getText().toString()));
 
-        }
-
-        if (player.getSkillPoint() ==  0 ) {
-            //viewModel.addPlayer(player);
+            //universe created
+            Universe universe = new Universe();
+            universeViewModel.addUniverse(universe);
+            Object[] planets = universe.getUniverseMap().values().toArray();
+            player.setPlayerLocation((Planet) planets[(int) Math.random() * planets.length]);
+            viewModel.addPlayer(player);
+            Log.d("User Location: ", player.getPlayerLocation().toString());
             Log.d("user data:", player.toString());
-            Intent intent = new Intent(this, UniverseActivity.class);
+            Log.d("universe", universe.toString());
+
+            Intent intent = new Intent(this, StartGameActivity.class);
             startActivity(intent);
             finish();
         } else {
@@ -184,6 +194,7 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
+
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
     }
 

@@ -26,7 +26,7 @@ public class Universe {
         planetList.add("Tonald Drump");
         planetList.add("Amita");
         planetList.add("Nine Ball");
-        planetList.add("Ahrahas");
+        planetList.add("Ahlo");
         planetList.add("Silva");
         resourceList = Resources.values();
         techLevelList = TechLevel.values();
@@ -38,15 +38,18 @@ public class Universe {
             if (!coordinate.containsKey(x) || !coordinate.containsValue(y)) {
                 HashMap<Integer, Integer> coor = new HashMap<>();
                 coor.put(x, y);
-                universeMap.put(coor,
-                            new Planet(planetList.get(i), resourceList[(int) (Math.random()* resourceList.length)],techLevelList[(int) (Math.random()* techLevelList.length)] ));
+                Planet planet = new Planet(planetList.get(i),
+                        resourceList[(int) (Math.random() * resourceList.length)],
+                        techLevelList[(int) (Math.random()* techLevelList.length)], x, y);
+                planet.setCargo();
+                universeMap.put(coor, planet);
                 i++;
             }
         }
     }
 
-    public String getUniverse() {
-        return universeName;
+    public HashMap<HashMap<Integer, Integer>, Planet> getUniverseMap() {
+        return universeMap;
     }
 
     @Override

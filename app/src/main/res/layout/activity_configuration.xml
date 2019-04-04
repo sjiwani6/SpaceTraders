@@ -8,7 +8,10 @@
     >
 
 
-    <include layout="@layout/new_game" />
+    <include
+        layout="@layout/new_game"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="87dp" />
 
 
 
