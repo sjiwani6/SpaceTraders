@@ -7,7 +7,7 @@ public class Ship {
     private HashMap<Items, int[]> cargo;
     private int capacity;
     private int fuel;
-
+    private int INITIAL_FUEL = 500;
     public Ship() {
         this(ShipType.GNAT);
     }
@@ -43,6 +43,10 @@ public class Ship {
 
     public int getFuel() {
         return fuel;
+    }
+
+    public int getINITIAL_FUEL() {
+        return INITIAL_FUEL;
     }
 
     public void setFuel(int fuel) {
