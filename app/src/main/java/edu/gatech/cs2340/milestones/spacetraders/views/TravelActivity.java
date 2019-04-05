@@ -115,6 +115,9 @@ public class TravelActivity extends AppCompatActivity {
         final int tempCredit = player.getCredit();
 
         final Planet[] planetList = universe.getUniverseMap().values().toArray(new Planet[10]);
+        if (count == planetList.length) {
+            count = 0;
+        }
         final Planet temp = planetList[count];
         final int dist = Travel.calcDistance(temp, player);
         planetName.setText(temp.getName());
@@ -153,6 +156,7 @@ public class TravelActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("gets here", ": true");
+                Log.d("count: ", "" + count);
                 if (count == 0) {
                     count = 9;
                 } else {
@@ -178,7 +182,7 @@ public class TravelActivity extends AppCompatActivity {
                 eventMessage = myDialog.findViewById(R.id.Whatthehell);
                 Button btw;
                 btw = myDialog.findViewById(R.id.ok_popup);
-                if ( Math.random() <= 0.1) {
+                if ( Math.random() <= 0.3) {
                     if (event.equalsIgnoreCase("Illegal Trespassing")) {
                         String message = "You have been illegal trespassed and you have been arrested by the local police. You have to pay 50CR to get out of jail.";
                         eventTitle.setText("Illegal Trespassing");
