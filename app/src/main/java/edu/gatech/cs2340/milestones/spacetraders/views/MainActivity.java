@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         configView = getLayoutInflater().inflate(R.layout.new_game, null);
         setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.newGame);
+        button = findViewById(R.id.newGame);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,16 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void onPressed(View view) {
-//        Button newGame = findViewById(R.id.newGame);
         Log.d("msg", "you got here");
         Intent intent = new Intent(this, ConfigurationActivity.class);
         startActivity(intent);
-
-//        newGame.setOnClickListener( new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Log.d("msg", "you got here");
-//            }
-//        });
     }
 }

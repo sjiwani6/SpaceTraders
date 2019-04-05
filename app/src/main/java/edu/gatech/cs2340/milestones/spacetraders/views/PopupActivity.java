@@ -12,6 +12,8 @@ import android.view.MotionEvent;
 
 import edu.gatech.cs2340.milestones.spacetraders.R;
 
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+
 public class PopupActivity extends AppCompatActivity {
 
     @Override

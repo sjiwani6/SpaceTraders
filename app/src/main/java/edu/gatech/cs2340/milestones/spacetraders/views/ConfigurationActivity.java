@@ -35,9 +35,8 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
 
     private EditText nameField;
     private Spinner diffSpinner;
-    //private Spinner testSpinner;
     private TextView pilotPoint;
-    private TextView enginnerPoint;
+    private TextView engineerPoint;
     private TextView tradePoint;
     private TextView fighterPoint;
     private TextView skillPoint;
@@ -55,7 +54,7 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         nameField = findViewById(R.id.name_input);
         diffSpinner = findViewById(R.id.difficuly_spinner);
         pilotPoint = findViewById(R.id.p_count);
-        enginnerPoint = findViewById(R.id.e_count);
+        engineerPoint = findViewById(R.id.e_count);
         tradePoint = findViewById(R.id.t_count);
         fighterPoint = findViewById(R.id.f_count);
         skillPoint = findViewById(R.id.s_count);
@@ -66,7 +65,7 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
 
         skillPoint.setText(""+player.getSkillPoint());
         pilotPoint.setText(""+player.getPilotPoint());
-        enginnerPoint.setText(""+player.getEngineerPoint());
+        engineerPoint.setText(""+player.getEngineerPoint());
         tradePoint.setText(""+player.getTradePoint());
         fighterPoint.setText(""+player.getFighterPoint());
 
@@ -83,7 +82,7 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         if (player.getSkillPoint() == 0) {
             player.setName(nameField.getText().toString());
             player.setPilotPoint(Integer.parseInt(pilotPoint.getText().toString()));
-            player.setEngineerPoint(Integer.parseInt(enginnerPoint.getText().toString()));
+            player.setEngineerPoint(Integer.parseInt(engineerPoint.getText().toString()));
             player.setTradePoint(Integer.parseInt(tradePoint.getText().toString()));
             player.setFighterPoint(Integer.parseInt(fighterPoint.getText().toString()));
 
@@ -124,7 +123,7 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
                 player.setEngineerPoint(e1);
                 int s2 = player.getSkillPoint() - 1;
                 player.setSkillPoint(s2);
-                enginnerPoint.setText("" + player.getEngineerPoint());
+                engineerPoint.setText("" + player.getEngineerPoint());
                 skillPoint.setText("" + player.getSkillPoint());
             }
         }
@@ -165,7 +164,7 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
                 player.setEngineerPoint(e2);
                 int s6 = player.getSkillPoint() + 1;
                 player.setSkillPoint(s6);
-                enginnerPoint.setText("" + player.getEngineerPoint());
+                engineerPoint.setText("" + player.getEngineerPoint());
                 skillPoint.setText("" + player.getSkillPoint());
             }
         }

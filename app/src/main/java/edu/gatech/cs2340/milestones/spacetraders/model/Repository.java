@@ -1,8 +1,4 @@
 package edu.gatech.cs2340.milestones.spacetraders.model;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 
