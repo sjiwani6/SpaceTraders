@@ -17,6 +17,7 @@
     <string name="maxSkill">16</string>
     <string name="printuniverse">PrintUniverse</string>
     <string name="exit">EXIT</string>
+    <string name="this_is_a_popup_window">This is a popup window.</string>
     <string-array name="difficulty1">
         <item>Easy</item>
         <item>Normal</item>
