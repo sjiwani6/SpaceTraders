@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="#51C7F2">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="475dp"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="5dp">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/popup"
+        android:layout_width="282dp"
+        android:layout_height="240dp"
         android:layout_centerInParent="true"
         android:layout_margin="30dp"
-        android:textSize="22sp"
-        android:text="This is a popup window."/>
+        android:text=""
+        android:textSize="22sp" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/ok_popup"
+        android:layout_width="41dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+        android:background="#51C7F2"
+        android:onClick="onItemButton"
+        android:text="OK"
+        android:textColor="#ffffff" />
+</LinearLayout>

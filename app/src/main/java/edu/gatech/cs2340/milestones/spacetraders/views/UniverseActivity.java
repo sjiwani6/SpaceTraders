@@ -3,7 +3,6 @@ package edu.gatech.cs2340.milestones.spacetraders.views;
 import android.app.Activity;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
-//import android.support.v7.app.AppCompatActivity;
 import edu.gatech.cs2340.milestones.spacetraders.R;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Items;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Planet;
@@ -77,10 +76,10 @@ public class UniverseActivity extends AppCompatActivity {
         viewModel = ViewModelProviders.of(this).get(ConfigurationViewModel.class);
         universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
 
-        Universe universe = universeViewModel.getUniverse();
+        //Universe universe = universeViewModel.getUniverse();
         player = viewModel.getPlayer();
         Ship ship = player.getPlayerShip();
-        HashMap<Items, int[]> cargo = ship.getCargo();
+        //HashMap<Items, int[]> cargo = ship.getCargo();
         Planet planet = player.getPlayerLocation();
         HashMap<Items, int[]> planetCargo = planet.getCargo();
         Log.d("planet cargo", planet.cargoString());
@@ -106,9 +105,6 @@ public class UniverseActivity extends AppCompatActivity {
     }
 
     public void onBuyPressed(View view) {
-//        ViewStub stub = (ViewStub) findViewById(R.id.stub);
-//        stub.setLayoutResource(R.layout.content_buy);
-        //View inflated = stub.inflate();
         View sellView = findViewById(R.id.sell_layout);
         sellView.setVisibility(View.GONE);
         View buyView = findViewById(R.id.buy_layout);
@@ -168,7 +164,8 @@ public class UniverseActivity extends AppCompatActivity {
         machField = findViewById(R.id.mach_count2);
         narcField = findViewById(R.id.narc_count2);
         roboField = findViewById(R.id.robo_count2);
-        String total = totalField.getText().toString().substring(0, totalField.getText().toString().indexOf("/"));
+        String total = totalField.getText().toString()
+            .substring(0, totalField.getText().toString().indexOf("/"));
         totalField = findViewById(R.id.display_capacity2);
         totalPrice = findViewById(R.id.display_total2);
         remaining = findViewById(R.id.credit_count2);

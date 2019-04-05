@@ -1,6 +1,9 @@
 package edu.gatech.cs2340.milestones.spacetraders.views;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +13,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
+
 import edu.gatech.cs2340.milestones.spacetraders.R;
 import android.arch.lifecycle.ViewModelProviders;
 
@@ -22,11 +27,11 @@ import edu.gatech.cs2340.milestones.spacetraders.viewmodel.UniverseViewModel;
 
 
 public class TravelActivity extends AppCompatActivity {
+
     private UniverseViewModel universeViewModel;
     private ConfigurationViewModel viewModel;
     private Player player;
     private Universe universe;
-    //private String[][] listPlanet;
     private int count = 0;
 
     private TextView planetName;
@@ -42,11 +47,20 @@ public class TravelActivity extends AppCompatActivity {
     private Button button;
     private Button wrap;
     private Button closeWindow;
+    private String[] randomEvent = {
+        "Illegal Trespassing", "Ape Attacked", "Found some credits", "Fuel refill","Pirates Attacked",
+            "Found Resource: "
+    };
+
+    AlertDialog.Builder builder;
+    Dialog myDialog;
 
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats);
+
+        //myDialog = new Dialog(getApplicationContext());
 
         planetName = findViewById(R.id.planet_name);
         name = findViewById(R.id.name_content);
@@ -71,7 +85,7 @@ public class TravelActivity extends AppCompatActivity {
         distance.setText(""+ (tempDist / 3) + "parsecs");
 
     }
-
+    //Change the name of the method
     public void onNext2Pressed(View view) {
         planetName = findViewById(R.id.planet_name);
         name = findViewById(R.id.name_content);
@@ -95,7 +109,7 @@ public class TravelActivity extends AppCompatActivity {
         button = findViewById(R.id.next_content);
         wrap = findViewById(R.id.warp_button);
 
-        final int tempfuel = player.getPlayerShip().getFuel();
+        final int tempFuel = player.getPlayerShip().getFuel();
         final int tempCredit = player.getCredit();
 
         final Planet[] planetList = universe.getUniverseMap().values().toArray(new Planet[10]);
@@ -107,7 +121,7 @@ public class TravelActivity extends AppCompatActivity {
         distance.setText("" + (dist/3) + " parsecs");
 
         Log.d(planetList[count].getName(), "dist is :"+ dist);
-        if (dist > 50 || player.getPlayerShip().getFuel() < (dist/3)) {
+        if (dist > 100 || player.getPlayerShip().getFuel() < (dist/3)) {
             wrap.setEnabled(false);
         } else {
 
@@ -118,6 +132,20 @@ public class TravelActivity extends AppCompatActivity {
             Log.d(planetList[count].getName(), "dist : Fuel :  is :"+ fuel);
         }
 
+//        builder = new AlertDialog.Builder(getApplicationContext());
+        builder = new AlertDialog.Builder(TravelActivity.this);
+        builder.setTitle("Illegal Trespassing");
+        builder.setMessage("You have been illegal trespassed and you have been"
+                + " arrested by the local police. " +
+                "You have to pay 50CR to get out of jail.");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                int tempCredit = player.getCredit() - 50;
+                player.setCredit(tempCredit);
+            }
+        });
+
+        builder.show();
         wrap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,11 +156,112 @@ public class TravelActivity extends AppCompatActivity {
                     count--;
                 }
                 player.setPlayerLocation(planetList[count]);
-                player.getPlayerShip().setFuel(tempfuel - (dist/3));
+                player.getPlayerShip().setFuel(tempFuel - (dist/3));
                 player.setCredit(tempCredit - ((dist/3)/10));
                 distance.setText(""+Travel.calcDistance(planetList[count], player) + "parsecs");
                 cost.setText("0 cr.");
                 count++;
+                Random rn = new Random();
+                int random = rn.nextInt(randomEvent.length);
+                String event = randomEvent[random];
+//                Button btw;
+//                myDialog.setContentView(R.layout.popup_window);
+//                btw = myDialog.findViewById(R.id.ok_popup);
+//
+//                btw.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        myDialog.dismiss();
+//                    }
+//                });
+//
+//                myDialog.show();
+
+//                private String[] randomEvent = {
+//                        "Illegal Trespassing", "Ape Attacked", "Found some credits", "Fuel refill","Pirates Attacked",
+//                        "Found Resource: "
+//                };
+
+//                if (event.equalsIgnoreCase("Illegal Trespassing")) {
+//
+//                    builder.setTitle("Illegal Trespassing");
+//                    builder.setMessage("You have been illegal trespassed and you have been"
+//                            + " arrested by the local police. " +
+//                            "You have to pay 50CR to get out of jail.");
+//                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int id) {
+//                            int tempCredit = player.getCredit() - 50;
+//                            player.setCredit(tempCredit);
+//                        }
+//                    });
+//                } else if (event.equalsIgnoreCase("Ape Attacked")) {
+//                    //AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+//                    builder.setTitle("Illegal Trespassing");
+//                    builder.setMessage("You have been illegal trespassed and you have been"
+//                            + " arrested by the local police. " +
+//                            "You have to pay 50CR to get out of jail.");
+//                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int id) {
+//                            int tempCredit = player.getCredit() - 50;
+//                            player.setCredit(tempCredit);
+//                        }
+//                    });
+//                } else if (event.equalsIgnoreCase("Found some credits")) {
+//                    //AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+//                    builder.setTitle("Illegal Trespassing");
+//                    builder.setMessage("You have been illegal trespassed and you have been"
+//                            + " arrested by the local police. " +
+//                            "You have to pay 50CR to get out of jail.");
+//                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int id) {
+//                            int tempCredit = player.getCredit() - 50;
+//                            player.setCredit(tempCredit);
+//                        }
+//                    });
+//                } else if (event.equalsIgnoreCase("Fuel refill")) {
+//                    //AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+//                    builder.setTitle("Illegal Trespassing");
+//                    builder.setMessage("You have been illegal trespassed and you have been"
+//                            + " arrested by the local police. " +
+//                            "You have to pay 50CR to get out of jail.");
+//                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int id) {
+//                            int tempCredit = player.getCredit() - 50;
+//                            player.setCredit(tempCredit);
+//                        }
+//                    });
+//                } else if (event.equalsIgnoreCase("Pirates Attacked")) {
+//                    //AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+//                    builder.setTitle("Illegal Trespassing");
+//                    builder.setMessage("You have been illegal trespassed and you have been"
+//                            + " arrested by the local police. " +
+//                            "You have to pay 50CR to get out of jail.");
+//                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int id) {
+//                            int tempCredit = player.getCredit() - 50;
+//                            player.setCredit(tempCredit);
+//                        }
+//                    });
+//                } else if (event.equalsIgnoreCase("Found Resource: ")) {
+//                    //AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+//                    builder.setTitle("Illegal Trespassing");
+//                    builder.setMessage("You have been illegal trespassed and you have been"
+//                            + " arrested by the local police. " +
+//                            "You have to pay 50CR to get out of jail.");
+//                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int id) {
+//                            int tempCredit = player.getCredit() - 50;
+//                            player.setCredit(tempCredit);
+//                        }
+//                    });
+//                }
+                Log.d("Random Event: ", ""+random);
+//                if (randomEvent) {
+//                    Log.d("Random Event: ", "true");
+//                } else {
+//                    Log.d("Random Event: ", "false");
+//                }
+
             }
         });
         count++;
