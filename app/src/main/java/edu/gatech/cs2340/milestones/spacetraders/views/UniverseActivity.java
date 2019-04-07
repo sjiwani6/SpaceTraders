@@ -517,7 +517,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ fursField.getText().toString().substring(0,fursField.getText().toString().indexOf("/"));
             price = playerCargo.get(Items.FURS)[1];
 
-            if (totalCount < capacity && Integer.parseInt(count) < playerCargo.get(Items.FURS)[0]
+            if (totalCount > 0 && Integer.parseInt(count) < playerCargo.get(Items.FURS)[0]
                     && (remainingCr - totalCR - price) > 0) {
                 fursField.setText(Integer.parseInt(count) + 1 +"/"+ playerCargo.get(Items.FURS)[0]);
                 purchaseTable.put(Items.FURS, Integer.parseInt(count) + 1);
@@ -530,7 +530,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ foodField.getText().toString().substring(0,foodField.getText().toString().indexOf("/"));
             price = playerCargo.get(Items.FOOD)[1];
 
-            if (totalCount < capacity && Integer.parseInt(count) < playerCargo.get(Items.FOOD)[0]
+            if (totalCount > 0 && Integer.parseInt(count) < playerCargo.get(Items.FOOD)[0]
                     && (remainingCr - totalCR - price) > 0) {
                 foodField.setText(Integer.parseInt(count) + 1 +"/"+ playerCargo.get(Items.FOOD)[0]);
                 purchaseTable.put(Items.FOOD, Integer.parseInt(count) + 1);
@@ -543,7 +543,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ oreField.getText().toString().substring(0,oreField.getText().toString().indexOf("/"));
             price = playerCargo.get(Items.ORE)[1];
 
-            if (totalCount < capacity && Integer.parseInt(count) < playerCargo.get(Items.ORE)[0]
+            if (totalCount > 0 && Integer.parseInt(count) < playerCargo.get(Items.ORE)[0]
                     && (remainingCr - totalCR - price) > 0) {
                 oreField.setText(Integer.parseInt(count) + 1 +"/"+ playerCargo.get(Items.ORE)[0]);
                 purchaseTable.put(Items.ORE, Integer.parseInt(count) + 1);
@@ -556,7 +556,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ gameField.getText().toString().substring(0,gameField.getText().toString().indexOf("/"));
             price = playerCargo.get(Items.GAMES)[1];
 
-            if (totalCount < capacity && Integer.parseInt(count) < playerCargo.get(Items.GAMES)[0]
+            if (totalCount > 0 && Integer.parseInt(count) < playerCargo.get(Items.GAMES)[0]
                     && (remainingCr - totalCR - price) > 0) {
                 gameField.setText(Integer.parseInt(count) + 1 +"/"+ playerCargo.get(Items.GAMES)[0]);
                 purchaseTable.put(Items.GAMES, Integer.parseInt(count) + 1);
@@ -569,7 +569,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ fireField.getText().toString().substring(0,fireField.getText().toString().indexOf("/"));
             price = playerCargo.get(Items.FIREARMS)[1];
 
-            if (totalCount < capacity && Integer.parseInt(count) < playerCargo.get(Items.FIREARMS)[0]
+            if (totalCount > 0 && Integer.parseInt(count) < playerCargo.get(Items.FIREARMS)[0]
                     && (remainingCr - totalCR - price) > 0) {
                 fireField.setText(Integer.parseInt(count) + 1 +"/"+ playerCargo.get(Items.FIREARMS)[0]);
                 purchaseTable.put(Items.FIREARMS, Integer.parseInt(count) + 1);
@@ -582,7 +582,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ medField.getText().toString().substring(0,medField.getText().toString().indexOf("/"));
             price = playerCargo.get(Items.MEDICINE)[1];
 
-            if (totalCount < capacity && Integer.parseInt(count) < playerCargo.get(Items.MEDICINE)[0]
+            if (totalCount > 0 && Integer.parseInt(count) < playerCargo.get(Items.MEDICINE)[0]
                     && (remainingCr - totalCR - price) > 0) {
                 medField.setText(Integer.parseInt(count) + 1 +"/"+ playerCargo.get(Items.MEDICINE)[0]);
                 purchaseTable.put(Items.MEDICINE, Integer.parseInt(count) + 1);
@@ -595,7 +595,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ machField.getText().toString().substring(0,machField.getText().toString().indexOf("/"));
             price = playerCargo.get(Items.MACHINES)[1];
 
-            if (totalCount < capacity && Integer.parseInt(count) < playerCargo.get(Items.MACHINES)[0]
+            if (totalCount > 0 && Integer.parseInt(count) < playerCargo.get(Items.MACHINES)[0]
                     && (remainingCr - totalCR - price) > 0) {
                 machField.setText(Integer.parseInt(count) + 1 +"/"+ playerCargo.get(Items.MACHINES)[0]);
                 purchaseTable.put(Items.MACHINES, Integer.parseInt(count) + 1);
@@ -608,7 +608,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ narcField.getText().toString().substring(0,narcField.getText().toString().indexOf("/"));
             price = playerCargo.get(Items.NARCOTICS)[1];
 
-            if (totalCount < capacity && Integer.parseInt(count) < playerCargo.get(Items.NARCOTICS)[0]
+            if (totalCount > 0 && Integer.parseInt(count) < playerCargo.get(Items.NARCOTICS)[0]
                     && (remainingCr - totalCR - price) > 0) {
                 narcField.setText(Integer.parseInt(count) + 1 +"/"+ playerCargo.get(Items.NARCOTICS)[0]);
                 purchaseTable.put(Items.NARCOTICS, Integer.parseInt(count) + 1);
@@ -621,7 +621,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ roboField.getText().toString().substring(0,roboField.getText().toString().indexOf("/"));
             price = playerCargo.get(Items.ROBOTS)[1];
 
-            if (totalCount < capacity && Integer.parseInt(count) < playerCargo.get(Items.ROBOTS)[0]
+            if (totalCount > 0 && Integer.parseInt(count) < playerCargo.get(Items.ROBOTS)[0]
                     && (remainingCr - totalCR - price) > 0) {
                 roboField.setText(Integer.parseInt(count) + 1 +"/"+ playerCargo.get(Items.ROBOTS)[0]);
                 purchaseTable.put(Items.ROBOTS, Integer.parseInt(count) + 1);
