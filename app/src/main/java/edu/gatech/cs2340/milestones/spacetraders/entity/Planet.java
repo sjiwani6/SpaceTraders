@@ -1,5 +1,9 @@
 package edu.gatech.cs2340.milestones.spacetraders.entity;
 
+import android.util.Log;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import edu.gatech.cs2340.milestones.spacetraders.model.EconomicModel;
@@ -9,10 +13,28 @@ public class Planet {
     private String description;
     private TechLevel techLevel;
     private Resources resources;
-    private HashMap<Items, int[]> cargo;
+    private HashMap<String, ArrayList<Integer>> cargo;
     private int x;
     private int y;
 
+    public Planet() {
+        this.name = "";
+        this.resources = null;
+        this.techLevel = null;
+        this.x = 0;
+        this.y = 0;
+        cargo = new HashMap<>();
+        cargo.put(Items.WATER.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.FURS.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.FOOD.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.ORE.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.GAMES.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.FIREARMS.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.MEDICINE.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.MACHINES.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.NARCOTICS.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.ROBOTS.getName(), new ArrayList<Integer>(2));
+    }
     public Planet(String name, Resources resources, TechLevel techLevel, int x, int y) {
         this.name = name;
         this.resources = resources;
@@ -20,16 +42,16 @@ public class Planet {
         this.x = x;
         this.y = y;
         cargo = new HashMap<>();
-        cargo.put(Items.WATER, new int[2]);
-        cargo.put(Items.FURS, new int[2]);
-        cargo.put(Items.FOOD, new int[2]);
-        cargo.put(Items.ORE, new int[2]);
-        cargo.put(Items.GAMES, new int[2]);
-        cargo.put(Items.FIREARMS, new int[2]);
-        cargo.put(Items.MEDICINE, new int[2]);
-        cargo.put(Items.MACHINES, new int[2]);
-        cargo.put(Items.NARCOTICS, new int[2]);
-        cargo.put(Items.ROBOTS, new int[2]);
+        cargo.put(Items.WATER.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.FURS.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.FOOD.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.ORE.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.GAMES.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.FIREARMS.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.MEDICINE.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.MACHINES.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.NARCOTICS.getName(), new ArrayList<Integer>(2));
+        cargo.put(Items.ROBOTS.getName(), new ArrayList<Integer>(2));
     }
 
     //getters
@@ -49,7 +71,7 @@ public class Planet {
         return name;
     }
 
-    public HashMap<Items, int[]> getCargo() {
+    public HashMap<String, ArrayList<Integer>> getCargo() {
         return cargo;
     }
 
@@ -84,9 +106,10 @@ public class Planet {
 
     public void setCargo() {
         cargo = EconomicModel.setPlanetCargo(this);
+        Log.d("got here?", cargo.toString());
     }
 
-    public void setCargo(HashMap<Items, int[]> cargo) {
+    public void setCargo(HashMap<String, ArrayList<Integer>> cargo) {
         this.cargo = cargo;
     }
     @Override
@@ -96,9 +119,11 @@ public class Planet {
     }
     public String cargoString() {
         String string = "";
-        for (Items car : cargo.keySet()) {
-            string += car.toString()+":";
-                string += "qt: "+ cargo.get(car)[0] + " pr:" + cargo.get(car)[1] + "\n";
+        for (String car : cargo.keySet()) {
+            Log.d("does it work", car);
+            Log.d("is it same?", Items.WATER.getName());
+            string += car+":";
+                string += "qt: "+ cargo.get(car).get(0) + " pr:" + cargo.get(car).get(1) + "\n";
         }
         return string;
     }

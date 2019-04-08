@@ -13,7 +13,16 @@
           "package_name": "edu.gatech.cs2340.milestones.spacetraders"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "650951610634-1ncu8uvhhvcftnp3djk7cn4bv4b3cicc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.gatech.cs2340.milestones.spacetraders",
+            "certificate_hash": "82e9e38186af1be5788d112a92c136669824d56d"
+          }
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyANJqJJXN_PQZEq9z4UOr1a1u0TSZbEG6M"

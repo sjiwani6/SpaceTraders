@@ -1,5 +1,6 @@
 package edu.gatech.cs2340.milestones.spacetraders.entity;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -20,7 +21,7 @@ public class Player {
     private Ship playerShip;
     private Planet playerLocation;
 
-    public static List<Difficulty> difficultyList = Arrays.asList(Difficulty.EASY, Difficulty.NORMAl, Difficulty.HARD, Difficulty.IMPOSSIBLE);
+    //public static List<Difficulty> difficultyList = Arrays.asList(Difficulty.EASY, Difficulty.NORMAl, Difficulty.HARD, Difficulty.IMPOSSIBLE);
 
     public Player(){
         this("Bob Waters");
@@ -103,10 +104,11 @@ public class Player {
         return playerLocation;
     }
 
-    public HashMap<Items, int[]> getCargo() {
+    public HashMap<String, ArrayList<Integer>> getCargo() {
         return playerShip.getCargo();
     }
-    public void setCargo(HashMap<Items, int[]> cargo) {
+
+    public void setCargo(HashMap<String, ArrayList<Integer>> cargo) {
         playerShip.setCargo(cargo);
     }
 
