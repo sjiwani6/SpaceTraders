@@ -30,33 +30,63 @@ public enum Items {
         this.Var = Var;
     }
 
+    /**
+     * This is the getter for name.
+     * @return returns the name.
+     */
     public String getName() {
         return name;
     }
-
+    /**
+     * This is the getter for base price.
+     * @return returns the base price.
+     */
     public int getBasePrice() {
         return basePrice;
     }
-
+    /**
+     * This is the getter for name.
+     * @return returns the name.
+     */
     public int getMTLP() {
         return MTLP;
     }
+    /**
+     * This is the getter for MTLU.
+     * @return returns the MTLU.
+     */
 
     public int getMTLU() {
         return MTLU;
     }
+    /**
+     * This is the getter for TTP.
+     * @return returns the TTP.
+     */
 
     public int getTTP() {
         return TTP;
     }
+    /**
+     * This is the getter for IPL.
+     * @return returns the IPL.
+     */
 
     public int getIPL() {
         return IPL;
     }
+    /**
+     * This is the getter for Var.
+     * @return returns the Var.
+     */
 
     public int getVar() {
         return Var;
     }
+    /**
+     * This is the toString method that returns the above in a string.
+     * @return returns the string representation.
+     */
 
     @Override
     public String toString() {

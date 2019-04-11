@@ -12,6 +12,11 @@ public class Universe {
     private Resources[] resourceList;
     private TechLevel[] techLevelList;
 
+    /**
+     * is the constructor foe the universe class.
+     * adds the name of the planet to an ArrayList.
+     * and then generates random coordinates for the planets.
+     */
     public Universe() {
         //150 x 100
         int i = 0;
@@ -48,10 +53,18 @@ public class Universe {
         }
     }
 
+    /**
+     * this is the getter for the map of the universe.
+     * @return the universe map.
+     */
     public HashMap<HashMap<Integer, Integer>, Planet> getUniverseMap() {
         return universeMap;
     }
 
+    /**
+     * this is the toString method for the universe map.
+     * @return the coordinate as a String.
+     */
     @Override
     public String toString() {
         String abc = "";

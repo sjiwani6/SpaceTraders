@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Player {
-
     private String name;
     //points
     private int pilotPoint;
@@ -22,9 +21,17 @@ public class Player {
 
     public static List<Difficulty> difficultyList = Arrays.asList(Difficulty.EASY, Difficulty.NORMAl, Difficulty.HARD, Difficulty.IMPOSSIBLE);
 
+    /**
+     * this is a reference method to the player.
+     */
     public Player(){
         this("Bob Waters");
     }
+
+    /**
+     * This method assigns all the skill points to the player.
+     * @param name passes in the name of the player.
+     */
     public Player(String name) {
         this.name = name;
         skillPoint = INITIAL_SKILL;
@@ -37,83 +44,154 @@ public class Player {
         playerShip = new Ship();
     }
 
+    /**
+     * this is the getter for the credit.
+     * @return returns the credit the player has.
+     */
     public int getCredit() {
         return credit;
     }
 
+    /**
+     * this is the setter for credit.
+     * @param credit passes in the credit.
+     */
     public void setCredit(int credit) {
         this.credit = credit;
     }
-
+    /**
+     * this is the getter for the engineer points.
+     * @return returns the engineer points the player has.
+     */
     public int getEngineerPoint() {
         return engineerPoint;
     }
-
+    /**
+     * this is the setter for engineer points.
+     * @param engineerPoint passes in the engineer point.
+     */
     public void setEngineerPoint(int engineerPoint) {
         this.engineerPoint = engineerPoint;
     }
-
+    /**
+     * this is the getter for the fighter point.
+     * @return returns the fighter point the player has.
+     */
     public int getFighterPoint() {
         return fighterPoint;
     }
-
+    /**
+     * this is the setter for fighter point.
+     * @param fighterPoint passes in the fighter point.
+     */
     public void setFighterPoint(int fighterPoint) {
         this.fighterPoint = fighterPoint;
     }
-
+    /**
+     * this is the getter for the pilot point.
+     * @return returns the pilot point the player has.
+     */
     public int getPilotPoint() {
         return pilotPoint;
     }
-
+    /**
+     * this is the setter for pilot points.
+     * @param pilotPoint passes in the pilot points.
+     */
     public void setPilotPoint(int pilotPoint) {
         this.pilotPoint = pilotPoint;
     }
-
+    /**
+     * this is the getter for the trade points.
+     * @return returns the trade point the player has.
+     */
     public int getTradePoint() {
         return tradePoint;
     }
-
+    /**
+     * this is the setter for trade points.
+     * @param tradePoint passes in the trade points.
+     */
     public void setTradePoint(int tradePoint) {
         this.tradePoint = tradePoint;
     }
-
+    /**
+     * this is the getter for the name.
+     * @return returns the name.
+     */
     public String getName() {
         return name;
     }
-
+    /**
+     * this is the setter for name.
+     * @param name passes in the name.
+     */
     public void setName(String name) {
         this.name = name;
     }
+    /**
+     * this is the getter for the skill point.
+     * @return returns the skill Points the player has.
+     */
     public int getSkillPoint() {
         return skillPoint;
     }
+    /**
+     * this is the setter for skill points.
+     * @param skillPoint passes in the skill points.
+     */
     public void setSkillPoint(int skillPoint) {
         this.skillPoint = skillPoint;
     }
-
+    /**
+     * this is the getter for the ship.
+     * @return returns the ship the player has.
+     */
     public Ship getPlayerShip() {
         return playerShip;
     }
-
+    /**
+     * this is the setter for ship.
+     * @param playerShip passes in the ship.
+     */
     public void setPlayerShip(Ship playerShip) {
         this.playerShip = playerShip;
     }
-
+    /**
+     * this is the getter for the location of the player.
+     * @return returns the location.
+     */
     public Planet getPlayerLocation() {
         return playerLocation;
     }
 
+    /**
+     * this is the hashmap that stores cargo of the player
+     * @return the cargo in the ship
+     */
+
     public HashMap<Items, int[]> getCargo() {
         return playerShip.getCargo();
     }
+    /**
+     * this is the setter for cargo.
+     * @param cargo passes in the cargo.
+     */
     public void setCargo(HashMap<Items, int[]> cargo) {
         playerShip.setCargo(cargo);
     }
-
+    /**
+     * this is the setter for player location.
+     * @param playerLocation passes in the player location.
+     */
     public void setPlayerLocation(Planet playerLocation) {
         this.playerLocation = playerLocation;
     }
 
+    /**
+     * this is the tostring method.
+     * @return the player skill points as a string.
+     */
     @Override
     public String toString() {
         return String.format("Player: %s, Pilot Points: %d, Engineer " +
