@@ -20,6 +20,20 @@ public enum Items {
     private int IPL;
     private int Var;
 
+    /**
+     * this is the constructor fot the items enum.
+     * @param name takes in a name param.
+     * @param MTLP is the Minimum Tech Level to Produce.
+     * @param MTLU is the Minimum Tech Level to
+     *             Use this resource.
+     * @param TTP is the Tech Level which produces
+     *           the most of this item.
+     * @param basePrice is the starting price of the items.
+     * @param IPL is the Price increase per tech level.
+     * @param Var is the variance which is the max
+     *            percentage the price can change from
+     *            the base price.
+     */
     Items (String name, int MTLP, int MTLU, int TTP, int basePrice, int IPL, int Var){
         this.name = name;
         this.MTLP = MTLP;

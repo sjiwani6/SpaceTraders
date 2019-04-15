@@ -11,6 +11,11 @@ import edu.gatech.cs2340.milestones.spacetraders.entity.TechLevel;
 
 public class EconomicModel {
 
+    /**
+     * Setter for planet cargo
+     * @param planet current planet
+     * @return current cargo
+     */
     public static HashMap<String, ArrayList<Integer>> setPlanetCargo(Planet planet) {
         Items[] items = Items.values();
         TechLevel level = planet.getTechLevel();

@@ -20,13 +20,13 @@ public class Player {
     private Planet playerLocation;
 
     /**
-     * this is a reference method to the player.
+     * this is a reference/constructor method to the player.
      */
     public Player(){
         this("Bob Waters");
     }
     /**
-     * This method assigns all the skill points to the player.
+     * This method/constructor assigns all the skill points to the player.
      * @param name passes in the name of the player.
      */
     public Player(String name) {
