@@ -1,8 +1,10 @@
-package edu.gatech.cs2340.milestones.spacetraders.entity;
+package edu.gatech.cs2340.milestones.spacetraders;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 
 import static org.junit.Assert.*;
 
