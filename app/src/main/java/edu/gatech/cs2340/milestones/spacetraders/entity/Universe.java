@@ -56,7 +56,6 @@ public class Universe {
             }
         }
     }
-    
     /**
      * this is the getter for the map of the universe.
      * @return the universe map.
