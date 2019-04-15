@@ -111,7 +111,7 @@ public class Universe {
      * @param i is an int number.
      * @return returns the coordinate value of y.
      */
-    private int randCoordinateY(int base, int range, int i) {
+    public int randCoordinateY(int base, int range, int i) {
         Random rand = new Random();
         int coord = rand.nextInt(range) + base;
         if (coord - 10 > 20 && coord + 10 < 80) {
