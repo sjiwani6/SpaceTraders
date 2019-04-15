@@ -155,7 +155,7 @@ public class Planet {
     }
     /**
      * This is the setter for cargo.
-     \     */
+     */
     public void setCargo() {
         cargo = EconomicModel.setPlanetCargo(this);
         Log.d("got here?", cargo.toString());
