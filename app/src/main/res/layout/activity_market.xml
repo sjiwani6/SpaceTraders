@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:padding="8dp"
-            android:text="Welcome to planet market!"
+            android:text="@string/welcome_to_planet_market"
             android:textColor="#51C7F2"
             android:textSize="30sp" />
     </RelativeLayout>
@@ -90,18 +90,18 @@
             android:layout_height="wrap_content"
             android:background="#51C7F2"
             android:onClick="onBuyPressed"
-            android:text="BUY"
+            android:text="@string/buy"
             android:textColor="#ffffff" />
 
         <Button
             android:id="@+id/sell_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@id/buy_tab"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@id/buy_tab"
             android:background="#51C7F2"
             android:onClick="onSellPressed"
-            android:text="SELL"
+            android:text="@string/sell"
             android:textColor="#ffffff" />
     </RelativeLayout>
 
