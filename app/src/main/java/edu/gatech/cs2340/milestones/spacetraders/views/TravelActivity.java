@@ -115,7 +115,7 @@ public class TravelActivity extends AppCompatActivity {
         final int tempCredit = player.getCredit();
 
         final Planet[] planetList = universe.getUniverseMap().values().toArray(new Planet[10]);
-        final Planet temp = planetList[count];
+        Planet temp = planetList[count];
         final int dist = Travel.calcDistance(temp, player);
         planetName.setText(temp.getName());
         name.setText(temp.getName());
@@ -123,6 +123,7 @@ public class TravelActivity extends AppCompatActivity {
         distance.setText("" + (dist/3) + " parsecs");
 
         Log.d(planetList[count].getName(), "dist is :"+ dist);
+        Log.d("count: ", "" + count);
         if (dist > 100 || player.getPlayerShip().getFuel() < (dist/3)) {
             wrap.setEnabled(false);
         } else {
@@ -149,15 +150,21 @@ public class TravelActivity extends AppCompatActivity {
 //
 //        builder.show();
         myDialog = new Dialog(this);
+
+        if (count == 9) {
+            count = 0;
+        }
+
         wrap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("gets here", ": true");
-                if (count == 0) {
-                    count = 9;
-                } else {
-                    count--;
-                }
+//                if (count == 0) {
+//                    count = 9;
+//                } else {
+//                    count--;
+//                }
+                Log.d(planetList[count].toString(), ": Planet ");
                 player.setPlayerLocation(planetList[count]);
                 player.getPlayerShip().setFuel(tempFuel - (dist/3));
                 player.setCredit(tempCredit - ((dist/3)/10));
@@ -276,7 +283,7 @@ public class TravelActivity extends AppCompatActivity {
             }
         });
         count++;
-        if (count == planetList.length) {
+        if (count == 9) {
             count = 0;
         }
     }
