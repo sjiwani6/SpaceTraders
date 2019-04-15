@@ -19,7 +19,6 @@ public class EconomicModel {
 
         int quantity = 0;
         int price = 0;
-        Log.d("setting cargo for", planet.getName());
         for (int i = 0; i < items.length; i++) {
             if(items[i].getMTLP() <= levelNum) {
                 if (items[i].getTTP() == levelNum) {

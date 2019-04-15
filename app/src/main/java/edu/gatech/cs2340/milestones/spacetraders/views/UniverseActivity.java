@@ -173,16 +173,16 @@ public class UniverseActivity extends AppCompatActivity {
         HashMap<String, ArrayList<Integer>> playerCargo = player.getCargo();
         Ship ship = player.getPlayerShip();
 
-        waterField.setText("0/"+ playerCargo.get(Items.WATER.toString()).get(0));
-        fursField.setText("0/"+ playerCargo.get(Items.FURS.toString()).get(0));
-        foodField.setText("0/"+ playerCargo.get(Items.FOOD.toString()).get(0));
-        oreField.setText("0/"+ playerCargo.get(Items.ORE.toString()).get(0));
-        gameField.setText("0/"+ playerCargo.get(Items.GAMES.toString()).get(0));
-        fireField.setText("0/"+ playerCargo.get(Items.FIREARMS.toString()).get(0));
-        medField.setText("0/"+ playerCargo.get(Items.MEDICINE.toString()).get(0));
-        machField.setText("0/"+ playerCargo.get(Items.MACHINES.toString()).get(0));
-        narcField.setText("0/"+ playerCargo.get(Items.NARCOTICS.toString()).get(0));
-        roboField.setText("0/"+ playerCargo.get(Items.ROBOTS.toString()).get(0));
+        waterField.setText("0/"+ playerCargo.get(Items.WATER.getName()).get(0));
+        fursField.setText("0/"+ playerCargo.get(Items.FURS.getName()).get(0));
+        foodField.setText("0/"+ playerCargo.get(Items.FOOD.getName()).get(0));
+        oreField.setText("0/"+ playerCargo.get(Items.ORE.getName()).get(0));
+        gameField.setText("0/"+ playerCargo.get(Items.GAMES.getName()).get(0));
+        fireField.setText("0/"+ playerCargo.get(Items.FIREARMS.getName()).get(0));
+        medField.setText("0/"+ playerCargo.get(Items.MEDICINE.getName()).get(0));
+        machField.setText("0/"+ playerCargo.get(Items.MACHINES.getName()).get(0));
+        narcField.setText("0/"+ playerCargo.get(Items.NARCOTICS.getName()).get(0));
+        roboField.setText("0/"+ playerCargo.get(Items.ROBOTS.getName()).get(0));
 
         totalField.setText(total + "/"+ ship.getShipType().getCapacity());
         totalPrice.setText("0Cr");
