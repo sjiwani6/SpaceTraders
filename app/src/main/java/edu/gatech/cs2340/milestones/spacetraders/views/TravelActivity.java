@@ -55,6 +55,10 @@ public class TravelActivity extends AppCompatActivity {
     AlertDialog.Builder builder;
     Dialog myDialog;
 
+    /**
+     * Layout setup
+     * @param savedInstanceState configuration
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -86,7 +90,12 @@ public class TravelActivity extends AppCompatActivity {
         distance.setText(""+ (tempDist / 3) + "parsecs");
 
     }
+
     //Change the name of the method
+    /**
+     * Action for travelling
+     * @param view
+     */
     public void onNext2Pressed(View view) {
         planetName = findViewById(R.id.planet_name);
         name = findViewById(R.id.name_content);
@@ -297,11 +306,21 @@ public class TravelActivity extends AppCompatActivity {
             count = 0;
         }
     }
+
+    /**
+     * Returning to travel start
+     * @param view
+     */
     public void onBackPressed(View view) {
         closeWindow = findViewById(R.id.back_button);
         Intent myIntent2 = new Intent(TravelActivity.this, StartGameActivity.class);
         startActivity(myIntent2);
     }
+
+    /**
+     * Action for warp
+     * @param view
+     */
     public void onWarpPressed(View view) {
         player = viewModel.getPlayer();
 

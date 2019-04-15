@@ -42,9 +42,8 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
     private TextView skillPoint;
 
     /**
-     * Gets the value associated with the given key.
-     *
-     * @param savedInstanceState 
+     * Sets up the new player screen
+     * @param savedInstanceState previous configuration
      */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +82,10 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
     }
 
+    /**
+     * Activity for page after player screen
+     * @param view
+     */
     public void onNextPressed(View view) {
         if (player.getSkillPoint() == 0) {
             player.setName(nameField.getText().toString());
@@ -109,6 +112,11 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
             Toast.makeText(getApplicationContext(), test,Toast.LENGTH_LONG).show();
         }
     }
+
+    /**
+     * Controls skill points
+     * @param view
+     */
     public void onSkillButton(View view) {
         int id = view.getId();
         //
@@ -195,6 +203,13 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         }
     }
 
+    /**
+     * Activity for selecting items
+     * @param parent
+     * @param view
+     * @param position of item
+     * @param id of item
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
@@ -202,6 +217,10 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * When nothing is selected
+     * @param parent
+     */
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 

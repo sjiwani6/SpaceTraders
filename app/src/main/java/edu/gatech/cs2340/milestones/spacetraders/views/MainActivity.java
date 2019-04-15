@@ -13,6 +13,11 @@ public class MainActivity extends AppCompatActivity {
 
     private View configView;
     private Button button;
+
+    /**
+     * Layout setup
+     * @param savedInstanceState previous configuration
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -29,11 +34,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    /**
+     * Pressed Activity
+     * @param view
+     */
     public void onPressed(View view) {
         Log.d("msg", "you got here");
         Intent intent = new Intent(this, ConfigurationActivity.class);
         startActivity(intent);
     }
+
+    /**
+     * Resume Activity
+     * @param view
+     */
     public void onResume(View view) {
         Log.d("resume:", "resume started");
 
