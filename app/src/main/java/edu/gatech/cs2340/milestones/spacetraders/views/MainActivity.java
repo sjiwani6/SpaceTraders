@@ -34,4 +34,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ConfigurationActivity.class);
         startActivity(intent);
     }
+    public void onResume(View view) {
+        Log.d("resume:", "resume started");
+
+        Intent intent = new Intent(this, StartGameActivity.class);
+        startActivity(intent);
+    }
 }

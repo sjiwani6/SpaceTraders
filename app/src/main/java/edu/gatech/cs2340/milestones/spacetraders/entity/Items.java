@@ -60,7 +60,7 @@ public enum Items {
 
     @Override
     public String toString() {
-        return super.toString();
+        return name;
     }
 }
 
