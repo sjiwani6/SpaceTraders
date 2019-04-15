@@ -45,7 +45,6 @@ public class Universe {
                         resourceList[(int) (Math.random() * resourceList.length)],
                         techLevelList[(int) (Math.random()* techLevelList.length)],
                         Integer.parseInt(x), Integer.parseInt(y));
-
                 planet.setCargo();
                 universeMap.put(coor, planet);
                 i++;
