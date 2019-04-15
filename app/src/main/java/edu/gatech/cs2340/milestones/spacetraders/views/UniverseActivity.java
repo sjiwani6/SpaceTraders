@@ -107,7 +107,7 @@ public class UniverseActivity extends AppCompatActivity {
 
     /**
      * Action for buying
-     * @param view
+     * @param view is the view parameter.
      */
     public void onBuyPressed(View view) {
         View sellView = findViewById(R.id.sell_layout);
