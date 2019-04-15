@@ -17,12 +17,19 @@ class Repository {
     private Universe universe;
     private DatabaseReference mDatabase;
 
-
+    /**
+     * Constructor for repostiory
+     */
     public Repository() {
         player = new Player();
         universe = new Universe();
 
     }
+
+    /**
+     * Getter for the player
+     * @return player
+     */
     public Player getPlayer() {
 //        mDatabase = FirebaseDatabase.getInstance().getReference();
 //        ValueEventListener playerListener = new ValueEventListener() {
@@ -48,6 +55,10 @@ class Repository {
     }
 
 
+    /**
+     * Getter for unidverse from database
+     * @return universe from database
+     */
     public Universe getUniverse() {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         ValueEventListener universeListener = new ValueEventListener() {
@@ -70,6 +81,10 @@ class Repository {
         return universe;
     }
 
+    /**
+     * Setter for the player
+     * @param player the settings it will be updated to
+     */
     public void setPlayer(Player player) {
         Log.d("does data base set player:", player.toString());
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -82,6 +97,10 @@ class Repository {
         this.player = player;
     }
 
+    /**
+     * Setter for the universe
+     * @param universe the settings the universe will be updated to
+     */
     public void setUniverse(Universe universe) {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("universe").child("1").setValue(universe);
@@ -89,6 +108,10 @@ class Repository {
         this.universe = universe;
     }
 
+    /**
+     * Updating the player to the passed player's settings
+     * @param player whose settings the player's settings will be changed to
+     */
     public void updatePlayer(Player player) {
         player.setCredit(player.getCredit());
         player.setEngineerPoint(player.getEngineerPoint());

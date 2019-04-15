@@ -10,6 +10,11 @@ public class Universe {
     private HashMap<String, Planet> universeMap;
     private HashMap<String, String> coordinate;
 
+    /**
+     * is the constructor foe the universe class.
+     * adds the name of the planet to an ArrayList.
+     * and then generates random coordinates for the planets.
+     */
     public Universe() {
         //150 x 100
         int i = 0;
@@ -50,11 +55,17 @@ public class Universe {
             }
         }
     }
-
+    /**
+     * this is the getter for the map of the universe.
+     * @return the universe map.
+     */
     public HashMap<String, Planet> getUniverseMap() {
         return universeMap;
     }
-
+    /**
+     * this is the toString method for the universe map.
+     * @return the coordinate as a String.
+     */
     @Override
     public String toString() {
         String abc = "";
@@ -68,6 +79,16 @@ public class Universe {
         }
         return abc;
     }
+
+    /**
+     * this method generates a random x coordinate for the
+     * universe map.
+     * @param base is the base parameter that is added
+     *            to the rand num.
+     * @param range is the range param.
+     * @param i is an int number.
+     * @return returns the coordinate value of x.
+     */
     private int randCoordinateX(int base, int range, int i) {
         Random rand = new Random();
         int coord = rand.nextInt(range) + base;
@@ -81,6 +102,15 @@ public class Universe {
         }
         return coord;
     }
+    /**
+     * this method generates a random y coordinate for the
+     * universe map.
+     * @param base is the base parameter that is added
+     *            to the rand num.
+     * @param range is the range param.
+     * @param i is an int number.
+     * @return returns the coordinate value of y.
+     */
     private int randCoordinateY(int base, int range, int i) {
         Random rand = new Random();
         int coord = rand.nextInt(range) + base;
