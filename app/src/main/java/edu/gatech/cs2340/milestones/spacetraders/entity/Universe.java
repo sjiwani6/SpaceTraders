@@ -10,6 +10,7 @@ public class Universe {
     private String universeName;
     private HashMap<String, Planet> universeMap;
     private HashMap<String, String> coordinate;
+
     /**
      * is the constructor foe the universe class.
      * adds the name of the planet to an ArrayList.
@@ -55,6 +56,7 @@ public class Universe {
             }
         }
     }
+    
     /**
      * this is the getter for the map of the universe.
      * @return the universe map.
