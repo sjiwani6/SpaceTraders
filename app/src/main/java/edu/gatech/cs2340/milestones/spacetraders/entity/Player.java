@@ -1,9 +1,7 @@
 package edu.gatech.cs2340.milestones.spacetraders.entity;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
 public class Player {
 
@@ -191,8 +189,8 @@ public class Player {
      */
     @Override
     public String toString() {
-        return String.format("Player: %s, Pilot Points: %d, Engineer " +
-                "Points: %d, Trade Points: %d, Fighter  Points: %d, Credit: %d, Location: %s", name,
-                pilotPoint, engineerPoint,tradePoint,fighterPoint,credit, playerLocation.getName());
+        return "Player: "+name+", Pilot Points: "+pilotPoint+", Engineer " +
+                "Points: "+engineerPoint+", Trade Points: "+tradePoint+", Fighter  Points: "
+                +fighterPoint+", Credit: "+credit+", Location: "+playerLocation.getName();
     }
 }

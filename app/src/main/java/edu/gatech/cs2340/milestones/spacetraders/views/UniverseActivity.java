@@ -1,14 +1,11 @@
 package edu.gatech.cs2340.milestones.spacetraders.views;
 
-import android.app.Activity;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.Intent;
 import edu.gatech.cs2340.milestones.spacetraders.R;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Items;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Planet;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Ship;
-import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 import edu.gatech.cs2340.milestones.spacetraders.model.Market;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewModel;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.UniverseViewModel;
@@ -17,18 +14,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewStub;
-import android.widget.Button;
-import android.widget.RelativeLayout;
+
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Random;
 
 public class UniverseActivity extends AppCompatActivity {
+
     private Items item;
     private UniverseViewModel universeViewModel;
+
     private ConfigurationViewModel viewModel;
     private HashMap<Items, Integer> purchaseTable;
     private Player player;
@@ -981,7 +977,7 @@ public class UniverseActivity extends AppCompatActivity {
 
     private int varienceCalc(int var, int basePrice) {
         double varience = 0;
-        int coinFlip = (int)Math.random();
+        int coinFlip = (int) (Math.random() * 2);
         double randomVar = (Math.random() * var) / 100;
         if (coinFlip == 1) {
             varience = basePrice * -randomVar;

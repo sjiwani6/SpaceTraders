@@ -2,7 +2,6 @@ package edu.gatech.cs2340.milestones.spacetraders.entity;
 
 import android.util.Log;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
