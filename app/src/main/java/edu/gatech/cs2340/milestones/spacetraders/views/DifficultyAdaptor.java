@@ -13,7 +13,8 @@ import java.util.List;
 import edu.gatech.cs2340.milestones.spacetraders.R;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Difficulty;
 
-public class DifficultyAdaptor extends RecyclerView.Adapter<DifficultyAdaptor.DifficultyViewHolder> {
+public class DifficultyAdaptor
+        extends RecyclerView.Adapter<DifficultyAdaptor.DifficultyViewHolder> {
     private List<Difficulty> difficulties = new ArrayList<>();
 
     private OnDifficultyClickListener listener;
@@ -29,7 +30,8 @@ public class DifficultyAdaptor extends RecyclerView.Adapter<DifficultyAdaptor.Di
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DifficultyAdaptor.DifficultyViewHolder difficultyViewHolder, int position) {
+    public void onBindViewHolder(@NonNull DifficultyAdaptor.DifficultyViewHolder
+                                             difficultyViewHolder, int position) {
         Difficulty list = difficulties.get(position);
     }
 

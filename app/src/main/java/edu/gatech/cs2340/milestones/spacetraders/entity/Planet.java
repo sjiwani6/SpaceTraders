@@ -114,7 +114,8 @@ public class Planet {
     }
     @Override
     public String toString() {
-        return "Name: "+ name +" Resources: " + resources.toString() + " Tech Level: " + techLevel.toString() + " "+
+        return "Name: "+ name +" Resources: " + resources.toString() + " Tech Level: "
+                + techLevel.toString() + " "+
                     techLevel.getTechLevelNum();
     }
     public String cargoString() {

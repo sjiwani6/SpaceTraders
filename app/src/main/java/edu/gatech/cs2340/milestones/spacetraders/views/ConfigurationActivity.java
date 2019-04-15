@@ -27,7 +27,8 @@ import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewModel;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.UniverseViewModel;
 
-public class ConfigurationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class ConfigurationActivity extends AppCompatActivity
+        implements AdapterView.OnItemSelectedListener {
 
     private ConfigurationViewModel viewModel;
     private UniverseViewModel universeViewModel;
@@ -69,7 +70,9 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         tradePoint.setText(""+player.getTradePoint());
         fighterPoint.setText(""+player.getFighterPoint());
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.difficulty1, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter
+                .createFromResource(this, R.array.difficulty1
+                        , android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         diffSpinner.setAdapter(adapter);
         diffSpinner.setOnItemSelectedListener(this);
