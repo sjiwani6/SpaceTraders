@@ -8,7 +8,7 @@
     android:background="@drawable/starsback"
     android:padding="10dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".views.UniverseActivity">
+    tools:context=".views.TravelActivity">
 
     <RelativeLayout
         android:id="@+id/name_field"
@@ -267,7 +267,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#51C7F2"
-            android:onClick="onBuyPressed"
             android:text=" Average Price List "
             android:textColor="#ffffff" />
 
