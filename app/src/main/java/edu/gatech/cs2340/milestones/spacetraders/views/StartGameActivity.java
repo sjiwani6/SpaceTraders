@@ -43,7 +43,7 @@ public class StartGameActivity extends AppCompatActivity {
 
         final TextView nameField = findViewById(R.id.name);
         final TextView pilotPoint = findViewById(R.id.p_count);
-        final TextView enginnerPoint = findViewById(R.id.e_count);
+        final TextView engineerPoint = findViewById(R.id.e_count);
         final TextView tradePoint = findViewById(R.id.t_count);
         final TextView fighterPoint = findViewById(R.id.f_count);
 
@@ -60,7 +60,7 @@ public class StartGameActivity extends AppCompatActivity {
                 //ineed to handle here
                 nameField.setText(player.getName());
                 pilotPoint.setText(""+player.getPilotPoint());
-                enginnerPoint.setText(""+player.getEngineerPoint());
+                engineerPoint.setText(""+player.getEngineerPoint());
                 tradePoint.setText(""+player.getTradePoint());
                 fighterPoint.setText(""+player.getFighterPoint());
                 viewModel.addPlayer(player);
@@ -93,11 +93,6 @@ public class StartGameActivity extends AppCompatActivity {
         mDatabase.child("player").child("1").addListenerForSingleValueEvent(playerListener);
         mDatabase.child("universe").child("1").addListenerForSingleValueEvent(universeListener);
 
-//        nameField.setText(player.getName());
-//        pilotPoint.setText(""+player.getPilotPoint());
-//        enginnerPoint.setText(""+player.getEngineerPoint());
-//        tradePoint.setText(""+player.getTradePoint());
-//        fighterPoint.setText(""+player.getFighterPoint());
 
     }
     public void onMarket(View view) {
