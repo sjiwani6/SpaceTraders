@@ -9,6 +9,10 @@ public enum Difficulty {
 
     private String diffLevel;
 
+    /**
+     * this is the constructor for the difficulty class.
+     * @param diffLevel takes in the difficulty level.
+     */
     Difficulty(String diffLevel){
         this.diffLevel = diffLevel;
     }
