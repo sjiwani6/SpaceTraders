@@ -40,6 +40,7 @@ public class Universe {
             if (!coordinate.containsKey(x) || !coordinate.containsValue(y)) {
                 coordinate.put(x, y);
                 String coor = "("+ x + ", " + y + ")";
+
                 Planet planet = new Planet(planetList.get(i),
                         resourceList[(int) (Math.random() * resourceList.length)],
                         techLevelList[(int) (Math.random()* techLevelList.length)],

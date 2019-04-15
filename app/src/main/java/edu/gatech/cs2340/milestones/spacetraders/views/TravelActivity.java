@@ -190,9 +190,11 @@ public class TravelActivity extends AppCompatActivity {
                 btw = myDialog.findViewById(R.id.ok_popup);
                 if ( Math.random() <= 0.3) {
                     if (event.equalsIgnoreCase("Illegal Trespassing")) {
+
+
                         String message = "You have been illegal trespassed and you have been " +
-                                "arrested by the local police. You have to " +
-                                "pay 50CR to get out of jail.";
+                                "arrested by the local police. You have to pay 50CR to get " +
+                                "out of jail.";
                         eventTitle.setText("Illegal Trespassing");
                         eventMessage.setText(message);
                         btw.setOnClickListener(new View.OnClickListener() {
@@ -237,11 +239,9 @@ public class TravelActivity extends AppCompatActivity {
                         myDialog.show();
                     } else if (event.equalsIgnoreCase("Fuel refill")) {
                         int tempFuel = 1;
-                        if (player.getPlayerShip().getFuel() < player.
-                                getPlayerShip()
+
+                        if (player.getPlayerShip().getFuel() < player.getPlayerShip()
                                 .getINITIAL_FUEL()) {
-                            //tempFuel = player.getPlayerShip()
-                            // .getINITIAL_FUEL() - player.getPlayerShip().getFuel();
                             tempFuel = 10;
                         }
                         String message = "You found " + tempFuel +"gallon of SpaceShip's fuel ";
@@ -256,8 +256,10 @@ public class TravelActivity extends AppCompatActivity {
                         });
                         myDialog.show();
                     } else if (event.equalsIgnoreCase("Pirates Attacked")) {
-                        String message = "Pirates attacked your ship and stole" +
-                                " 25CR from your vault";
+
+                        String message = "Pirates attacked your ship " +
+                                "and stole 25CR from your vault";
+
                         eventMessage.setText(message);
                         eventTitle.setText("Pirates Attacked");
                         btw.setOnClickListener(new View.OnClickListener() {

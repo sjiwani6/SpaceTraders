@@ -21,8 +21,6 @@ public class Player {
     private Ship playerShip;
     private Planet playerLocation;
 
-    //public static List<Difficulty> difficultyList =
-    // Arrays.asList(Difficulty.EASY, Difficulty.NORMAl, Difficulty.HARD, Difficulty.IMPOSSIBLE);
 
     public Player(){
         this("Bob Waters");

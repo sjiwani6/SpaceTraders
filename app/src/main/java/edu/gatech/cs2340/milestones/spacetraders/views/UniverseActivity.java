@@ -122,8 +122,9 @@ public class UniverseActivity extends AppCompatActivity {
         narcField = findViewById(R.id.narc_count);
         roboField = findViewById(R.id.robo_count);
 
-        String total = totalField.getText().toString().substring(0, totalField.getText()
-                .toString().indexOf("/"));
+
+        String total = totalField.getText().toString().substring(
+                0, totalField.getText().toString().indexOf("/"));
         totalField = findViewById(R.id.display_capacity);
         totalPrice = findViewById(R.id.display_total);
         remaining = findViewById(R.id.credit_count);
@@ -213,20 +214,22 @@ public class UniverseActivity extends AppCompatActivity {
         String count;
         int totalCR = Integer.parseInt(totalPrice.getText().toString()
                 .substring(0, totalPrice.getText().toString().indexOf("C")));
+
         int remainingCr = Integer.parseInt(remaining.getText().toString());
         int price;
 
         if (id == R.id.water_plus) {
 
-            count = ""+ waterField.getText().toString().substring(0,waterField.getText()
-                    .toString().indexOf("/"));
+            count = ""+ waterField.getText().toString().substring(
+                    0,waterField.getText().toString().indexOf("/"));
             price = planetCargo.get(Items.WATER.getName()).get(1);
 
             if (totalCount < capacity &&
                     Integer.parseInt(count) < planetCargo.get(Items.WATER.getName()).get(0)
                 && (remainingCr - totalCR - price) > 0) {
-                waterField.setText(Integer.parseInt(count) + 1 +"/"
-                        + planetCargo.get(Items.WATER.getName()).get(0));
+
+                waterField.setText(Integer.parseInt(count) + 1 +"/"+ planetCargo
+                    .get(Items.WATER.getName()).get(0));
                 purchaseTable.put(Items.WATER, Integer.parseInt(count) + 1);
                 totalField.setText(totalCount + 1 + "/"+capacity);
                 totalPrice.setText(totalCR + price + "Cr");
