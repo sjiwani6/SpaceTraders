@@ -42,7 +42,8 @@ public class Universe {
                 String coor = "("+ x + ", " + y + ")";
                 Planet planet = new Planet(planetList.get(i),
                         resourceList[(int) (Math.random() * resourceList.length)],
-                        techLevelList[(int) (Math.random()* techLevelList.length)], Integer.parseInt(x), Integer.parseInt(y));
+                        techLevelList[(int) (Math.random()* techLevelList.length)],
+                        Integer.parseInt(x), Integer.parseInt(y));
                 planet.setCargo();
                 universeMap.put(coor, planet);
                 i++;
