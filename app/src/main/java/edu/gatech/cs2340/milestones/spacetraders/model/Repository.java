@@ -6,7 +6,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.gson.Gson;
 
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;

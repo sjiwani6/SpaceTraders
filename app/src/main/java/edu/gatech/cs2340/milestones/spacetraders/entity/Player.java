@@ -1,9 +1,7 @@
 package edu.gatech.cs2340.milestones.spacetraders.entity;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
 public class Player {
 

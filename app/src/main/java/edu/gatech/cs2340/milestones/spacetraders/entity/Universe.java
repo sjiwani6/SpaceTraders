@@ -3,7 +3,6 @@ package edu.gatech.cs2340.milestones.spacetraders.entity;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
-import java.util.Set;
 
 public class Universe {
 

@@ -1,6 +1,5 @@
 package edu.gatech.cs2340.milestones.spacetraders.model;
 
-import android.util.Log;
 
 import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 
