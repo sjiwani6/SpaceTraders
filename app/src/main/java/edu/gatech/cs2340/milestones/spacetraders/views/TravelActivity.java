@@ -86,7 +86,7 @@ public class TravelActivity extends AppCompatActivity {
         planetName.setText(player.getPlayerLocation().getName());
         name.setText(player.getPlayerLocation().getName());
         techLevel.setText(player.getPlayerLocation().getTechLevel().toString());
-        int tempDist = Travel.calcDistance(player.getPlayerLocation(),player);
+        int tempDist = Travel.calcDistance(player.getPlayerLocation(),player.getPlayerLocation());
         distance.setText(""+ (tempDist / 3) + "parsecs");
 
     }
@@ -126,7 +126,7 @@ public class TravelActivity extends AppCompatActivity {
             count = 0;
         }
         final Planet temp = planetList[count];
-        final int dist = Travel.calcDistance(temp, player);
+        final int dist = Travel.calcDistance(temp, player.getPlayerLocation());
         planetName.setText(temp.getName());
         name.setText(temp.getName());
         techLevel.setText(temp.getTechLevel().toString());
@@ -178,7 +178,7 @@ public class TravelActivity extends AppCompatActivity {
                 player.setPlayerLocation(planetList[count]);
                 player.getPlayerShip().setFuel(tempFuel - (dist/3));
                 player.setCredit(tempCredit - ((dist/3)/10));
-                distance.setText(""+Travel.calcDistance(planetList[count], player) + "parsecs");
+                distance.setText(""+Travel.calcDistance(planetList[count], player.getPlayerLocation()) + "parsecs");
                 cost.setText("0 cr.");
                 count++;
 
