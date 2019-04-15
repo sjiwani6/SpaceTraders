@@ -89,7 +89,7 @@ public class Universe {
      * @param i is an int number.
      * @return returns the coordinate value of x.
      */
-    private int randCoordinateX(int base, int range, int i) {
+    public int randCoordinateX(int base, int range, int i) {
         Random rand = new Random();
         int coord = rand.nextInt(range) + base;
         if (coord - 10 > 15 && coord + 10 < 135) {
