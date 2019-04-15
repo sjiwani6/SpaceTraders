@@ -191,10 +191,10 @@ public class TravelActivity extends AppCompatActivity {
                 if ( Math.random() <= 0.3) {
                     if (event.equalsIgnoreCase("Illegal Trespassing")) {
 
+
                         String message = "You have been illegal trespassed and you have been " +
                                 "arrested by the local police. You have to pay 50CR to get " +
                                 "out of jail.";
-
                         eventTitle.setText("Illegal Trespassing");
                         eventMessage.setText(message);
                         btw.setOnClickListener(new View.OnClickListener() {
@@ -210,7 +210,6 @@ public class TravelActivity extends AppCompatActivity {
                     } else if (event.equalsIgnoreCase("Ape Attacked")) {
                         String message = "Your ship has been attacked by Ape from Planet Vegeta. " +
                                 "Need 20CR to repair the ship";
-
                         eventMessage.setText(message);
                         eventTitle.setText("Ape Attacked");
                         btw.setOnClickListener(new View.OnClickListener() {
@@ -240,6 +239,7 @@ public class TravelActivity extends AppCompatActivity {
                         myDialog.show();
                     } else if (event.equalsIgnoreCase("Fuel refill")) {
                         int tempFuel = 1;
+
                         if (player.getPlayerShip().getFuel() < player.getPlayerShip()
                                 .getINITIAL_FUEL()) {
                             tempFuel = 10;
@@ -256,6 +256,7 @@ public class TravelActivity extends AppCompatActivity {
                         });
                         myDialog.show();
                     } else if (event.equalsIgnoreCase("Pirates Attacked")) {
+
                         String message = "Pirates attacked your ship " +
                                 "and stole 25CR from your vault";
 

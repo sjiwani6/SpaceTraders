@@ -21,6 +21,7 @@ public class Player {
     private Ship playerShip;
     private Planet playerLocation;
 
+
     public Player(){
         this("Bob Waters");
     }

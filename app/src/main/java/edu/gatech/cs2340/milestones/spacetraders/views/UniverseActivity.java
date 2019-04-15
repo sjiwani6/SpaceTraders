@@ -122,6 +122,7 @@ public class UniverseActivity extends AppCompatActivity {
         narcField = findViewById(R.id.narc_count);
         roboField = findViewById(R.id.robo_count);
 
+
         String total = totalField.getText().toString().substring(
                 0, totalField.getText().toString().indexOf("/"));
         totalField = findViewById(R.id.display_capacity);
@@ -207,20 +208,20 @@ public class UniverseActivity extends AppCompatActivity {
         Ship ship = player.getPlayerShip();
 
         int capacity = ship.getShipType().getCapacity();
-        int totalCount = Integer.parseInt(""+totalField.getText().toString().substring(
-                0, totalField.getText().toString().indexOf("/")));
+        int totalCount = Integer.parseInt(""+totalField.getText().toString()
+                .substring(0, totalField.getText().toString().indexOf("/")));
 
         String count;
-        int totalCR = Integer.parseInt(totalPrice.getText().toString().substring(
-                0, totalPrice.getText().toString().indexOf("C")));
+        int totalCR = Integer.parseInt(totalPrice.getText().toString()
+                .substring(0, totalPrice.getText().toString().indexOf("C")));
 
         int remainingCr = Integer.parseInt(remaining.getText().toString());
         int price;
 
         if (id == R.id.water_plus) {
+
             count = ""+ waterField.getText().toString().substring(
                     0,waterField.getText().toString().indexOf("/"));
-
             price = planetCargo.get(Items.WATER.getName()).get(1);
 
             if (totalCount < capacity && Integer.parseInt(count) <
@@ -937,7 +938,7 @@ public class UniverseActivity extends AppCompatActivity {
             if (totalCount > 0 && Integer.parseInt(count) > 0) {
                 roboField.setText(Integer.parseInt(count) - 1 +"/"+
                         playerCargo.get(Items.ROBOTS.getName()).get(0));
-                
+
                 purchaseTable.put(Items.ROBOTS, Integer.parseInt(count) - 1);
 
                 totalField.setText(totalCount + 1 + "/"+capacity);
