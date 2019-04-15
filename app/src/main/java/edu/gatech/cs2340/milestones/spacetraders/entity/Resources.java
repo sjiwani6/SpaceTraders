@@ -18,7 +18,7 @@ enum Resources {
     private String resources;
 
     /**
-     * this is the constructor for the class.
+     * this is the constructor for the resources enum.
      * @param resources passes in the resources.
      */
     Resources(String resources) {
