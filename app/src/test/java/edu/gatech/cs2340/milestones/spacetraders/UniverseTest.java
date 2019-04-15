@@ -56,7 +56,8 @@ public class UniverseTest {
         int i = 1;
         while (i <= 10) {
             coordinateY3 = testCoordinate.randCoordinateY(20,60,i);
-            assertTrue("coordinateY3 is out of range ", coordinateY3 <= 80 && coordinateY3 >= 20);
+            assertTrue("coordinateY3 is out of range ", coordinateY3 <= 80);
+            assertTrue("coordinateY3 is out of range ", coordinateY3 >= 20);
             i++;
         }
 
@@ -66,7 +67,8 @@ public class UniverseTest {
         int i = 1;
         while (i <= 10) {
             coordinateY4 = testCoordinate.randCoordinateY(81,100,i);
-            assertEquals(false, coordinateY4 <=80 && coordinateY4 >= 20);
+            assertEquals(false, coordinateY4 <= 80);
+            assertEquals(false, coordinateY4 >= 20);
             i++;
         }
 
