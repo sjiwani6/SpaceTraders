@@ -126,6 +126,7 @@ public class TravelActivity extends AppCompatActivity {
         distance.setText("" + (dist/3) + " parsecs");
 
         Log.d(planetList[count].getName(), "dist is :"+ dist);
+        Log.d("count: ", "" + count);
         if (dist > 100 || player.getPlayerShip().getFuel() < (dist/3)) {
             wrap.setEnabled(false);
         } else {
@@ -152,6 +153,11 @@ public class TravelActivity extends AppCompatActivity {
 //
 //        builder.show();
         myDialog = new Dialog(this);
+
+        if (count == 9) {
+            count = 0;
+        }
+
         wrap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -280,7 +286,7 @@ public class TravelActivity extends AppCompatActivity {
             }
         });
         count++;
-        if (count == planetList.length) {
+        if (count == 9) {
             count = 0;
         }
     }
