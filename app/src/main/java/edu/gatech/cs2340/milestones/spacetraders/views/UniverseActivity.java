@@ -45,6 +45,10 @@ public class UniverseActivity extends AppCompatActivity {
     private TextView totalPrice;
     private TextView remaining;
 
+    /**
+     * Layout setup
+     * @param savedInstanceState configuration
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,6 +105,10 @@ public class UniverseActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Action for buying
+     * @param view
+     */
     public void onBuyPressed(View view) {
         View sellView = findViewById(R.id.sell_layout);
         sellView.setVisibility(View.GONE);
@@ -145,6 +153,11 @@ public class UniverseActivity extends AppCompatActivity {
         totalPrice.setText("0Cr");
         remaining.setText(""+player.getCredit());
     }
+
+    /**
+     * Action for selling
+     * @param view
+     */
     public void onSellPressed(View view) {
 
         View buyView = findViewById(R.id.buy_layout);
@@ -195,6 +208,10 @@ public class UniverseActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * When an item is selected
+     * @param view
+     */
     public void onItemButton(View view) {
 
         int id = view.getId();
@@ -581,6 +598,11 @@ public class UniverseActivity extends AppCompatActivity {
             viewModel.updatePlayer(player);
         }
     }
+
+    /**
+     * When item is selected
+     * @param view
+     */
     public void onItemButton2(View view) {
 
         int id = view.getId();
@@ -970,11 +992,21 @@ public class UniverseActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Action for trading
+     * @param view
+     */
     public void onTradePressed(View view) {
         int id = view.getId();
 
     }
 
+    /**
+     * Calculating varience
+     * @param var varience
+     * @param basePrice base price for item
+     * @return the calculated varience
+     */
     private int varienceCalc(int var, int basePrice) {
         double varience = 0;
         int coinFlip = (int) (Math.random() * 2);
@@ -987,6 +1019,10 @@ public class UniverseActivity extends AppCompatActivity {
             return (int)varience;
         }
     }
+
+    /**
+     * Clear purchase
+     */
     private void clearPurch() {
         Items[] items = Items.values();
         for (int i = 0; i < items.length; i++) {

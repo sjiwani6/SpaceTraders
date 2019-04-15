@@ -20,13 +20,13 @@ public class Player {
     private Planet playerLocation;
 
     /**
-     * this is a reference method to the player.
+     * this is a reference/constructor method to the player.
      */
     public Player(){
         this("Bob Waters");
     }
     /**
-     * This method assigns all the skill points to the player.
+     * This method/constructor assigns all the skill points to the player.
      * @param name passes in the name of the player.
      */
     public Player(String name) {
@@ -189,8 +189,8 @@ public class Player {
      */
     @Override
     public String toString() {
-        return String.format("Player: %s, Pilot Points: %d, Engineer " +
-                "Points: %d, Trade Points: %d, Fighter  Points: %d, Credit: %d, Location: %s", name,
-                pilotPoint, engineerPoint,tradePoint,fighterPoint,credit, playerLocation.getName());
+        return "Player: "+name+", Pilot Points: "+pilotPoint+", Engineer " +
+                "Points: "+engineerPoint+", Trade Points: "+tradePoint+", Fighter  Points: "
+                +fighterPoint+", Credit: "+credit+", Location: "+playerLocation.getName();
     }
 }

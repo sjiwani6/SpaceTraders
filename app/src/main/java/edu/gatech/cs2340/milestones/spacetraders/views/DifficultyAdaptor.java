@@ -20,7 +20,12 @@ public class DifficultyAdaptor
 
     private OnDifficultyClickListener listener;
 
-
+    /**
+     * Set up difficulty view
+     * @param parent
+     * @param i
+     * @return difficulty view
+     */
     public DifficultyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
 
         //Tell the adapter what layout to use for each course in the list
@@ -30,24 +35,41 @@ public class DifficultyAdaptor
         return new DifficultyViewHolder(itemView);
     }
 
+    /**
+     * Set up difficulty view
+     * @param difficultyViewHolder
+     * @param position
+     */
     @Override
-
     public void onBindViewHolder(@NonNull DifficultyAdaptor.DifficultyViewHolder
                                              difficultyViewHolder, int position) {
         Difficulty list = difficulties.get(position);
     }
 
+    /**
+     * Items in difficulty
+     * @return difficulties list size
+     */
     @Override
     public int getItemCount() {
         if (difficulties == null) return 0;
         return difficulties.size();
     }
 
+    /**
+     * Set list of difficulties
+     * @param courses difficulty options
+     */
     public void setDifficultyList(List<Difficulty> courses) {
         difficulties = courses;
         notifyDataSetChanged();
     }
 
+    /**
+     * Selection from list of difficulties
+     * @param position selected difficulty
+     * @return difficulty at position
+     */
     public Difficulty getCourseAt(int position) {
         return difficulties.get(position);
     }
@@ -84,9 +106,18 @@ public class DifficultyAdaptor
     }
 
     public interface OnDifficultyClickListener {
+
+        /**
+         * Interface method for difficulty clicked
+         * @param difficulty
+         */
         void onDifficultyClicked(Difficulty difficulty);
     }
 
+    /**
+     * Sets listener
+     * @param listener
+     */
     public void setOnDifficultyClickListener(OnDifficultyClickListener listener) {
         this.listener = listener;
     }

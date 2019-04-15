@@ -1,5 +1,6 @@
 package edu.gatech.cs2340.milestones.spacetraders.views;
 
+import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,13 +9,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
 
 import edu.gatech.cs2340.milestones.spacetraders.R;
+import edu.gatech.cs2340.milestones.spacetraders.entity.Difficulty;
 
 import edu.gatech.cs2340.milestones.spacetraders.entity.Planet;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
@@ -22,9 +27,7 @@ import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewModel;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.UniverseViewModel;
 
-
-public class ConfigurationActivity extends AppCompatActivity
-        implements AdapterView.OnItemSelectedListener {
+public class ConfigurationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private ConfigurationViewModel viewModel;
     private UniverseViewModel universeViewModel;
@@ -38,7 +41,10 @@ public class ConfigurationActivity extends AppCompatActivity
     private TextView fighterPoint;
     private TextView skillPoint;
 
-    @Override
+    /**
+     * Sets up the new player screen
+     * @param savedInstanceState previous configuration
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuration);
@@ -67,11 +73,7 @@ public class ConfigurationActivity extends AppCompatActivity
         tradePoint.setText(""+player.getTradePoint());
         fighterPoint.setText(""+player.getFighterPoint());
 
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter
-                .createFromResource(this, R.array.difficulty1
-                        , android.R.layout.simple_spinner_item);
-
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.difficulty1, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         diffSpinner.setAdapter(adapter);
         diffSpinner.setOnItemSelectedListener(this);
@@ -80,6 +82,10 @@ public class ConfigurationActivity extends AppCompatActivity
         universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
     }
 
+    /**
+     * Activity for page after player screen
+     * @param view
+     */
     public void onNextPressed(View view) {
         if (player.getSkillPoint() == 0) {
             player.setName(nameField.getText().toString());
@@ -92,7 +98,7 @@ public class ConfigurationActivity extends AppCompatActivity
             Universe universe = new Universe();
             universeViewModel.addUniverse(universe);
             Object[] planets = universe.getUniverseMap().values().toArray();
-            player.setPlayerLocation((Planet) planets[(int) (Math.random() * planets.length)]);
+            player.setPlayerLocation((Planet) planets[(int) Math.random() * planets.length]);
             viewModel.addPlayer(player);
             Log.d("User Location: ", player.getPlayerLocation().toString());
             Log.d("user data:", player.toString());
@@ -106,6 +112,11 @@ public class ConfigurationActivity extends AppCompatActivity
             Toast.makeText(getApplicationContext(), test,Toast.LENGTH_LONG).show();
         }
     }
+
+    /**
+     * Controls skill points
+     * @param view
+     */
     public void onSkillButton(View view) {
         int id = view.getId();
         //
@@ -192,6 +203,13 @@ public class ConfigurationActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * Activity for selecting items
+     * @param parent
+     * @param view
+     * @param position of item
+     * @param id of item
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
@@ -199,6 +217,10 @@ public class ConfigurationActivity extends AppCompatActivity
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * When nothing is selected
+     * @param parent
+     */
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 

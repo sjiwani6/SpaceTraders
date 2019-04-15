@@ -18,6 +18,14 @@
     <string name="printuniverse">PrintUniverse</string>
     <string name="exit">EXIT</string>
     <string name="this_is_a_popup_window">This is a popup window.</string>
+    <string name="welcome">Welcome!</string>
+    <string name="new_game">NEW GAME</string>
+    <string name="about">ABOUT</string>
+    <string name="instructions">INSTRUCTIONS</string>
+    <string name="resume">Resume</string>
+    <string name="welcome_to_planet_market">Welcome to planet market!</string>
+    <string name="buy">BUY</string>
+    <string name="sell">SELL</string>
     <string-array name="difficulty1">
         <item>Easy</item>
         <item>Normal</item>

@@ -31,6 +31,10 @@ public class StartGameActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
 
 
+    /**
+     * Sets up start of game
+     * @param savedInstanceState configuration
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -51,6 +55,11 @@ public class StartGameActivity extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         ValueEventListener playerListener = new ValueEventListener() {
+
+            /**
+             * Manipulates player data
+             * @param dataSnapshot input data
+             */
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -65,6 +74,11 @@ public class StartGameActivity extends AppCompatActivity {
                 fighterPoint.setText(""+player.getFighterPoint());
                 viewModel.addPlayer(player);
             }
+
+            /**
+             * Logs error and cancels action
+             * @param databaseError error from database
+             */
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 // Getting Post failed, log a message
@@ -73,6 +87,11 @@ public class StartGameActivity extends AppCompatActivity {
             }
         };
         ValueEventListener universeListener = new ValueEventListener() {
+
+            /**
+             * Manipulates universe data
+             * @param dataSnapshot input data
+             */
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -82,6 +101,11 @@ public class StartGameActivity extends AppCompatActivity {
                 //ineed to handle here();
                 universeViewModel.addUniverse(universe);
             }
+
+            /**
+             * Logs error and cancels action
+             * @param databaseError error from database
+             */
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 // Getting Post failed, log a message
@@ -95,10 +119,20 @@ public class StartGameActivity extends AppCompatActivity {
 
 
     }
+
+    /**
+     * Market Activity
+     * @param view
+     */
     public void onMarket(View view) {
         Intent intent = new Intent(this, UniverseActivity.class);
         startActivity(intent);
     }
+
+    /**
+     * Travel Activity
+     * @param view
+     */
     public void onTravel(View view) {
         Intent intent = new Intent(this, TravelActivity.class);
         startActivity(intent);

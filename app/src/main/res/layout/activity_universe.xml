@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:padding="8dp"
-            android:text="Welcome!"
+            android:text="@string/welcome"
             android:textColor="#51C7F2"
             android:textSize="30sp" />
     </RelativeLayout>
@@ -41,6 +41,7 @@
 
         <ImageView
             android:id="@+id/imageView"
+            android:contentDescription="Planet location"
             android:layout_width="149dp"
             android:layout_height="74dp"
             app:srcCompat="@drawable/planet" />
@@ -51,7 +52,7 @@
             android:layout_height="match_parent"
             android:visibility="gone">
 
-            <include layout="@layout/content_buy" />
+
 
             <!--<include layout="@layout/content_sell"-->
             <!--android:visibility="gone"-->

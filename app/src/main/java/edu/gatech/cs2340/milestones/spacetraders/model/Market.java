@@ -7,7 +7,12 @@ import edu.gatech.cs2340.milestones.spacetraders.entity.Items;
 
 public class Market {
 
-
+    /**
+     * Buying items updating player's cargo
+     * @param purchaseTable what to purchase
+     * @param playerCargo current cargo of player
+     * @return newCargo: the updated cargo
+     */
     public static HashMap<String, ArrayList<Integer>> buyAction(HashMap<Items
             , Integer> purchaseTable, HashMap<String, ArrayList<Integer>> playerCargo) {
         Items[] items = Items.values();
@@ -32,6 +37,12 @@ public class Market {
         return newCargo;
     }
 
+    /**
+     * Buying items updating planet's cargo
+     * @param purchaseTable what to purchase
+     * @param planetCargo current cargo of planet
+     * @return newCargo: the updated cargo
+     */
     public static HashMap<String, ArrayList<Integer>> buyAction2(HashMap<Items,
             Integer> purchaseTable, HashMap<String, ArrayList<Integer>> planetCargo) {
 
@@ -56,6 +67,12 @@ public class Market {
         return newCargo;
     }
 
+    /**
+     * Selling items updating planet's cargo
+     * @param purchaseTable what to sell
+     * @param planetCargo current cargo of planet
+     * @return newCargo: the updated cargo
+     */
     public static HashMap<Items, int[]> sellAction(HashMap<Items,
             Integer> purchaseTable, HashMap<Items, int[]> planetCargo) {
         Items[] items = Items.values();
@@ -73,6 +90,12 @@ public class Market {
         return newCargo;
     }
 
+    /**
+     * Selling items updating player's cargo
+     * @param purchaseTable what tosell
+     * @param playerCargo current cargo of player
+     * @return newCargo: the updated cargo
+     */
     public static HashMap<Items, int[]> sellAction2(HashMap<Items,
             Integer> purchaseTable, HashMap<Items, int[]> playerCargo) {
         Items[] items = Items.values();
