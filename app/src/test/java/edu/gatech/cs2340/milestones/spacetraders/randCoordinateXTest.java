@@ -12,9 +12,10 @@ import static junit.framework.TestCase.assertTrue;
 public class randCoordinateXTest {
     private Universe testCoord = new Universe();
 
-    int i = 3;
+    int i = 1;
     private int coord1;
     private int coord2;
+    private int coord3;
 
 
 
@@ -23,6 +24,8 @@ public class randCoordinateXTest {
         coord1 = testCoord.randCoordinateX(10, 60, 2);
         coord2 = testCoord.randCoordinateX(10, 60, 3);
 
+        coord3 = testCoord.randCoordinateX(10, 90, 3);
+
     }
 
     @After
@@ -30,6 +33,7 @@ public class randCoordinateXTest {
         System.out.println("Running: tearDown");
         coord1 = 0;
         coord2 = 0;
+        coord3 = 0;
     }
 
     @Test
@@ -39,12 +43,13 @@ public class randCoordinateXTest {
                 System.out.println("The test passes for even coordinate.");
             }
 
-        }
-        @Test
-        public void randCoordinateXodd() {
             if (i % 2 == 1){
                 assertTrue(coord2 >= 20 && coord2 <= 80);
                 System.out.println("The test passes for odd coordinate.");
             }
+        coord3 = testCoord.randCoordinateY(20,80,i);
+        Assert.assertTrue("coor3 is out of range ", coord3 <= 80);
+        Assert.assertTrue("coord3 is out of range ", coord3 >= 20);
         }
+
     }
