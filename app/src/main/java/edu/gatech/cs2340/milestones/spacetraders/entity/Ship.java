@@ -1,13 +1,17 @@
 package edu.gatech.cs2340.milestones.spacetraders.entity;
 
+import java.lang.reflect.Array;
 import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Ship {
+
     private ShipType shipType;
-    private HashMap<Items, int[]> cargo;
+    private HashMap<String, ArrayList<Integer>> cargo;
     private int capacity;
     private int fuel;
     private int INITIAL_FUEL = 500;
+
     public Ship() {
         this(ShipType.GNAT);
     }
@@ -17,19 +21,18 @@ public class Ship {
         this.fuel = 500;
 
         cargo = new HashMap<>();
-        cargo.put(Items.WATER, new int[] {0,20});
-        cargo.put(Items.FURS, new int[]{0,20});
-        cargo.put(Items.FOOD, new int[]{0,20});
-        cargo.put(Items.ORE, new int[]{0,20});
-        cargo.put(Items.GAMES, new int[]{0,20});
-        cargo.put(Items.FIREARMS, new int[]{0,20});
-        cargo.put(Items.MEDICINE, new int[]{0,20});
-        cargo.put(Items.MACHINES, new int[]{0,20});
-        cargo.put(Items.NARCOTICS, new int[]{0,20});
-        cargo.put(Items.ROBOTS, new int[]{0,20});
+        initialCargo();
     }
-
-    public void setCargo(HashMap<Items, int[]> cargo) {
+    public void initialCargo() {
+        Items[] items = Items.values();
+        for (int i = 0; i < items.length; i++) {
+            ArrayList<Integer> quantiPrice = new ArrayList<>();
+            quantiPrice.add(0, 0);
+            quantiPrice.add(1, items[i].getBasePrice());
+            cargo.put(items[i].toString(),quantiPrice);
+        }
+    }
+    public void setCargo(HashMap<String, ArrayList<Integer>> cargo) {
         this.cargo = cargo;
     }
 
@@ -57,7 +60,7 @@ public class Ship {
         this.capacity = capacity;
     }
 
-    public HashMap<Items, int[]> getCargo() {
+    public HashMap<String, ArrayList<Integer>> getCargo() {
         return cargo;
     }
 

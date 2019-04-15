@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "650951610634",
+    "firebase_url": "https://db-6dce9.firebaseio.com",
+    "project_id": "db-6dce9",
+    "storage_bucket": "db-6dce9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650951610634:android:b00360253dd95e04",
+        "android_client_info": {
+          "package_name": "edu.gatech.cs2340.milestones.spacetraders"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650951610634-1ncu8uvhhvcftnp3djk7cn4bv4b3cicc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.gatech.cs2340.milestones.spacetraders",
+            "certificate_hash": "82e9e38186af1be5788d112a92c136669824d56d"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANJqJJXN_PQZEq9z4UOr1a1u0TSZbEG6M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "650951610634-6o07f40h92e66bmpmatqnphi99n0k7i3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
