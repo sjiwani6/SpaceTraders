@@ -1,6 +1,5 @@
 package edu.gatech.cs2340.milestones.spacetraders.views;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -12,14 +11,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.Random;
 
 import edu.gatech.cs2340.milestones.spacetraders.R;
 import android.arch.lifecycle.ViewModelProviders;
 
-import edu.gatech.cs2340.milestones.spacetraders.entity.Items;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Planet;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
@@ -58,6 +55,7 @@ public class TravelActivity extends AppCompatActivity {
     AlertDialog.Builder builder;
     Dialog myDialog;
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);

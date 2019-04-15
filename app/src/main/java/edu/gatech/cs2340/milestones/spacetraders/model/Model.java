@@ -17,11 +17,24 @@ public class Model {
 
     private static  Model instance = new Model();
 
+    /**
+     * getter for an instance of the model
+     * @return instance of model
+     */
     public static Model getInstance() { return instance;}
 
+    /**
+     * Getter for the instance of player interactor
+     * @return instance of player interactor
+     */
     public PlayerInteractor getPlayerInteractor() {
         return (PlayerInteractor) interactorMap.get("Player");
     }
+
+    /**
+     * Getter for instance of universe interactor
+     * @return instance of universe interactor
+     */
     public UniverseInteractor getUniverseInteractor() {
         return (UniverseInteractor) interactorMap.get("Universe");
     }

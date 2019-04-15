@@ -1,6 +1,5 @@
 package edu.gatech.cs2340.milestones.spacetraders.views;
 
-import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,17 +8,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import edu.gatech.cs2340.milestones.spacetraders.R;
-import edu.gatech.cs2340.milestones.spacetraders.entity.Difficulty;
 
 import edu.gatech.cs2340.milestones.spacetraders.entity.Planet;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
@@ -43,6 +38,7 @@ public class ConfigurationActivity extends AppCompatActivity
     private TextView fighterPoint;
     private TextView skillPoint;
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuration);
@@ -96,7 +92,7 @@ public class ConfigurationActivity extends AppCompatActivity
             Universe universe = new Universe();
             universeViewModel.addUniverse(universe);
             Object[] planets = universe.getUniverseMap().values().toArray();
-            player.setPlayerLocation((Planet) planets[(int) Math.random() * planets.length]);
+            player.setPlayerLocation((Planet) planets[(int) (Math.random() * planets.length)]);
             viewModel.addPlayer(player);
             Log.d("User Location: ", player.getPlayerLocation().toString());
             Log.d("user data:", player.toString());

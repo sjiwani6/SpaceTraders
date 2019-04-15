@@ -1,11 +1,9 @@
 package edu.gatech.cs2340.milestones.spacetraders.model;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import edu.gatech.cs2340.milestones.spacetraders.entity.Items;
-import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
 
 public class Market {
 

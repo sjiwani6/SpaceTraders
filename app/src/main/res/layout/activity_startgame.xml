@@ -76,7 +76,7 @@
 
 
     </RelativeLayout>
-    <!--enginner field-->
+
     <RelativeLayout
         android:id="@+id/engineer_field"
         android:layout_width="match_parent"
@@ -87,7 +87,7 @@
         android:background="@color/transparent_neon">
 
         <TextView
-            android:id="@+id/display_enginner"
+            android:id="@+id/display_engineer"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:maxLines="1"
