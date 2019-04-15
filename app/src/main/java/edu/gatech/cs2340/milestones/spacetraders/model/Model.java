@@ -18,7 +18,7 @@ public class Model {
     private static  Model instance = new Model();
 
     /**
-     * getter for an instance of the model
+     * Getter for an instance of the model
      * @return instance of model
      */
     public static Model getInstance() { return instance;}
