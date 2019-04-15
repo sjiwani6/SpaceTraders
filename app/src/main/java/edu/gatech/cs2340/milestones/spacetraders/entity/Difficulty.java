@@ -22,7 +22,7 @@ public enum Difficulty {
     }
 
     /**
-     * This is the toString method.
+     * This is the toString method for the diff level.
      * @return a string representation of the difficulty level.
      */
     @Override
