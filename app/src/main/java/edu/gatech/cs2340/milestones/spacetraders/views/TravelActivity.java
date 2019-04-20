@@ -12,11 +12,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import edu.gatech.cs2340.milestones.spacetraders.R;
 import android.arch.lifecycle.ViewModelProviders;
 
+import edu.gatech.cs2340.milestones.spacetraders.entity.Items;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Planet;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Player;
 import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
@@ -48,12 +50,21 @@ public class TravelActivity extends AppCompatActivity {
     private Button closeWindow;
 
     private String[] randomEvent = {
-        "Illegal Trespassing", "Ape Attacked", "Found some credits",
-            "Fuel refill","Pirates Attacked", "Found Resource: "
+            "Illegal Trespassing", "Ape Attacked", "Found some credits",
+            "Fuel refill","Pirates Attacked", "Ship damaged by Rocks",
+            "Lost a crew member", "Police Check", "Civilian's Ship under attack",
+            "Engine Failed", "Stopped by Galaxy Patrol", "Unknown being found",
+            "Encountered Pirate GNAT"
     };
 
-    AlertDialog.Builder builder;
-    Dialog myDialog;
+    private Items[] items = Items.values();
+//    private String[] extraRandomEvents = {"Ship damaged by Rocks",
+//            "Lost a crew member", "Police Check", "Civilian's Ship under attack",
+//            "Engine Failed", "Stopped by Galaxy Patrol", "Unknown being found",
+//            "Encountered Pirate GNAT"
+//    };
+
+    private Dialog myDialog;
 
     /**
      * Layout setup
@@ -196,7 +207,7 @@ public class TravelActivity extends AppCompatActivity {
                 Button btw;
                 btw = myDialog.findViewById(R.id.ok_popup);
                 if ( Math.random() <= 0.3) {
-                    if (event.equalsIgnoreCase("Illegal Trespassing")) {
+                    if (random == 0) {
 
 
                         String message = "You have been illegal trespassed and you have been " +
@@ -214,7 +225,7 @@ public class TravelActivity extends AppCompatActivity {
                             }
                         });
                         myDialog.show();
-                    } else if (event.equalsIgnoreCase("Ape Attacked")) {
+                    } else if (random == 1) {
                         String message = "Your ship has been attacked by Ape from Planet Vegeta. " +
                                 "Need 20CR to repair the ship";
                         eventMessage.setText(message);
@@ -229,7 +240,7 @@ public class TravelActivity extends AppCompatActivity {
                             }
                         });
                         myDialog.show();
-                    } else if (event.equalsIgnoreCase("Found some credits")) {
+                    } else if (random == 2) {
                         final int foundCR =  rn.nextInt(100);
                         String message = "You found "+ foundCR +"CR on this planet";
                         eventMessage.setText(message);
@@ -244,7 +255,7 @@ public class TravelActivity extends AppCompatActivity {
                             }
                         });
                         myDialog.show();
-                    } else if (event.equalsIgnoreCase("Fuel refill")) {
+                    } else if (random == 3) {
                         int tempFuel = 1;
 
                         if (player.getPlayerShip().getFuel() < player.getPlayerShip()
@@ -262,7 +273,7 @@ public class TravelActivity extends AppCompatActivity {
                             }
                         });
                         myDialog.show();
-                    } else if (event.equalsIgnoreCase("Pirates Attacked")) {
+                    } else if (random == 4) {
 
                         String message = "Pirates attacked your ship " +
                                 "and stole 25CR from your vault";
@@ -279,7 +290,154 @@ public class TravelActivity extends AppCompatActivity {
                             }
                         });
                         myDialog.show();
+                    } else if (random == 5) {
+                        String message = "Your GNAT has been damaged by the space rocks and" +
+                                "need 30CR to repair the ship before it become unable " +
+                                "to travel to your destination.";
+                        eventMessage.setText(message);
+                        eventTitle.setText(randomEvent[5]);
+                        btw.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                int tempCredit = player.getCredit() - 30;
+                                player.setCredit(tempCredit);
+                                myDialog.dismiss();
+                            }
+                        });
+                    } else if (random == 6) {
+                        String message = "one of your crew member got sick and down during the " +
+                                "travel and you need to hire upon arrival to your final " +
+                                "destination. Its going to cost your 50CR to hire a crew mem";
+                        eventMessage.setText(message);
+                        eventTitle.setText(randomEvent[6]);
+                        btw.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                int tempCredit = player.getCredit() - 50;
+                                player.setCredit(tempCredit);
+                                myDialog.dismiss();
+                            }
+                        });
+                    } else if (random == 7) {
+                        ArrayList<Integer> tempNorc = new ArrayList<>();
+                        tempNorc = player.getCargo().get(items[8].toString());
+
+                        if (tempNorc.get(0) > 0) {
+                            String message = "You have to been arrested for possessing illegal" +
+                                    " drug in your ship and you have to pay 20CR and" +
+                                    " police took all of your narcotics";
+                            eventMessage.setText(message);
+                            eventTitle.setText(randomEvent[7]);
+                            /**
+                             *
+                             *
+                             * I need edit individual cargo list
+                             *
+                             */
+                            btw.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    int tempCredit = player.getCredit() - 20;
+                                    player.setCredit(tempCredit);
+                                    myDialog.dismiss();
+                                }
+                            });
+                        } else {
+                            String message = "Police didn't find any illegal possessions so" +
+                                    " they let you go without any fine";
+                            eventMessage.setText(message);
+                            eventTitle.setText(randomEvent[7]);
+                            btw.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    myDialog.dismiss();
+                                }
+                            });
+                        }
+                    } else if (random == 8) {
+                        eventTitle.setText(randomEvent[8]);
+                        String message = "Our ship is under attack and if you save us " +
+                                "from thr danger, we will give you 100CR";
+                        eventMessage.setText(message);
+                        btw.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                int tempCredit = player.getCredit() + 100;
+                                player.setCredit(tempCredit);
+                                myDialog.dismiss();
+                            }
+                        });
+                    } else if (random == 9) {
+                        eventTitle.setText(randomEvent[9]);
+                        String message = "Captain, ship'e engine failed and we need 50Cr " +
+                                "for the engine part to repair the ship";
+                        eventMessage.setText(message);
+                        btw.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                int tempCredit = player.getCredit() -50;
+                                player.setCredit(tempCredit);
+                                myDialog.dismiss();
+                            }
+                        });
+                    } else if (random == 10) {
+                        eventTitle.setText(randomEvent[10]);
+                        String message = "Captain, galaxy patrol stopped and they found out " +
+                                "that we have two non-registered crew members in the ship and " +
+                                "they are demanding use to pay 80CR to get register or " +
+                                "they will arrest both of the crew members";
+                        eventMessage.setText(message);
+                        btw.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                int tempCredit = player.getCredit() - 80;
+                                player.setCredit(tempCredit);
+                                myDialog.dismiss();
+                            }
+                        });
+                    } else if (random == 11) {
+                        eventTitle.setText(randomEvent[11]);
+                        String message = "Captain we found an unknown being on space and " +
+                                "it's offering us foods and 75CR to save it";
+                        eventMessage.setText(message);
+                        /**
+                         *
+                         *
+                         * Need to edit the cargo
+                         *
+                         *
+                         */
+                        btw.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                int tempCredit = player.getCredit() + 75;
+                                player.setCredit(tempCredit);
+                                myDialog.dismiss();
+                            }
+                        });
+                    } else if (random == 12) {
+                        eventTitle.setText(randomEvent[8]);
+                        String message = "Pirate ship attacked you and stole 60CR and some of " +
+                                "resources and please check the resource to restock " +
+                                "once you reach your destination";
+                        eventMessage.setText(message);
+                        /**
+                         *
+                         *
+                         * Need to edit the cargo
+                         *
+                         *
+                         */
+                        btw.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                int tempCredit = player.getCredit() - 60;
+                                player.setCredit(tempCredit);
+                                myDialog.dismiss();
+                            }
+                        });
                     }
+                    
 //                    else if (event.equalsIgnoreCase("Found Resource")) {
 //                        String message = "You found a 2 Boxes of Food";
 //                        eventMessage.setText(message);
