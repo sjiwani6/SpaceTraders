@@ -325,4 +325,10 @@ public class TravelActivity extends AppCompatActivity {
         player = viewModel.getPlayer();
 
     }
+
+    public void onPressed2Dmap(View view){
+        Dialog mapDialog = new Dialog(this);
+        mapDialog.setContentView(R.layout.universe_2d_map);
+
+    }
 }
