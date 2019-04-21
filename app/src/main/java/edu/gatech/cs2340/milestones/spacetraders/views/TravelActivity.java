@@ -134,7 +134,7 @@ public class TravelActivity extends AppCompatActivity {
 
         Log.d(planetList[count].getName(), "dist is :"+ dist);
         Log.d("count: ", "" + count);
-        if (dist > 100 || player.getPlayerShip().getFuel() < (dist/3)) {
+        if (dist > 50 || player.getPlayerShip().getFuel() < (dist/3)) {
             wrap.setEnabled(false);
         } else {
 

@@ -22,7 +22,7 @@ public class randCoordinateXTest {
     @Before
     public void setUp() throws Exception {
         coord1 = testCoord.randCoordinateX(10, 60, 2);
-        coord2 = testCoord.randCoordinateX(10, 60, 3);
+        coord2 = testCoord.randCoordinateX(10, 60, 4);
 
         coord3 = testCoord.randCoordinateX(10, 90, 3);
 
