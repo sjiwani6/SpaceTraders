@@ -518,8 +518,9 @@ public class TravelActivity extends AppCompatActivity {
     }
 
     public void onPressed2Dmap(View view){
-        Dialog mapDialog = new Dialog(this);
+        Dialog mapDialog = new Dialog(TravelActivity.this);
         mapDialog.setContentView(R.layout.universe_2d_map);
+        //closeWindow = findViewById(R.id.OKMapButton);
 
     }
 }
