@@ -15,7 +15,7 @@ public class Player {
     private final int INITIAL_CREDIT = 1000;
     private int skillPoint;
     private final int INITIAL_SKILL = 20;
-    //
+    private String diff;
     private Ship playerShip;
     private Planet playerLocation;
 
@@ -39,6 +39,7 @@ public class Player {
         fighterPoint = 1;
         skillPoint -= 4;
         playerShip = new Ship();
+        diff = Difficulty.EASY.toString();
     }
 
     /**
@@ -183,10 +184,29 @@ public class Player {
     public void setPlayerLocation(Planet playerLocation) {
         this.playerLocation = playerLocation;
     }
+
+    /**
+     * Get the Difficulty
+     * @return return a diff string
+     */
+    public String getDiff() {
+        return diff;
+    }
+
+    /**
+     * Setter for the diff string
+     * @param diff string of diff
+     */
+    public void setDiff(String diff) {
+        this.diff = diff;
+    }
+
     /**
      * this is the tostring method.
      * @return the player skill points as a string.
      */
+
+
     @Override
     public String toString() {
         return "Player: "+name+", Pilot Points: "+pilotPoint+", Engineer " +

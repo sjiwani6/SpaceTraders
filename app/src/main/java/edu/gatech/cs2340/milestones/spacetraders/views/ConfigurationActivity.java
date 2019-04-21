@@ -78,6 +78,8 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         diffSpinner.setAdapter(adapter);
         diffSpinner.setOnItemSelectedListener(this);
 
+        player.setDiff(diffSpinner.getSelectedItem().toString());
+
         viewModel = ViewModelProviders.of(this).get(ConfigurationViewModel.class);
         universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
     }
