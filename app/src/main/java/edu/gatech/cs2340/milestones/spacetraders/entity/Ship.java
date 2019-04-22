@@ -33,7 +33,7 @@ public class Ship {
      * this method stores the initial
      * cargo the player has.
      */
-    public void initialCargo() {
+    private void initialCargo() {
         Items[] items = Items.values();
         for (int i = 0; i < items.length; i++) {
             ArrayList<Integer> quantiPrice = new ArrayList<>();

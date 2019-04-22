@@ -27,7 +27,8 @@ import edu.gatech.cs2340.milestones.spacetraders.entity.Universe;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewModel;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.UniverseViewModel;
 
-public class ConfigurationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class ConfigurationActivity extends AppCompatActivity
+        implements AdapterView.OnItemSelectedListener {
 
     private ConfigurationViewModel viewModel;
     private UniverseViewModel universeViewModel;
@@ -45,6 +46,7 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
      * Sets up the new player screen
      * @param savedInstanceState previous configuration
      */
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuration);
@@ -73,7 +75,8 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
         tradePoint.setText(""+player.getTradePoint());
         fighterPoint.setText(""+player.getFighterPoint());
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.difficulty1, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.difficulty1, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         diffSpinner.setAdapter(adapter);
         diffSpinner.setOnItemSelectedListener(this);
@@ -98,7 +101,7 @@ public class ConfigurationActivity extends AppCompatActivity implements AdapterV
             Universe universe = new Universe();
             universeViewModel.addUniverse(universe);
             Object[] planets = universe.getUniverseMap().values().toArray();
-            player.setPlayerLocation((Planet) planets[(int) Math.random() * planets.length]);
+            player.setPlayerLocation((Planet) planets[(int) (Math.random() * planets.length)]);
             viewModel.addPlayer(player);
             Log.d("User Location: ", player.getPlayerLocation().toString());
             Log.d("user data:", player.toString());

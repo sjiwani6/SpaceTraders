@@ -31,7 +31,7 @@ public class TravelActivity extends AppCompatActivity {
     private ConfigurationViewModel viewModel;
     private Player player;
     private Universe universe;
-    private int count = 0;
+    private int count;
 
     private TextView planetName;
     private TextView name;
@@ -53,7 +53,7 @@ public class TravelActivity extends AppCompatActivity {
     };
 
     AlertDialog.Builder builder;
-    Dialog myDialog;
+    private Dialog myDialog;
 
     /**
      * Layout setup
@@ -178,7 +178,8 @@ public class TravelActivity extends AppCompatActivity {
                 player.setPlayerLocation(planetList[count]);
                 player.getPlayerShip().setFuel(tempFuel - (dist/3));
                 player.setCredit(tempCredit - ((dist/3)/10));
-                distance.setText(""+Travel.calcDistance(planetList[count], player.getPlayerLocation()) + "parsecs");
+                distance.setText(""+Travel.calcDistance(planetList[count],
+                        player.getPlayerLocation()) + "parsecs");
                 cost.setText("0 cr.");
                 count++;
 

@@ -4,6 +4,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import edu.gatech.cs2340.milestones.spacetraders.model.EconomicModel;
 
@@ -100,6 +101,7 @@ public class Planet {
      * @return returns the cargo.
      */
     public HashMap<String, ArrayList<Integer>> getCargo() {
+//        Map<String, ArrayList<Integer>> temp = cargo;
         return cargo;
     }
     /**

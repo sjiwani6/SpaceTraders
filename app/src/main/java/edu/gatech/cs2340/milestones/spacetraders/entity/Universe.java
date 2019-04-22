@@ -18,8 +18,8 @@ public class Universe {
     public Universe() {
         //150 x 100
         int i = 0;
-        String x = "";
-        String y = "";
+        String x;
+        String y;
 
         ArrayList<String> planetList = new ArrayList<>();
         planetList.add("Bobert");
@@ -89,7 +89,7 @@ public class Universe {
      * @param i is an int number.
      * @return returns the coordinate value of x.
      */
-    public int randCoordinateX(int base, int range, int i) {
+    private int randCoordinateX(int base, int range, int i) {
         Random rand = new Random();
         int coord = rand.nextInt(range) + base;
         if (coord - 10 > 15 && coord + 10 < 135) {
@@ -111,7 +111,7 @@ public class Universe {
      * @param i is an int number.
      * @return returns the coordinate value of y.
      */
-    public int randCoordinateY(int base, int range, int i) {
+    private int randCoordinateY(int base, int range, int i) {
         Random rand = new Random();
         int coord = rand.nextInt(range) + base;
         if (coord - 10 > 20 && coord + 10 < 80) {

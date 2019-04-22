@@ -574,7 +574,7 @@ public class UniverseActivity extends AppCompatActivity {
         }
 
         if (id == R.id.purchase) {
-            Log.d("total credot = ", totalCR+"");
+            Log.d("total credit = ", totalCR+"");
             player.setCredit(remainingCr - totalCR);
 
             HashMap<String, ArrayList<Integer>> playerCargo = player.getCargo();
@@ -648,10 +648,11 @@ public class UniverseActivity extends AppCompatActivity {
 
             price = playerCargo.get(Items.FURS.toString()).get(0);
 
-            if (totalCount > 0 && Integer.parseInt(count) < playerCargo.get(Items.FURS).get(0)
+            if (totalCount > 0 && Integer.parseInt(count) <
+                    playerCargo.get(Items.FURS.getName()).get(0)
                     && (remainingCr - totalCR - price) > 0) {
                 fursField.setText(Integer.parseInt(count) + 1 +"/"+
-                        playerCargo.get(Items.FURS).get(0));
+                        playerCargo.get(Items.FURS.getName()).get(0));
 
                 purchaseTable.put(Items.FURS, Integer.parseInt(count) + 1);
 
@@ -739,11 +740,11 @@ public class UniverseActivity extends AppCompatActivity {
             price = playerCargo.get(Items.MEDICINE.getName()).get(0);
 
             if (totalCount > 0 && Integer.parseInt(count) <
-                    playerCargo.get(Items.MEDICINE).get(0)
+                    playerCargo.get(Items.MEDICINE.getName()).get(0)
                     && (remainingCr - totalCR - price) > 0) {
 
                 medField.setText(Integer.parseInt(count) + 1 +"/"+
-                        playerCargo.get(Items.MEDICINE).get(0));
+                        playerCargo.get(Items.MEDICINE.getName()).get(0));
                 purchaseTable.put(Items.MEDICINE, Integer.parseInt(count) + 1);
 
                 totalField.setText(totalCount - 1 + "/"+capacity);
@@ -1008,7 +1009,7 @@ public class UniverseActivity extends AppCompatActivity {
      * @return the calculated varience
      */
     private int varienceCalc(int var, int basePrice) {
-        double varience = 0;
+        double varience;
         int coinFlip = (int) (Math.random() * 2);
         double randomVar = (Math.random() * var) / 100;
         if (coinFlip == 1) {

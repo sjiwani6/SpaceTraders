@@ -26,6 +26,7 @@ public class DifficultyAdaptor
      * @param i
      * @return difficulty view
      */
+    @Override
     public DifficultyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
 
         //Tell the adapter what layout to use for each course in the list

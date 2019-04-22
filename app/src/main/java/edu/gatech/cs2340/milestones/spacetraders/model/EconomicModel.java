@@ -22,8 +22,8 @@ public class EconomicModel {
         int levelNum = level.getTechLevelNum();
         HashMap<String, ArrayList<Integer>> cargo = planet.getCargo();
 
-        int quantity = 0;
-        int price = 0;
+        int quantity;
+        int price;
         for (int i = 0; i < items.length; i++) {
             if(items[i].getMTLP() <= levelNum) {
                 if (items[i].getTTP() == levelNum) {
