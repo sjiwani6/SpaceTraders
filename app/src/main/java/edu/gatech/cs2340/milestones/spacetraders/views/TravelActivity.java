@@ -491,6 +491,7 @@ public class TravelActivity extends AppCompatActivity {
                         });
                     }
                 }
+                viewModel.updatePlayer(player);
             }
         });
         count++;

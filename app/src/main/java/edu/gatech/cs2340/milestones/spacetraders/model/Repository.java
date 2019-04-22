@@ -113,12 +113,14 @@ class Repository {
      * @param player whose settings the player's settings will be changed to
      */
     public void updatePlayer(Player player) {
+
         player.setCredit(player.getCredit());
         player.setEngineerPoint(player.getEngineerPoint());
         player.setFighterPoint(player.getFighterPoint());
         player.setName(player.getName());
         player.setPilotPoint(player.getPilotPoint());
         player.setTradePoint(player.getTradePoint());
+        player.setPlayerLocation(player.getPlayerLocation());
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 //        Gson gson = new Gson();

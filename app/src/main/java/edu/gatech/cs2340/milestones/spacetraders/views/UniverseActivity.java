@@ -100,6 +100,30 @@ public class UniverseActivity extends AppCompatActivity {
         totalPrice.setText("0Cr");
         remaining.setText(""+player.getCredit());
 
+        TextView waterPrice = findViewById(R.id.water_price);
+        TextView furPrice = findViewById(R.id.furs_price);
+        TextView foodPrice = findViewById(R.id.food_price);
+        TextView orePrice = findViewById(R.id.ore_price);
+        TextView gamePrice = findViewById(R.id.game_price);
+        TextView firePrice = findViewById(R.id.fire_price);
+        TextView medPrice = findViewById(R.id.med_price);
+        TextView machPrice = findViewById(R.id.mach_price);
+        TextView narcPrice = findViewById(R.id.narc_price);
+        TextView roboPrice = findViewById(R.id.robo_price);
+
+        waterPrice.setText(""+planetCargo.get(Items.WATER.getName()).get(1)+"Cr");
+        furPrice.setText(""+planetCargo.get(Items.FURS.getName()).get(1)+"Cr");
+        foodPrice.setText(""+planetCargo.get(Items.FOOD.getName()).get(1)+"Cr");
+        orePrice.setText(""+planetCargo.get(Items.ORE.getName()).get(1)+"Cr");
+        gamePrice.setText(""+planetCargo.get(Items.GAMES.getName()).get(1)+"Cr");
+        firePrice.setText(""+planetCargo.get(Items.FIREARMS.getName()).get(1)+"Cr");
+        medPrice.setText(""+planetCargo.get(Items.MEDICINE.getName()).get(1)+"Cr");
+        machPrice.setText(""+planetCargo.get(Items.MACHINES.getName()).get(1)+"Cr");
+        narcPrice.setText(""+planetCargo.get(Items.NARCOTICS.getName()).get(1)+"Cr");
+        roboPrice.setText(""+planetCargo.get(Items.ROBOTS.getName()).get(1)+"Cr");
+
+
+
         purchaseTable = new HashMap<>();
 
 
@@ -628,7 +652,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ waterField.getText().toString()
                     .substring(0,waterField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.WATER.getName()).get(0);
+            price = playerCargo.get(Items.WATER.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) <
                     playerCargo.get(Items.WATER.getName()).get(0)
@@ -646,7 +670,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ fursField.getText().toString()
                     .substring(0,fursField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.FURS.getName()).get(0);
+            price = playerCargo.get(Items.FURS.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) <
                     playerCargo.get(Items.FURS.getName()).get(0)
@@ -664,7 +688,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ foodField.getText().toString()
                     .substring(0,foodField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.FOOD.getName()).get(0);//exception here .getName() needed
+            price = playerCargo.get(Items.FOOD.getName()).get(1);//exception here .getName() needed
 
             if (totalCount > 0 && Integer.parseInt(count) <
                     playerCargo.get(Items.FOOD.getName()).get(0)
@@ -683,7 +707,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ oreField.getText().toString()
                     .substring(0,oreField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.ORE.getName()).get(0);
+            price = playerCargo.get(Items.ORE.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) <
                     playerCargo.get(Items.ORE.getName()).get(0)
@@ -701,7 +725,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ gameField.getText().toString()
                     .substring(0,gameField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.GAMES.getName()).get(0);
+            price = playerCargo.get(Items.GAMES.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) <
                     playerCargo.get(Items.GAMES.getName()).get(0)
@@ -719,7 +743,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ fireField.getText().toString()
                     .substring(0,fireField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.FIREARMS.getName()).get(0);
+            price = playerCargo.get(Items.FIREARMS.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) <
                     playerCargo.get(Items.FIREARMS.getName()).get(0)
@@ -737,7 +761,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ medField.getText().toString()
                     .substring(0,medField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.MEDICINE.getName()).get(0);
+            price = playerCargo.get(Items.MEDICINE.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) <
                     playerCargo.get(Items.MEDICINE.getName()).get(0)
@@ -755,7 +779,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ machField.getText().toString()
                     .substring(0,machField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.MACHINES.getName()).get(0);
+            price = playerCargo.get(Items.MACHINES.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) <
                     playerCargo.get(Items.MACHINES.getName()).get(0)
@@ -774,7 +798,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ narcField.getText().toString()
                     .substring(0,narcField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.NARCOTICS.getName()).get(0);
+            price = playerCargo.get(Items.NARCOTICS.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) <
                     playerCargo.get(Items.NARCOTICS.getName()).get(0)
@@ -792,7 +816,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ roboField.getText().toString()
                     .substring(0,roboField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.ROBOTS.getName()).get(0);
+            price = playerCargo.get(Items.ROBOTS.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) <
                     playerCargo.get(Items.ROBOTS.getName()).get(0)
@@ -812,7 +836,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ waterField.getText().toString()
                     .substring(0,waterField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.WATER.getName()).get(0);
+            price = playerCargo.get(Items.WATER.getName()).get(1);
             if (totalCount > 0 && Integer.parseInt(count) > 0) {
                 waterField.setText(Integer.parseInt(count) - 1 +"/"+
                         playerCargo.get(Items.WATER.getName()).get(0));
@@ -827,7 +851,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ fursField.getText().toString()
                     .substring(0,fursField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.FURS.getName()).get(0);
+            price = playerCargo.get(Items.FURS.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) > 0) {
                 fursField.setText(Integer.parseInt(count) - 1 +"/"+
@@ -842,7 +866,7 @@ public class UniverseActivity extends AppCompatActivity {
         if (id == R.id.food_minus) {
             count = ""+ foodField.getText().toString()
                     .substring(0,foodField.getText().toString().indexOf("/"));
-            price = playerCargo.get(Items.FOOD.getName()).get(0);
+            price = playerCargo.get(Items.FOOD.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) > 0) {
                 foodField.setText(Integer.parseInt(count) - 1 +"/"+
@@ -857,7 +881,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ oreField.getText().toString()
                     .substring(0,oreField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.ORE.getName()).get(0);
+            price = playerCargo.get(Items.ORE.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) > 0) {
                 oreField.setText(Integer.parseInt(count) - 1 +"/"+
@@ -872,7 +896,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ gameField.getText().toString()
                     .substring(0,gameField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.GAMES.getName()).get(0);
+            price = playerCargo.get(Items.GAMES.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) > 0) {
                 gameField.setText(Integer.parseInt(count) - 1 +"/"+
@@ -888,7 +912,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ fireField.getText().toString()
                     .substring(0,fireField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.FIREARMS.getName()).get(0);
+            price = playerCargo.get(Items.FIREARMS.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) > 0) {
                 fireField.setText(Integer.parseInt(count) - 1 +"/"+
@@ -904,7 +928,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ medField.getText().toString()
                     .substring(0,medField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.MEDICINE.getName()).get(0);
+            price = playerCargo.get(Items.MEDICINE.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) > 0) {
                 medField.setText(Integer.parseInt(count) - 1 +"/"+
@@ -920,7 +944,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ machField.getText().toString()
                     .substring(0,machField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.MACHINES.getName()).get(0);
+            price = playerCargo.get(Items.MACHINES.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) > 0) {
                 machField.setText(Integer.parseInt(count) - 1 +"/"+
@@ -936,7 +960,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ narcField.getText().toString()
                     .substring(0,narcField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.NARCOTICS.getName()).get(0);
+            price = playerCargo.get(Items.NARCOTICS.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) > 0) {
                 narcField.setText(Integer.parseInt(count) - 1 +"/"+
@@ -952,7 +976,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ roboField.getText().toString()
                     .substring(0,roboField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.ROBOTS.getName()).get(0);
+            price = playerCargo.get(Items.ROBOTS.getName()).get(1);
 
             if (totalCount > 0 && Integer.parseInt(count) > 0) {
                 roboField.setText(Integer.parseInt(count) - 1 +"/"+
@@ -990,6 +1014,7 @@ public class UniverseActivity extends AppCompatActivity {
 
             totalPrice.setText("0Cr");
             remaining.setText(""+player.getCredit());
+            viewModel.updatePlayer(player);
         }
     }
 
@@ -1002,24 +1027,6 @@ public class UniverseActivity extends AppCompatActivity {
 
     }
 
-    /**
-     * Calculating varience
-     * @param var varience
-     * @param basePrice base price for item
-     * @return the calculated varience
-     */
-    private int varienceCalc(int var, int basePrice) {
-        double varience;
-        int coinFlip = (int) (Math.random() * 2);
-        double randomVar = (Math.random() * var) / 100;
-        if (coinFlip == 1) {
-            varience = basePrice * -randomVar;
-            return (int)varience;
-        } else {
-            varience = basePrice * randomVar;
-            return (int)varience;
-        }
-    }
 
     /**
      * Clear purchase

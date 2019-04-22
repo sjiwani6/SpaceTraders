@@ -29,7 +29,7 @@ public class EconomicModel {
                 if (items[i].getTTP() == levelNum) {
 
                     quantity = 35 + (int) (20 * Math.random());
-                    price = items[i].getBasePrice();
+                    price = items[i].getBasePrice() + varienceCalc(items[i].getVar(), items[i].getBasePrice());
                     ArrayList<Integer> quantiPrice = new ArrayList<>();
                     quantiPrice.add(0, quantity);
                     quantiPrice.add(1, price);
@@ -37,7 +37,7 @@ public class EconomicModel {
 
                 } else {
                     quantity = 15 + (int) (25 * Math.random());
-                    price = items[i].getBasePrice();
+                    price = items[i].getBasePrice() + varienceCalc(items[i].getVar(), items[i].getBasePrice());
 
                     ArrayList<Integer> quantiPrice = new ArrayList<>();
                     quantiPrice.add(0, quantity);
@@ -55,6 +55,25 @@ public class EconomicModel {
 
         }
         return cargo;
+    }
+
+    /**
+     * Calculating varience
+     * @param var varience
+     * @param basePrice base price for item
+     * @return the calculated varience
+     */
+    private static int varienceCalc(int var, int basePrice) {
+        double varience;
+        int coinFlip = (int) (Math.random() * 2);
+        double randomVar = (Math.random() * var) / 100;
+        if (coinFlip == 1) {
+            varience = basePrice * -randomVar;
+            return (int)varience;
+        } else {
+            varience = basePrice * randomVar;
+            return (int)varience;
+        }
     }
 
 }
