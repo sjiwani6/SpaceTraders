@@ -317,6 +317,8 @@
             android:text=" 2D Map "
             android:textColor="#ffffff"
 
+
+
             />
 
     </RelativeLayout>

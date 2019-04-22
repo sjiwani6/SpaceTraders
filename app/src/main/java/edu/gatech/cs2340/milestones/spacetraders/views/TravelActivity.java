@@ -50,6 +50,9 @@ public class TravelActivity extends AppCompatActivity {
     private Button button;
     private Button wrap;
     private Button closeWindow;
+    private Button mapButton;
+    private Button close;
+    private Dialog mapDialog;
     private int diffCalc;
     private double maxCheck;
 
@@ -91,6 +94,17 @@ public class TravelActivity extends AppCompatActivity {
         police = findViewById(R.id.police_content);
         pirates = findViewById(R.id.pirates_content);
         cost = findViewById(R.id.cost_content);
+        mapButton = findViewById(R.id.mapButton);
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mapDialog = new Dialog(TravelActivity.this);
+                mapDialog.setContentView(R.layout.universe_2d_map);
+                mapDialog.show();
+
+            }
+        });
+
 
         viewModel = ViewModelProviders.of(this).get(ConfigurationViewModel.class);
         universeViewModel = ViewModelProviders.of(this).get(UniverseViewModel.class);
@@ -509,7 +523,11 @@ public class TravelActivity extends AppCompatActivity {
         Intent myIntent2 = new Intent(TravelActivity.this, StartGameActivity.class);
         startActivity(myIntent2);
     }
-
+    public void onPressed2Dmap(View view) {
+        close = findViewById(R.id.OKMapButton);
+        Intent mapIntent = new Intent(TravelActivity.this, TravelActivity.class);
+        startActivity(mapIntent);
+    }
     /**
      * Action for warp
      * @param view
@@ -519,10 +537,4 @@ public class TravelActivity extends AppCompatActivity {
 
     }
 
-    public void onPressed2Dmap(View view){
-        Dialog mapDialog = new Dialog(TravelActivity.this);
-        mapDialog.setContentView(R.layout.universe_2d_map);
-        //closeWindow = findViewById(R.id.OKMapButton);
-
-    }
 }

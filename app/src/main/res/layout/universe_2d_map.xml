@@ -24,4 +24,15 @@
         android:text="OK"
         android:textColor="#ffffff" />
 
+    <TextView
+        android:id="@+id/mapText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:text="2D Universe Map"
+        android:textColor="#51C7F2"
+        android:textSize="30sp" />
+
+
 </FrameLayout>
