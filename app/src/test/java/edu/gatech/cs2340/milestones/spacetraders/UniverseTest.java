@@ -69,7 +69,11 @@ public class UniverseTest {
         int i = 1;
         while (i <= 10) {
             coordinateY4 = testCoordinate.randCoordinateY(81,100,i);
+<<<<<<< HEAD
+            assertEquals(false, coordinateY4 <= 80 && coordinateY4 >= 20 );
+=======
             assertEquals(false, coordinateY4 <= 80 && coordinateY4 >= 20);
+>>>>>>> 7be3a2e1b966656894fb8baf0d49dfc66aea1f43
             i++;
         }
 

@@ -305,6 +305,20 @@
             android:text=" Back "
             android:textColor="#ffffff" />
 
+        <Button
+            android:id="@+id/mapButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/apl_button"
+            android:layout_marginStart="205dp"
+            android:layout_marginTop="7dp"
+            android:background="#51C7F2"
+            android:onClick="onPressed2Dmap"
+            android:text=" 2D Map "
+            android:textColor="#ffffff"
+
+            />
+
     </RelativeLayout>
 
 </RelativeLayout>

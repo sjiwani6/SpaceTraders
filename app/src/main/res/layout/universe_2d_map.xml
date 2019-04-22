@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/image_dialog_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:gravity = "center">
+
+    <ImageView
+        android:id="@+id/your_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src = "@drawable/universe"/>
+
+    <Button
+        android:id="@+id/OKMapButton"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
+        android:background="#51C7F2"
+        android:onClick="onPressed2Dmap"
+        android:text="OK"
+        android:textColor="#ffffff" />
+
+</FrameLayout>
