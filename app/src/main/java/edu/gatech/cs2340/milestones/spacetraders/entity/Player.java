@@ -205,7 +205,12 @@ public class Player {
      * this is the tostring method.
      * @return the player skill points as a string.
      */
-
+    public int getCapacity() {
+        return playerShip.getCapacity();
+    }
+    public void setCapacity(int capacity) {
+        playerShip.setCapacity(capacity);
+    }
 
     @Override
     public String toString() {

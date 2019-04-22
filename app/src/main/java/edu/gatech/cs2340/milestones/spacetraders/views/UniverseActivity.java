@@ -96,7 +96,7 @@ public class UniverseActivity extends AppCompatActivity {
         narcField.setText("0/"+ planetCargo.get(Items.NARCOTICS.getName()).get(0));
         roboField.setText("0/"+ planetCargo.get(Items.ROBOTS.getName()).get(0));
 
-        totalField.setText("0/"+ ship.getShipType().getCapacity());
+        totalField.setText(player.getCapacity()+"/"+ ship.getShipType().getCapacity());
         totalPrice.setText("0Cr");
         remaining.setText(""+player.getCredit());
 
@@ -576,7 +576,7 @@ public class UniverseActivity extends AppCompatActivity {
         if (id == R.id.purchase) {
             Log.d("total credit = ", totalCR+"");
             player.setCredit(remainingCr - totalCR);
-
+            player.setCapacity(totalCount);
             HashMap<String, ArrayList<Integer>> playerCargo = player.getCargo();
 
             player.setCargo(Market.buyAction(purchaseTable, playerCargo));
@@ -628,14 +628,14 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ waterField.getText().toString()
                     .substring(0,waterField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.WATER.toString()).get(0);
+            price = playerCargo.get(Items.WATER.getName()).get(0);
 
             if (totalCount > 0 && Integer.parseInt(count) <
-                    playerCargo.get(Items.WATER.toString()).get(0)
+                    playerCargo.get(Items.WATER.getName()).get(0)
                     && (remainingCr - totalCR - price) > 0) {
 
                 waterField.setText(Integer.parseInt(count) + 1 +"/"+
-                        playerCargo.get(Items.WATER.toString()).get(0));
+                        playerCargo.get(Items.WATER.getName()).get(0));
 
                 purchaseTable.put(Items.WATER, Integer.parseInt(count) + 1);
                 totalField.setText(totalCount - 1 + "/"+capacity);
@@ -646,7 +646,7 @@ public class UniverseActivity extends AppCompatActivity {
             count = ""+ fursField.getText().toString()
                     .substring(0,fursField.getText().toString().indexOf("/"));
 
-            price = playerCargo.get(Items.FURS.toString()).get(0);
+            price = playerCargo.get(Items.FURS.getName()).get(0);
 
             if (totalCount > 0 && Integer.parseInt(count) <
                     playerCargo.get(Items.FURS.getName()).get(0)
@@ -968,7 +968,7 @@ public class UniverseActivity extends AppCompatActivity {
         if (id == R.id.sell) {
 
             player.setCredit(remainingCr + totalCR);
-
+            player.setCapacity(totalCount);
 
             HashMap<String, ArrayList<Integer>> planetCargo = planet.getCargo();
 

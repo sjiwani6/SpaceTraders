@@ -39,7 +39,7 @@ public class Ship {
             ArrayList<Integer> quantiPrice = new ArrayList<>();
             quantiPrice.add(0, 0);
             quantiPrice.add(1, items[i].getBasePrice());
-            cargo.put(items[i].toString(),quantiPrice);
+            cargo.put(items[i].getName(),quantiPrice);
         }
     }
     /**
