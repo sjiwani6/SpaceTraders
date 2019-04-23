@@ -209,6 +209,12 @@
             android:textColor="#ffffff" />
     </RelativeLayout>
 
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fighter_field"
+        android:src="@drawable/ship1" />
+
     <!--<android.support.design.widget.BottomNavigationView-->
         <!--android:id="@+id/navigationView"-->
         <!--android:layout_width="wrap_content"-->
