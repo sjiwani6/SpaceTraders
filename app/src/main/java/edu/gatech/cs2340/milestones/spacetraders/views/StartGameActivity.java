@@ -2,6 +2,7 @@ package edu.gatech.cs2340.milestones.spacetraders.views;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -29,7 +30,7 @@ public class StartGameActivity extends AppCompatActivity {
     private ConfigurationViewModel viewModel;
     private UniverseViewModel universeViewModel;
     private DatabaseReference mDatabase;
-
+    private MediaPlayer click;
 
     /**
      * Sets up start of game
@@ -125,6 +126,14 @@ public class StartGameActivity extends AppCompatActivity {
      * @param view
      */
     public void onMarket(View view) {
+        click = MediaPlayer.create(this,R.raw.clicksound);
+        click.start();
+        click.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+
+            };
+        });
         Intent intent = new Intent(this, UniverseActivity.class);
         startActivity(intent);
     }
@@ -134,8 +143,15 @@ public class StartGameActivity extends AppCompatActivity {
      * @param view
      */
     public void onTravel(View view) {
+        click = MediaPlayer.create(this,R.raw.clicksound);
+        click.start();
+        click.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+
+            };
+        });
         Intent intent = new Intent(this, TravelActivity.class);
         startActivity(intent);
-        finish();
     }
 }

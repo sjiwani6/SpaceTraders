@@ -10,6 +10,7 @@ import edu.gatech.cs2340.milestones.spacetraders.model.Market;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.ConfigurationViewModel;
 import edu.gatech.cs2340.milestones.spacetraders.viewmodel.UniverseViewModel;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -28,6 +29,7 @@ public class UniverseActivity extends AppCompatActivity {
     private ConfigurationViewModel viewModel;
     private HashMap<Items, Integer> purchaseTable;
     private Player player;
+    private MediaPlayer click;
 
 
     private TextView waterField;
@@ -134,6 +136,8 @@ public class UniverseActivity extends AppCompatActivity {
      * @param view is the view parameter.
      */
     public void onBuyPressed(View view) {
+        click = MediaPlayer.create(this,R.raw.clicksound);
+        click.start();
         View sellView = findViewById(R.id.sell_layout);
         sellView.setVisibility(View.GONE);
         View buyView = findViewById(R.id.buy_layout);
@@ -183,6 +187,8 @@ public class UniverseActivity extends AppCompatActivity {
      * @param view
      */
     public void onSellPressed(View view) {
+        click = MediaPlayer.create(this,R.raw.clicksound);
+        click.start();
 
         View buyView = findViewById(R.id.buy_layout);
         buyView.setVisibility(View.GONE);
@@ -237,6 +243,8 @@ public class UniverseActivity extends AppCompatActivity {
      * @param view
      */
     public void onItemButton(View view) {
+        click = MediaPlayer.create(this,R.raw.clicksound);
+        click.start();
 
         int id = view.getId();
         Planet planet = player.getPlayerLocation();
@@ -628,6 +636,14 @@ public class UniverseActivity extends AppCompatActivity {
      * @param view
      */
     public void onItemButton2(View view) {
+        click = MediaPlayer.create(this,R.raw.clicksound);
+        click.start();
+        click.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+
+            };
+        });
 
         int id = view.getId();
         Planet planet = player.getPlayerLocation();

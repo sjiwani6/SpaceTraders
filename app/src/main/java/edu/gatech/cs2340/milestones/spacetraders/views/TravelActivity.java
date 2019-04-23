@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,6 +56,7 @@ public class TravelActivity extends AppCompatActivity {
     private Dialog mapDialog;
     private int diffCalc;
     private double maxCheck;
+    private MediaPlayer click;
 
     private String[] randomEvent = {
             "Illegal Trespassing", "Ape Attacked", "Found some credits",
@@ -126,6 +128,15 @@ public class TravelActivity extends AppCompatActivity {
      * @param view
      */
     public void onNext2Pressed(View view) {
+        click = MediaPlayer.create(this,R.raw.clicksound);
+        click.start();
+        click.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+
+            };
+        });
+
         planetName = findViewById(R.id.planet_name);
         name = findViewById(R.id.name_content);
         size = findViewById(R.id.size_content);
@@ -214,6 +225,7 @@ public class TravelActivity extends AppCompatActivity {
         wrap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Log.d("gets here", ": true");
                 Log.d("count: ", "" + count);
                 if (count == 0) {
@@ -519,11 +531,15 @@ public class TravelActivity extends AppCompatActivity {
      * @param view
      */
     public void onBackPressed(View view) {
+        click = MediaPlayer.create(this,R.raw.clicksound);
+        click.start();
         closeWindow = findViewById(R.id.back_button);
         Intent myIntent2 = new Intent(TravelActivity.this, StartGameActivity.class);
         startActivity(myIntent2);
     }
     public void onPressed2Dmap(View view) {
+        click = MediaPlayer.create(this,R.raw.clicksound);
+        click.start();
         close = findViewById(R.id.OKMapButton);
         Intent mapIntent = new Intent(TravelActivity.this, TravelActivity.class);
         startActivity(mapIntent);

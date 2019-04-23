@@ -3,6 +3,7 @@ package edu.gatech.cs2340.milestones.spacetraders.views;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -41,6 +42,7 @@ public class ConfigurationActivity extends AppCompatActivity
     private TextView tradePoint;
     private TextView fighterPoint;
     private TextView skillPoint;
+    private MediaPlayer click;
 
     /**
      * Sets up the new player screen
@@ -92,6 +94,8 @@ public class ConfigurationActivity extends AppCompatActivity
      * @param view
      */
     public void onNextPressed(View view) {
+        click = MediaPlayer.create(this,R.raw.clicksound);
+        click.start();
         if (player.getSkillPoint() == 0) {
             player.setName(nameField.getText().toString());
             player.setPilotPoint(Integer.parseInt(pilotPoint.getText().toString()));
@@ -109,6 +113,7 @@ public class ConfigurationActivity extends AppCompatActivity
             Log.d("user data:", player.toString());
             Log.d("universe", universe.toString());
 
+
             Intent intent = new Intent(this, StartGameActivity.class);
             startActivity(intent);
             finish();
@@ -125,6 +130,14 @@ public class ConfigurationActivity extends AppCompatActivity
     public void onSkillButton(View view) {
         int id = view.getId();
         //
+        click = MediaPlayer.create(this,R.raw.clicksound);
+        click.start();
+        click.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+
+            };
+        });
         if (id == R.id.p_plus) {
             if(player.getSkillPoint() > 0) {
                 int p1 = player.getPilotPoint() + 1;
